@@ -1,0 +1,18 @@
+﻿@model PagedList<LisaKatherine.Models.PublishedArticles>
+@using Webdiyer.WebControls.Mvc;
+
+
+@foreach (var item in Model)
+{ 
+    <div class="bloglist">
+        <div class="date">@String.Format("{0:dddd d MMMM yyyy}", item.datePublished)</div>
+        <h2>@Html.ActionLink(item.headline, "Details/" + item.headline.Replace(" ", "_"), new { id = item.articleId }, new { @class = "readMore" })</h2>
+        <h3>@item.strapline</h3>
+        <div class="articlebody">@Html.Raw(@item.body)</div>
+        <div class="author">@item.user.firstname @item.user.lastname</div>
+        <div class="actionlink">
+            @Html.ActionLink("Read More...", "Details/" + item.headline.Replace(" ", "_"), new { id = item.articleId }, new { @class = "readMore" })</div>
+    </div>
+}
+
+@Html.Pager(Model, new PagerOptions { PageIndexParameterName = "page", ContainerTagName = "div class=\"pager\"", ShowFirstLast = false })

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<LisaKatherine.Models.PublishedArticles>
+<div id="BlogList">
+    <div class="top">
+        <h1>
+            Blog</h1>
+    </div>
+    <div class="middle">
+        @{var month = 0;}
+        @foreach (var item in Model)
+        {
+            if (month != ((DateTime)item.datePublished).Month)
+            {
+                if (month != 0)
+                { @Html.Raw("</div>");
+                }
+                month = ((DateTime)item.datePublished).Month;
+            @Html.Raw(String.Format("<div class=\"slide\" id=\"{0:yyMM}\">{0:MMM yyyy}</div><div class=\"view\" id=\"{0:yyMM}_view\">", item.datePublished));
+
+            }
+            <div class="headline">@Html.ActionLink(item.headline, "Details/" + item.headline.Replace(" ", "_"), new { id = item.articleId })</div>
+
+        }
+    </div>
+</div>
+<div class="bottom">
+</div>
+</div>

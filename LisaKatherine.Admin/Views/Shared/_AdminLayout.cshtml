@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/css/Admin.css")" rel="stylesheet" type="text/css" />
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    @Html.Partial("_TinyMce")
+</head>
+<body>
+    <div>
+        <div id="header">
+            <div id="logindisplay">
+                @Html.Partial("_LogOnPartial")
+            </div>
+            <div id="menu">
+                @Html.ActionLink("Users", "Index", "User") |
+                @Html.ActionLink("Articles", "Index", "Articles") |
+                @Html.ActionLink("Article Type", "Index", "ArticleType") |
+                @Html.ActionLink("Photos", "Index", "Photos") |
+            </div>
+            <h1>
+                L K B Admin</h1>
+        </div>
+        @RenderBody()
+    </div>
+</body>
+</html>

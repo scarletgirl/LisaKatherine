@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="28de9f44-c862-40c8-86fe-e68fca90668c" name="Red 2@RED2-PC 2012-08-13 23:12:49" runUser="Red2-PC\Red 2" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="c3987368-8129-4de8-9a1d-3b6cab487d94">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Red 2_RED2-PC 2012-08-13 23_12_49">
+      <DeploymentItem filename="C:\Users\Red 2\LKB\LisaKatherine\bin\Facebook.dll" />
+      <DeploymentItem filename="C:\Users\Red 2\LKB\LisaKatherine\bin\Facebook.Web.dll" />
+      <DeploymentItem filename="C:\Users\Red 2\LKB\LisaKatherine\bin\RouteDebug.dll" />
+      <DeploymentItem filename="C:\Users\Red 2\LKB\MVCPager\bin\Debug\MvcPager.dll" />
+      <DeploymentItem filename="C:\Users\Red 2\LKB\LisaKatherine\bin\LisaKatherine.dll" />
+      <DeploymentItem filename="C:\Users\Red 2\Desktop\Newtonsoft.Json.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-08-13T23:12:49.3644259+01:00" queuing="2012-08-13T23:12:50.2044740+01:00" start="2012-08-13T23:12:50.2754780+01:00" finish="2012-08-13T23:12:51.3155375+01:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="AddFacebookCommentTest" storage="c:\users\red 2\lkb\lisakatherine.tests\bin\debug\lisakatherine.tests.dll" id="cf4155d9-79e4-0e75-296f-c12cd211d190">
+      <Execution id="c931ece9-504a-456d-b51f-74597efd5393" />
+      <TestMethod codeBase="C:/Users/Red 2/LKB/LisaKatherine.Tests/bin/Debug/LisaKatherine.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="LisaKatherine.Tests.FacebookServiceTest, LisaKatherine.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="AddFacebookCommentTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="cf4155d9-79e4-0e75-296f-c12cd211d190" executionId="c931ece9-504a-456d-b51f-74597efd5393" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="c931ece9-504a-456d-b51f-74597efd5393" testId="cf4155d9-79e4-0e75-296f-c12cd211d190" testName="AddFacebookCommentTest" computerName="RED2-PC" duration="00:00:00.3553610" startTime="2012-08-13T23:12:50.2894788+01:00" endTime="2012-08-13T23:12:51.2775354+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c931ece9-504a-456d-b51f-74597efd5393">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method LisaKatherine.Tests.FacebookServiceTest.AddFacebookCommentTest threw exception: 
+System.ArgumentException: The specified named connection is either not found in the configuration, not intended to be used with the EntityClient provider, or not valid.</Message>
+          <StackTrace>    at System.Data.EntityClient.EntityConnection.ChangeConnectionString(String newConnectionString)
+   at System.Data.EntityClient.EntityConnection..ctor(String connectionString)
+   at System.Data.Objects.ObjectContext.CreateEntityConnection(String connectionString)
+   at System.Data.Objects.ObjectContext..ctor(String connectionString, String defaultContainerName)
+   at LisaKatherine.Models.LisaKatherineEntities..ctor() in C:\Users\Red 2\LKB\LisaKatherine\Models\LKDataEntities.Designer.cs:line 45
+   at LisaKatherine.Models.DataAnnotations.FacebookService..ctor() in C:\Users\Red 2\LKB\LisaKatherine\Models\DataAnnotations\FacebookModel.cs:line 21
+   at LisaKatherine.Tests.FacebookServiceTest.AddFacebookCommentTest() in C:\Users\Red 2\LKB\LisaKatherine.Tests\FacebookServiceTest.cs:line 78
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

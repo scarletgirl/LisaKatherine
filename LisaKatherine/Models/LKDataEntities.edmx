@@ -1,0 +1,631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- EF Runtime content -->
+    <edmx:Runtime>
+        <!-- SSDL content -->
+        <edmx:StorageModels>
+        <Schema Namespace="LisaKatherineModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="LisaKatherineModelStoreContainer">
+          <EntitySet Name="tblArticle" EntityType="LisaKatherineModel.Store.tblArticle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblArticlePublished" EntityType="LisaKatherineModel.Store.tblArticlePublished" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblArticleType" EntityType="LisaKatherineModel.Store.tblArticleType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblFacebookPost" EntityType="LisaKatherineModel.Store.tblFacebookPost" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblFacebookUsers" EntityType="LisaKatherineModel.Store.tblFacebookUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblPhotos" EntityType="LisaKatherineModel.Store.tblPhotos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblPhotoSets" EntityType="LisaKatherineModel.Store.tblPhotoSets" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblSection" EntityType="LisaKatherineModel.Store.tblSection" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblUsers" EntityType="LisaKatherineModel.Store.tblUsers" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_tblArticle_tblArticleType" Association="LisaKatherineModel.Store.FK_tblArticle_tblArticleType">
+            <End Role="tblArticleType" EntitySet="tblArticleType" />
+            <End Role="tblArticle" EntitySet="tblArticle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblArticle_tblUsers" Association="LisaKatherineModel.Store.FK_tblArticle_tblUsers">
+            <End Role="tblUsers" EntitySet="tblUsers" />
+            <End Role="tblArticle" EntitySet="tblArticle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblArticlePublished_tblArticle" Association="LisaKatherineModel.Store.FK_tblArticlePublished_tblArticle">
+            <End Role="tblArticle" EntitySet="tblArticle" />
+            <End Role="tblArticlePublished" EntitySet="tblArticlePublished" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblArticleType_tblSection" Association="LisaKatherineModel.Store.FK_tblArticleType_tblSection">
+            <End Role="tblSection" EntitySet="tblSection" />
+            <End Role="tblArticleType" EntitySet="tblArticleType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblFacebookPost_tblArticle" Association="LisaKatherineModel.Store.FK_tblFacebookPost_tblArticle">
+            <End Role="tblArticle" EntitySet="tblArticle" />
+            <End Role="tblFacebookPost" EntitySet="tblFacebookPost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPhotos_tblUsers" Association="LisaKatherineModel.Store.FK_tblPhotos_tblUsers">
+            <End Role="tblUsers" EntitySet="tblUsers" />
+            <End Role="tblPhotos" EntitySet="tblPhotos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblArticle">
+          <Key>
+            <PropertyRef Name="articleId" />
+          </Key>
+          <Property Name="articleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="headline" Type="nvarchar" MaxLength="255" />
+          <Property Name="strapline" Type="nvarchar" MaxLength="800" />
+          <Property Name="body" Type="ntext" />
+          <Property Name="dateCreated" Type="datetime2" Nullable="false" />
+          <Property Name="datePublished" Type="datetime2" />
+          <Property Name="isPublished" Type="bit" Nullable="false" />
+          <Property Name="userid" Type="uniqueidentifier" />
+          <Property Name="articleTypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="tblArticlePublished">
+          <Key>
+            <PropertyRef Name="articleId" />
+          </Key>
+          <Property Name="articleId" Type="int" Nullable="false" />
+          <Property Name="headline" Type="nvarchar" MaxLength="255" />
+          <Property Name="strapline" Type="nvarchar" MaxLength="800" />
+          <Property Name="body" Type="ntext" />
+          <Property Name="dateCreated" Type="datetime2" Nullable="false" />
+          <Property Name="datePublished" Type="datetime2" />
+          <Property Name="isPublished" Type="bit" Nullable="false" />
+          <Property Name="userid" Type="uniqueidentifier" />
+          <Property Name="articleTypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="tblArticleType">
+          <Key>
+            <PropertyRef Name="articleTypeId" />
+          </Key>
+          <Property Name="articleTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="articleType" Type="nvarchar" MaxLength="20" />
+          <Property Name="sectionid" Type="int" />
+        </EntityType>
+        <EntityType Name="tblFacebookPost">
+          <Key>
+            <PropertyRef Name="postId" />
+          </Key>
+          <Property Name="postId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="facebookId" Type="bigint" Nullable="false" />
+          <Property Name="articleId" Type="int" Nullable="false" />
+          <Property Name="post" Type="ntext" />
+          <Property Name="approved" Type="bit" Nullable="false" />
+          <Property Name="dateAdded" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblFacebookUsers">
+          <Key>
+            <PropertyRef Name="facebookId" />
+          </Key>
+          <Property Name="facebookId" Type="bigint" Nullable="false" />
+          <Property Name="accessToken" Type="nvarchar" MaxLength="255" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="firstlogin" Type="datetime" Nullable="false" />
+          <Property Name="lastlogin" Type="datetime" />
+          <Property Name="active" Type="bit" Nullable="false" />
+          <Property Name="posts" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblPhotos">
+          <Key>
+            <PropertyRef Name="photoId" />
+          </Key>
+          <Property Name="photoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="alt" Type="nvarchar" MaxLength="50" />
+          <Property Name="width" Type="int" />
+          <Property Name="height" Type="int" />
+          <Property Name="uploaded" Type="datetime" />
+          <Property Name="isHomePage" Type="bit" Nullable="false" />
+          <Property Name="userId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="tblPhotoSets">
+          <Key>
+            <PropertyRef Name="SetId" />
+          </Key>
+          <Property Name="SetId" Type="bigint" Nullable="false" />
+          <Property Name="SetName" Type="varchar" MaxLength="255" />
+          <Property Name="Description" Type="text" />
+        </EntityType>
+        <EntityType Name="tblSection">
+          <Key>
+            <PropertyRef Name="sectionId" />
+          </Key>
+          <Property Name="sectionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="section" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblUsers">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="firstname" Type="nvarchar" MaxLength="50" />
+          <Property Name="lastname" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_tblArticle_tblArticleType">
+          <End Role="tblArticleType" Type="LisaKatherineModel.Store.tblArticleType" Multiplicity="0..1" />
+          <End Role="tblArticle" Type="LisaKatherineModel.Store.tblArticle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblArticleType">
+              <PropertyRef Name="articleTypeId" />
+            </Principal>
+            <Dependent Role="tblArticle">
+              <PropertyRef Name="articleTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblArticle_tblUsers">
+          <End Role="tblUsers" Type="LisaKatherineModel.Store.tblUsers" Multiplicity="0..1" />
+          <End Role="tblArticle" Type="LisaKatherineModel.Store.tblArticle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUsers">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="tblArticle">
+              <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblArticlePublished_tblArticle">
+          <End Role="tblArticle" Type="LisaKatherineModel.Store.tblArticle" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tblArticlePublished" Type="LisaKatherineModel.Store.tblArticlePublished" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tblArticle">
+              <PropertyRef Name="articleId" />
+            </Principal>
+            <Dependent Role="tblArticlePublished">
+              <PropertyRef Name="articleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblArticleType_tblSection">
+          <End Role="tblSection" Type="LisaKatherineModel.Store.tblSection" Multiplicity="0..1" />
+          <End Role="tblArticleType" Type="LisaKatherineModel.Store.tblArticleType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSection">
+              <PropertyRef Name="sectionId" />
+            </Principal>
+            <Dependent Role="tblArticleType">
+              <PropertyRef Name="sectionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblFacebookPost_tblArticle">
+          <End Role="tblArticle" Type="LisaKatherineModel.Store.tblArticle" Multiplicity="1" />
+          <End Role="tblFacebookPost" Type="LisaKatherineModel.Store.tblFacebookPost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblArticle">
+              <PropertyRef Name="articleId" />
+            </Principal>
+            <Dependent Role="tblFacebookPost">
+              <PropertyRef Name="articleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPhotos_tblUsers">
+          <End Role="tblUsers" Type="LisaKatherineModel.Store.tblUsers" Multiplicity="0..1" />
+          <End Role="tblPhotos" Type="LisaKatherineModel.Store.tblPhotos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUsers">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="tblPhotos">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+        <!-- CSDL content -->
+        <edmx:ConceptualModels>
+            <Schema Namespace="LisaKatherineModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+                <EntityContainer Name="LisaKatherineEntities" annotation:LazyLoadingEnabled="true">
+                    <EntitySet Name="Articles1" EntityType="LisaKatherineModel.Articles" />
+                    <EntitySet Name="tblPhotos" EntityType="LisaKatherineModel.Photos" />
+                    <EntitySet Name="Users1" EntityType="LisaKatherineModel.Users" />
+                    <AssociationSet Name="FK_tblArticle_tblUsers" Association="LisaKatherineModel.FK_tblArticle_tblUsers">
+                        <End Role="tblUsers" EntitySet="Users1" />
+                        <End Role="tblArticle" EntitySet="Articles1" />
+                    </AssociationSet>
+                    <AssociationSet Name="FK_tblPhotos_tblUsers" Association="LisaKatherineModel.FK_tblPhotos_tblUsers">
+                        <End Role="tblUsers" EntitySet="Users1" />
+                        <End Role="tblPhotos" EntitySet="tblPhotos" />
+                    </AssociationSet>
+                    <EntitySet Name="ArticleTypes1" EntityType="LisaKatherineModel.ArticleTypes" />
+                    <AssociationSet Name="FK_tblArticle_tblArticleType" Association="LisaKatherineModel.FK_tblArticle_tblArticleType">
+                        <End Role="tblArticleType" EntitySet="ArticleTypes1" />
+                        <End Role="Articles" EntitySet="Articles1" />
+                    </AssociationSet>
+          <EntitySet Name="PublishedArticles" EntityType="LisaKatherineModel.PublishedArticles" />
+          <AssociationSet Name="FK_tblArticlePublished_tblArticle" Association="LisaKatherineModel.FK_tblArticlePublished_tblArticle">
+            <End Role="Articles" EntitySet="Articles1" />
+            <End Role="tblArticlePublished" EntitySet="PublishedArticles" />
+          </AssociationSet>
+          <EntitySet Name="FlickrSets" EntityType="LisaKatherineModel.FlickrSets" />
+          <EntitySet Name="Sections" EntityType="LisaKatherineModel.Section" />
+          <AssociationSet Name="FK_tblArticleType_tblSection" Association="LisaKatherineModel.FK_tblArticleType_tblSection">
+            <End Role="Section" EntitySet="Sections" />
+            <End Role="ArticleTypes" EntitySet="ArticleTypes1" />
+          </AssociationSet>
+          <EntitySet Name="FacebookPosts" EntityType="LisaKatherineModel.FacebookPost" />
+          <EntitySet Name="FacebookUsers" EntityType="LisaKatherineModel.FacebookUser" />
+          <AssociationSet Name="FK_tblFacebookPost_tblArticle" Association="LisaKatherineModel.FK_tblFacebookPost_tblArticle">
+            <End Role="Articles" EntitySet="Articles1" />
+            <End Role="FacebookPost" EntitySet="FacebookPosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblFacebookPost_tblFacebookUsers" Association="LisaKatherineModel.FK_tblFacebookPost_tblFacebookUsers">
+            <End Role="FacebookUser" EntitySet="FacebookUsers" />
+            <End Role="FacebookPost" EntitySet="FacebookPosts" />
+          </AssociationSet>
+                </EntityContainer>
+                <EntityType Name="Articles">
+                    <Key>
+                        <PropertyRef Name="articleId" />
+                    </Key>
+                    <Property Name="articleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+                    <Property Name="headline" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+                    <Property Name="strapline" Type="String" MaxLength="800" Unicode="true" FixedLength="false" />
+                    <Property Name="body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+                    <Property Name="dateCreated" Type="DateTime" Nullable="false" />
+                    <Property Name="datePublished" Type="DateTime" />
+                    <Property Name="isPublished" Type="Boolean" Nullable="false" />
+                    <Property Name="userid" Type="Guid" />
+                    <NavigationProperty Name="tblUser" Relationship="LisaKatherineModel.FK_tblArticle_tblUsers" FromRole="tblArticle" ToRole="tblUsers" />
+                    <Property Type="Int32" Name="articleTypeId" />
+                    <NavigationProperty Name="tblArticleType" Relationship="LisaKatherineModel.FK_tblArticle_tblArticleType" FromRole="Articles" ToRole="tblArticleType" />
+          <NavigationProperty Name="tblArticlePublished" Relationship="LisaKatherineModel.FK_tblArticlePublished_tblArticle" FromRole="Articles" ToRole="tblArticlePublished" />
+          <NavigationProperty Name="tblFacebookPosts" Relationship="LisaKatherineModel.FK_tblFacebookPost_tblArticle" FromRole="Articles" ToRole="FacebookPost" />
+                </EntityType>
+                <EntityType Name="Photos">
+                    <Key>
+                        <PropertyRef Name="photoId" />
+                    </Key>
+                    <Property Name="photoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+                    <Property Name="alt" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+                    <Property Name="width" Type="Int32" />
+                    <Property Name="height" Type="Int32" />
+                    <Property Name="uploaded" Type="DateTime" />
+                    <Property Name="isHomePage" Type="Boolean" Nullable="false" />
+                    <Property Name="userId" Type="Guid" />
+                    <NavigationProperty Name="tblUser" Relationship="LisaKatherineModel.FK_tblPhotos_tblUsers" FromRole="tblPhotos" ToRole="tblUsers" />
+                </EntityType>
+                <EntityType Name="Users">
+                    <Key>
+                        <PropertyRef Name="userId" />
+                    </Key>
+                    <Property Name="userId" Type="Guid" Nullable="false" />
+                    <Property Name="username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+                    <Property Name="password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+                    <Property Name="firstname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+                    <Property Name="lastname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+                    <NavigationProperty Name="tblArticles" Relationship="LisaKatherineModel.FK_tblArticle_tblUsers" FromRole="tblUsers" ToRole="tblArticle" />
+                    <NavigationProperty Name="tblPhotos" Relationship="LisaKatherineModel.FK_tblPhotos_tblUsers" FromRole="tblUsers" ToRole="tblPhotos" />
+                </EntityType>
+                <Association Name="FK_tblArticle_tblUsers">
+                    <End Role="tblUsers" Type="LisaKatherineModel.Users" Multiplicity="0..1" />
+                    <End Role="tblArticle" Type="LisaKatherineModel.Articles" Multiplicity="*" />
+                    <ReferentialConstraint>
+                        <Principal Role="tblUsers">
+                            <PropertyRef Name="userId" />
+                        </Principal>
+                        <Dependent Role="tblArticle">
+                            <PropertyRef Name="userid" />
+                        </Dependent>
+                    </ReferentialConstraint>
+                </Association>
+                <Association Name="FK_tblPhotos_tblUsers">
+                    <End Role="tblUsers" Type="LisaKatherineModel.Users" Multiplicity="0..1" />
+                    <End Role="tblPhotos" Type="LisaKatherineModel.Photos" Multiplicity="*" />
+                    <ReferentialConstraint>
+                        <Principal Role="tblUsers">
+                            <PropertyRef Name="userId" />
+                        </Principal>
+                        <Dependent Role="tblPhotos">
+                            <PropertyRef Name="userId" />
+                        </Dependent>
+                    </ReferentialConstraint>
+                </Association>
+                <EntityType Name="ArticleTypes">
+                    <Key>
+                        <PropertyRef Name="articleTypeId" />
+                    </Key>
+                    <Property Type="Int32" Name="articleTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+                    <Property Type="String" Name="articleTypeName" MaxLength="20" FixedLength="false" Unicode="true" />
+                    <NavigationProperty Name="tblArticles" Relationship="LisaKatherineModel.FK_tblArticle_tblArticleType" FromRole="tblArticleType" ToRole="Articles" />
+          <Property Type="Int32" Name="sectionid" />
+          <NavigationProperty Name="tblSection" Relationship="LisaKatherineModel.FK_tblArticleType_tblSection" FromRole="ArticleTypes" ToRole="Section" />
+                </EntityType>
+                <Association Name="FK_tblArticle_tblArticleType">
+                    <End Type="LisaKatherineModel.ArticleTypes" Role="tblArticleType" Multiplicity="0..1" />
+                    <End Type="LisaKatherineModel.Articles" Role="Articles" Multiplicity="*" />
+                    <ReferentialConstraint>
+                        <Principal Role="tblArticleType">
+                            <PropertyRef Name="articleTypeId" />
+                        </Principal>
+                        <Dependent Role="Articles">
+                            <PropertyRef Name="articleTypeId" />
+                        </Dependent>
+                    </ReferentialConstraint>
+                </Association>
+        <EntityType Name="PublishedArticles">
+          <Key>
+            <PropertyRef Name="articleId" />
+          </Key>
+          <Property Type="Int32" Name="articleId" Nullable="false" />
+          <Property Type="String" Name="headline" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="strapline" MaxLength="800" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="body" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="dateCreated" Nullable="false" />
+          <Property Type="DateTime" Name="datePublished" />
+          <Property Type="Boolean" Name="isPublished" Nullable="false" />
+          <Property Type="Guid" Name="userid" />
+          <Property Type="Int32" Name="articleTypeId" />
+          <NavigationProperty Name="tblArticle" Relationship="LisaKatherineModel.FK_tblArticlePublished_tblArticle" FromRole="tblArticlePublished" ToRole="Articles" />
+        </EntityType>
+        <Association Name="FK_tblArticlePublished_tblArticle">
+          <End Type="LisaKatherineModel.Articles" Role="Articles" Multiplicity="1" />
+          <End Type="LisaKatherineModel.PublishedArticles" Role="tblArticlePublished" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Articles">
+              <PropertyRef Name="articleId" />
+            </Principal>
+            <Dependent Role="tblArticlePublished">
+              <PropertyRef Name="articleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FlickrSets">
+          <Key>
+            <PropertyRef Name="SetId" />
+          </Key>
+          <Property Type="Int64" Name="SetId" Nullable="false" />
+          <Property Type="String" Name="SetName" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="sectionId" />
+          </Key>
+          <Property Type="Int32" Name="sectionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="section" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblArticleTypes" Relationship="LisaKatherineModel.FK_tblArticleType_tblSection" FromRole="Section" ToRole="ArticleTypes" />
+        </EntityType>
+        <Association Name="FK_tblArticleType_tblSection">
+          <End Type="LisaKatherineModel.Section" Role="Section" Multiplicity="0..1" />
+          <End Type="LisaKatherineModel.ArticleTypes" Role="ArticleTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Section">
+              <PropertyRef Name="sectionId" />
+            </Principal>
+            <Dependent Role="ArticleTypes">
+              <PropertyRef Name="sectionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FacebookPost">
+          <Key>
+            <PropertyRef Name="postId" />
+          </Key>
+          <Property Type="Int32" Name="postId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="facebookId" Nullable="false" />
+          <Property Type="Int32" Name="articleId" Nullable="false" />
+          <Property Type="String" Name="post" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="approved" Nullable="false" />
+          <Property Type="DateTime" Name="dateAdded" Nullable="false" />
+          <NavigationProperty Name="tblArticle" Relationship="LisaKatherineModel.FK_tblFacebookPost_tblArticle" FromRole="FacebookPost" ToRole="Articles" />
+          <NavigationProperty Name="tblFacebookUser" Relationship="LisaKatherineModel.FK_tblFacebookPost_tblFacebookUsers" FromRole="FacebookPost" ToRole="FacebookUser" />
+        </EntityType>
+        <EntityType Name="FacebookUser">
+          <Key>
+            <PropertyRef Name="facebookId" />
+          </Key>
+          <Property Type="Int64" Name="facebookId" Nullable="false" />
+          <Property Type="String" Name="accessToken" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="gender" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="firstlogin" Nullable="false" />
+          <Property Type="DateTime" Name="lastlogin" />
+          <Property Type="Boolean" Name="active" Nullable="false" />
+          <Property Type="Int32" Name="posts" Nullable="false" />
+          <NavigationProperty Name="tblFacebookPosts" Relationship="LisaKatherineModel.FK_tblFacebookPost_tblFacebookUsers" FromRole="FacebookUser" ToRole="FacebookPost" />
+        </EntityType>
+        <Association Name="FK_tblFacebookPost_tblArticle">
+          <End Type="LisaKatherineModel.Articles" Role="Articles" Multiplicity="1" />
+          <End Type="LisaKatherineModel.FacebookPost" Role="FacebookPost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Articles">
+              <PropertyRef Name="articleId" />
+            </Principal>
+            <Dependent Role="FacebookPost">
+              <PropertyRef Name="articleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblFacebookPost_tblFacebookUsers">
+          <End Type="LisaKatherineModel.FacebookUser" Role="FacebookUser" Multiplicity="1" />
+          <End Type="LisaKatherineModel.FacebookPost" Role="FacebookPost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FacebookUser">
+              <PropertyRef Name="facebookId" />
+            </Principal>
+            <Dependent Role="FacebookPost">
+              <PropertyRef Name="facebookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+            </Schema>
+        </edmx:ConceptualModels>
+        <!-- C-S mapping content -->
+        <edmx:Mappings>
+            <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+                <EntityContainerMapping StorageEntityContainer="LisaKatherineModelStoreContainer" CdmEntityContainer="LisaKatherineEntities">
+                    <EntitySetMapping Name="Articles1">
+                        <EntityTypeMapping TypeName="LisaKatherineModel.Articles">
+                            <MappingFragment StoreEntitySet="tblArticle">
+                                <ScalarProperty Name="articleTypeId" ColumnName="articleTypeId" />
+                                <ScalarProperty Name="articleId" ColumnName="articleId" />
+                                <ScalarProperty Name="headline" ColumnName="headline" />
+                                <ScalarProperty Name="strapline" ColumnName="strapline" />
+                                <ScalarProperty Name="body" ColumnName="body" />
+                                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                                <ScalarProperty Name="datePublished" ColumnName="datePublished" />
+                                <ScalarProperty Name="isPublished" ColumnName="isPublished" />
+                                <ScalarProperty Name="userid" ColumnName="userid" />
+                            </MappingFragment>
+                        </EntityTypeMapping>
+                    </EntitySetMapping>
+                    <EntitySetMapping Name="tblPhotos">
+                        <EntityTypeMapping TypeName="LisaKatherineModel.Photos">
+                            <MappingFragment StoreEntitySet="tblPhotos">
+                                <ScalarProperty Name="photoId" ColumnName="photoId" />
+                                <ScalarProperty Name="alt" ColumnName="alt" />
+                                <ScalarProperty Name="width" ColumnName="width" />
+                                <ScalarProperty Name="height" ColumnName="height" />
+                                <ScalarProperty Name="uploaded" ColumnName="uploaded" />
+                                <ScalarProperty Name="isHomePage" ColumnName="isHomePage" />
+                                <ScalarProperty Name="userId" ColumnName="userId" />
+                            </MappingFragment>
+                        </EntityTypeMapping>
+                    </EntitySetMapping>
+                    <EntitySetMapping Name="Users1">
+                        <EntityTypeMapping TypeName="LisaKatherineModel.Users">
+                            <MappingFragment StoreEntitySet="tblUsers">
+                                <ScalarProperty Name="userId" ColumnName="userId" />
+                                <ScalarProperty Name="username" ColumnName="username" />
+                                <ScalarProperty Name="password" ColumnName="password" />
+                                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                            </MappingFragment>
+                        </EntityTypeMapping>
+                    </EntitySetMapping>
+                    <EntitySetMapping Name="ArticleTypes1">
+                        <EntityTypeMapping TypeName="LisaKatherineModel.ArticleTypes">
+                            <MappingFragment StoreEntitySet="tblArticleType">
+                                <ScalarProperty Name="sectionid" ColumnName="sectionid" />
+                <ScalarProperty Name="articleTypeName" ColumnName="articleType" />
+                                <ScalarProperty Name="articleTypeId" ColumnName="articleTypeId" />
+                            </MappingFragment>
+                        </EntityTypeMapping>
+                    </EntitySetMapping>
+          <EntitySetMapping Name="PublishedArticles">
+            <EntityTypeMapping TypeName="LisaKatherineModel.PublishedArticles">
+              <MappingFragment StoreEntitySet="tblArticlePublished">
+                <ScalarProperty Name="articleTypeId" ColumnName="articleTypeId" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="isPublished" ColumnName="isPublished" />
+                <ScalarProperty Name="datePublished" ColumnName="datePublished" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="body" ColumnName="body" />
+                <ScalarProperty Name="strapline" ColumnName="strapline" />
+                <ScalarProperty Name="headline" ColumnName="headline" />
+                <ScalarProperty Name="articleId" ColumnName="articleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FlickrSets">
+            <EntityTypeMapping TypeName="LisaKatherineModel.FlickrSets">
+              <MappingFragment StoreEntitySet="tblPhotoSets">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SetName" ColumnName="SetName" />
+                <ScalarProperty Name="SetId" ColumnName="SetId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sections">
+            <EntityTypeMapping TypeName="LisaKatherineModel.Section">
+              <MappingFragment StoreEntitySet="tblSection">
+                <ScalarProperty Name="section" ColumnName="section" />
+                <ScalarProperty Name="sectionId" ColumnName="sectionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FacebookPosts">
+            <EntityTypeMapping TypeName="LisaKatherineModel.FacebookPost">
+              <MappingFragment StoreEntitySet="tblFacebookPost">
+                <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+                <ScalarProperty Name="approved" ColumnName="approved" />
+                <ScalarProperty Name="post" ColumnName="post" />
+                <ScalarProperty Name="articleId" ColumnName="articleId" />
+                <ScalarProperty Name="facebookId" ColumnName="facebookId" />
+                <ScalarProperty Name="postId" ColumnName="postId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FacebookUsers">
+            <EntityTypeMapping TypeName="LisaKatherineModel.FacebookUser">
+              <MappingFragment StoreEntitySet="tblFacebookUsers">
+                <ScalarProperty Name="posts" ColumnName="posts" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="lastlogin" ColumnName="lastlogin" />
+                <ScalarProperty Name="firstlogin" ColumnName="firstlogin" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="accessToken" ColumnName="accessToken" />
+                <ScalarProperty Name="facebookId" ColumnName="facebookId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+                </EntityContainerMapping>
+            </Mapping>
+        </edmx:Mappings>
+    </edmx:Runtime>
+    <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+    <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+        <Connection>
+            <DesignerInfoPropertySet>
+                <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+            </DesignerInfoPropertySet>
+        </Connection>
+        <Options>
+            <DesignerInfoPropertySet>
+                <DesignerProperty Name="ValidateOnBuild" Value="true" />
+                <DesignerProperty Name="EnablePluralization" Value="True" />
+                <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+            </DesignerInfoPropertySet>
+        </Options>
+        <!-- Diagram content (shape and connector positions) -->
+        <Diagrams>
+            <Diagram Name="LKDataEntities">
+                <EntityTypeShape EntityType="LisaKatherineModel.Articles" Width="1.5" PointX="3" PointY="1.125" Height="2.7494921874999996" IsExpanded="true" />
+                <EntityTypeShape EntityType="LisaKatherineModel.Photos" Width="1.5" PointX="3" PointY="4.625" Height="2.5571907552083335" IsExpanded="true" />
+                <EntityTypeShape EntityType="LisaKatherineModel.Users" Width="1.5" PointX="0.75" PointY="3" Height="2.3648893229166656" IsExpanded="true" />
+                <AssociationConnector Association="LisaKatherineModel.FK_tblArticle_tblUsers" ManuallyRouted="false">
+                    <ConnectorPoint PointX="2.25" PointY="3.8218489583333328" />
+                    <ConnectorPoint PointX="3" PointY="3.8218489583333328" />
+                </AssociationConnector>
+                <AssociationConnector Association="LisaKatherineModel.FK_tblPhotos_tblUsers" ManuallyRouted="false">
+                    <ConnectorPoint PointX="2.25" PointY="4.9949446614583328" />
+                    <ConnectorPoint PointX="3" PointY="4.9949446614583328" />
+                </AssociationConnector>
+                <EntityTypeShape EntityType="LisaKatherineModel.ArticleTypes" Width="1.5" PointX="5.375" PointY="0.875" Height="1.5956835937499996" />
+                <AssociationConnector Association="LisaKatherineModel.FK_tblArticle_tblArticleType" >
+                    <ConnectorPoint PointX="5.375" PointY="1.9901432291666665" />
+                    <ConnectorPoint PointX="4.5" PointY="1.9901432291666665" />
+                </AssociationConnector>
+        <EntityTypeShape EntityType="LisaKatherineModel.PublishedArticles" Width="1.5" PointX="5.25" PointY="3.375" Height="2.941793619791667" />
+        <AssociationConnector Association="LisaKatherineModel.FK_tblArticlePublished_tblArticle" >
+          <ConnectorPoint PointX="4.5" PointY="4.0093489583333328" />
+          <ConnectorPoint PointX="5.25" PointY="4.0093489583333328" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LisaKatherineModel.FlickrSets" Width="1.5" PointX="7.375" PointY="0.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="LisaKatherineModel.Section" Width="1.5" PointX="7.375" PointY="3.75" Height="1.4033821614583317" />
+        <AssociationConnector Association="LisaKatherineModel.FK_tblArticleType_tblSection" >
+          <ConnectorPoint PointX="7.375" PointY="4.547841796875" />
+          <ConnectorPoint PointX="7" PointY="4.547841796875" />
+          <ConnectorPoint PointX="7" PointY="3.1250000000000004" />
+          <ConnectorPoint PointX="6.125" PointY="3.1250000000000004" />
+          <ConnectorPoint PointX="6.125" PointY="2.8552864583333331" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LisaKatherineModel.FacebookPost" Width="1.5" PointX="9.375" PointY="4.75" Height="2.192587890625" />
+        <EntityTypeShape EntityType="LisaKatherineModel.FacebookUser" Width="1.5" PointX="11.375" PointY="3.75" Height="2.5571907552083317" />
+        <AssociationConnector Association="LisaKatherineModel.FK_tblFacebookPost_tblArticle" >
+          <ConnectorPoint PointX="4.5" PointY="3.0213932291666667" />
+          <ConnectorPoint PointX="6.041666666666667" PointY="3.0213932291666663" />
+          <ConnectorPoint PointX="6.208333333333333" PointY="3.0213932291666667" />
+          <ConnectorPoint PointX="10.125" PointY="3.0213932291666667" />
+          <ConnectorPoint PointX="10.125" PointY="4.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="LisaKatherineModel.FK_tblFacebookPost_tblFacebookUsers" >
+          <ConnectorPoint PointX="11.375" PointY="5.62474609375" />
+          <ConnectorPoint PointX="10.875" PointY="5.62474609375" />
+        </AssociationConnector>
+            </Diagram>
+        </Diagrams>
+    </Designer>
+</edmx:Edmx>

@@ -1,0 +1,6 @@
+<Modules>
+  <Module PersistentId="AD8E64F8-AEFD-4402-AA26-532E300CF331" ModuleId="LisaKatherineTests" />
+  <Module PersistentId="AB23658E-972B-4A99-B8BC-AE438857FFFE" ModuleId="LisaKatherine" />
+  <Module PersistentId="4E75E340-B84E-416B-9EC2-A778DDF41B6E" ModuleId="LisaKatherine.Admin" />
+  <Module PersistentId="71DCE177-5227-4D7E-A5CB-298AFE33ABE1" ModuleId="MvcPager" />
+</Modules>

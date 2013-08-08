@@ -1,0 +1,12 @@
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.Admin.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.Admin.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\EntityFramework.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\MvcPager.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\Facebook.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\MvcPager.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\EntityFramework.xml
+C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.pdb

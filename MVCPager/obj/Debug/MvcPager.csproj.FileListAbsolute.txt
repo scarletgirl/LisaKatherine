@@ -1,0 +1,10 @@
+J:\WorkProjects\LisaKatherine\MVCPager\obj\Debug\ResolveAssemblyReference.cache
+J:\WorkProjects\LisaKatherine\MVCPager\bin\Debug\MvcPager.dll
+J:\WorkProjects\LisaKatherine\MVCPager\bin\Debug\MvcPager.pdb
+J:\WorkProjects\LisaKatherine\MVCPager\obj\Debug\MvcPager.dll
+J:\WorkProjects\LisaKatherine\MVCPager\obj\Debug\MvcPager.pdb
+C:\Users\Red 2\LKB\MVCPager\bin\Debug\MvcPager.dll
+C:\Users\Red 2\LKB\MVCPager\bin\Debug\MvcPager.pdb
+C:\Users\Red 2\LKB\MVCPager\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Red 2\LKB\MVCPager\obj\Debug\MvcPager.dll
+C:\Users\Red 2\LKB\MVCPager\obj\Debug\MvcPager.pdb

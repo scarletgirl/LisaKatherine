@@ -1,0 +1,13 @@
+C:\Users\Red 2\LKB\LisaKatherine.Tests\bin\Debug\LisaKatherine.Tests.dll
+C:\Users\Red 2\LKB\LisaKatherine.Tests\bin\Debug\LisaKatherine.Tests.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Tests\bin\Debug\Facebook.dll
+C:\Users\Red 2\LKB\LisaKatherine.Tests\bin\Debug\Facebook.Web.dll
+C:\Users\Red 2\LKB\LisaKatherine.Tests\bin\Debug\LisaKatherine.dll
+C:\Users\Red 2\LKB\LisaKatherine.Tests\bin\Debug\MvcPager.dll
+C:\Users\Red 2\LKB\LisaKatherine.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Red 2\LKB\LisaKatherine.Tests\bin\Debug\RouteDebug.dll
+C:\Users\Red 2\LKB\LisaKatherine.Tests\bin\Debug\LisaKatherine.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Tests\bin\Debug\MvcPager.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Red 2\LKB\LisaKatherine.Tests\obj\Debug\LisaKatherine.Tests.dll
+C:\Users\Red 2\LKB\LisaKatherine.Tests\obj\Debug\LisaKatherine.Tests.pdb
