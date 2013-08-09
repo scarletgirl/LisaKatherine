@@ -1,4 +1,4 @@
-﻿@model LisaKatherine.Models.PublishedArticles
+﻿@model LisaKatherine.Models.Extensions.PublishedArticles
 @{
     //ViewBag.Title = Model.headline + " | Lisa Katherine Blog";
     ViewBag.Description = Model.Description;
@@ -10,7 +10,7 @@
     <h3>@Model.strapline</h3>
     <div class="articlebody">@Html.Raw(@Model.body)</div>
     <div class="author">
-        By @Model.user.firstname @Model.user.lastname</div>
+        By @Model.User.firstname @Model.User.lastname</div>
 </div>
 <div class="actionlink">@Html.ActionLink("<< Back", "Index", section)</div>
 

@@ -1,5 +1,5 @@
 ﻿@using Webdiyer.WebControls.Mvc;
-@model PagedList<LisaKatherine.Models.Articles>
+@model PagedList<LisaKatherine.Interface.IArticle>
 
 @{
     ViewBag.Title = "Articles";
@@ -43,28 +43,28 @@
     foreach (var item in Model) {
     <tr class='@(alternating ? "alt" : "nor")'>
         <td>
-            @item.headline
+            @item.Headline
         </td>
         <td>
-            @String.Format("{0:dd/MM/yyyy}", item.dateCreated)
+            @String.Format("{0:dd/MM/yyyy}", item.DateCreated)
         </td>
         <td>
-            @String.Format("{0:dd/MM/yyyy}", item.datePublished)
+            @String.Format("{0:dd/MM/yyyy}", item.DatePublished)
         </td>
         <td>
-            @item.isPublished
+            @item.IsPublished
         </td>
         <td>
-            @item.articleType.articleTypeName
+            @item.ArticleType.articleTypeName
         </td>
         <td>
-            @item.user.firstname 
-            @item.user.lastname 
+            @item.User.firstname 
+            @item.User.lastname 
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.articleId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.articleId }) |
-            @Html.ActionLink("Preview", "../Blog/Preview", new { id = item.articleId }, new { target = "_blank" })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ArticleId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ArticleId }) |
+            @Html.ActionLink("Preview", "../Blog/Preview", new { id = item.ArticleId }, new { target = "_blank" })
         </td>
     </tr>
         alternating = !alternating;

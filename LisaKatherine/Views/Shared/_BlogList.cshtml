@@ -1,4 +1,4 @@
-﻿@model PagedList<LisaKatherine.Models.PublishedArticles>
+﻿@model PagedList<LisaKatherine.Models.Extensions.PublishedArticles>
 @using Webdiyer.WebControls.Mvc;
 
 
@@ -9,7 +9,7 @@
         <h2>@Html.ActionLink(item.headline, "Details/" + item.headline.Replace(" ", "_"), new { id = item.articleId }, new { @class = "readMore" })</h2>
         <h3>@item.strapline</h3>
         <div class="articlebody">@Html.Raw(@item.body)</div>
-        <div class="author">@item.user.firstname @item.user.lastname</div>
+        <div class="author">@item.User.firstname @item.User.lastname</div>
         <div class="actionlink">
             @Html.ActionLink("Read More...", "Details/" + item.headline.Replace(" ", "_"), new { id = item.articleId }, new { @class = "readMore" })</div>
     </div>

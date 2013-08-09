@@ -1,0 +1,11 @@
+S:\LisaKatherine\LisaKatherine.DataEntities\bin\Debug\LisaKatherine.DataEntitiesRepository.dll.config
+S:\LisaKatherine\LisaKatherine.DataEntities\bin\Debug\LisaKatherine.DataEntitiesRepository.dll
+S:\LisaKatherine\LisaKatherine.DataEntities\bin\Debug\LisaKatherine.DataEntitiesRepository.pdb
+S:\LisaKatherine\LisaKatherine.DataEntities\bin\Debug\LisaKatherine.Interface.dll
+S:\LisaKatherine\LisaKatherine.DataEntities\bin\Debug\Moq.dll
+S:\LisaKatherine\LisaKatherine.DataEntities\bin\Debug\LisaKatherine.Interface.pdb
+S:\LisaKatherine\LisaKatherine.DataEntities\bin\Debug\Moq.pdb
+S:\LisaKatherine\LisaKatherine.DataEntities\bin\Debug\Moq.xml
+S:\LisaKatherine\LisaKatherine.DataEntities\obj\Debug\LisaKatherine.DataEntitiesRepository.csprojResolveAssemblyReference.cache
+S:\LisaKatherine\LisaKatherine.DataEntities\obj\Debug\LisaKatherine.DataEntitiesRepository.dll
+S:\LisaKatherine\LisaKatherine.DataEntities\obj\Debug\LisaKatherine.DataEntitiesRepository.pdb

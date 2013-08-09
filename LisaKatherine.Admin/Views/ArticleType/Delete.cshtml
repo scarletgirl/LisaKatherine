@@ -1,4 +1,4 @@
-﻿@model LisaKatherine.Models.ArticleTypes
+﻿@model LisaKatherine.Interface.ArticleType
 @{
     ViewBag.Title = "Unable to Delete";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -11,7 +11,7 @@
     <legend>Article Type</legend>
     <div class="display-label">
         articleType</div>
-    <div class="display-field">@Model.articleTypeName</div>
+    <div class="display-field">@Model.ArticleTypeName</div>
 </fieldset>
 <p>
     @Html.ActionLink("Back to List", "Index")

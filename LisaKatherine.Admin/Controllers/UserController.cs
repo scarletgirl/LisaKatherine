@@ -1,103 +1,100 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using LisaKatherine.Models;
-
-namespace LisaKatherine.Controllers
+﻿namespace LisaKatherine.Admin.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Web.Mvc;
+
+    using LisaKatherine.Interface;
+    using LisaKatherine.Services;
+
     public class UserController : Controller
     {
-        readonly UserService _userService = new UserService();
+        private readonly UserService userService = new UserService();
 
         [Authorize]
         public ActionResult Index()
         {
-
-            IEnumerable<Users> users = _userService.GetList();
-            return View(users);
+            IEnumerable<IUser> users = this.userService.GetList();
+            return this.View(users);
         }
 
         [Authorize]
         public ActionResult Create()
         {
-            return View();
+            return this.View();
         }
 
         [Authorize]
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Create([Bind(Exclude = "UserId")] Users user)
+        public ActionResult Create([Bind(Exclude = "UserId")] IUser user)
         {
             try
             {
-                _userService.CreateUser(user);
-                // TODO: Add insert logic here 
+                this.userService.CreateUser(user.Username, user.FirstName, user.LastName, user.Password);
 
-                return RedirectToAction("Index");
+                return this.RedirectToAction("Index");
             }
 
             catch
             {
-                return View();
+                return this.View();
             }
         }
 
         [Authorize]
         public ActionResult Edit(Guid id)
         {
-            return View(_userService.GetUser(id));
+            return this.View(this.userService.GetUser(id));
         }
 
         [Authorize]
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Edit(Users user)
+        public ActionResult Edit(IUser user)
         {
             try
             {
-                if (ModelState.IsValid)
+                if (this.ModelState.IsValid)
                 {
-                    _userService.EditUser(user);
+                    this.userService.EditUser(user);
                 }
 
-                return RedirectToAction("Index");
+                return this.RedirectToAction("Index");
             }
 
             catch
             {
-                return View();
+                return this.View();
             }
-
         }
 
         [Authorize]
         public ActionResult Delete(Guid id)
         {
-            _userService.DeleteUser(id);
-            return RedirectToAction("Index");
+            this.userService.DeleteUser(id);
+            return this.RedirectToAction("Index");
         }
 
-        public ActionResult LogOn() {
-            return View();
+        public ActionResult LogOn()
+        {
+            return this.View();
         }
-
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult LogOn(Users user) {
-            Users authUser = _userService.AuthenticateUser(user.username, user.password);
+        public ActionResult LogOn(IUser user)
+        {
+            IUser authUser = this.userService.AuthenticateUser(user.Username, user.Password);
             if (authUser != null)
             {
-                return Redirect("~/Admin");
+                return this.Redirect("~/Admin");
             }
-            return View();
-        
+            return this.View();
         }
 
         [Authorize]
         public ActionResult LogOff()
         {
-            _userService.LogOffUser();
-            return Redirect("~/");
+            this.userService.LogOffUser();
+            return this.Redirect("~/");
         }
     }
 }

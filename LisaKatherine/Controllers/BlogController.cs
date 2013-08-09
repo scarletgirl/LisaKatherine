@@ -6,6 +6,7 @@
     using System.Web.Mvc;
 
     using LisaKatherine.Models;
+    using LisaKatherine.Models.Extensions;
 
     using Webdiyer.WebControls.Mvc;
 
@@ -31,7 +32,7 @@
         {
             PublishedArticles article = this._publishedArticleService.GetPublishedArticle(id);
 
-            switch (article.articleType.sectionid)
+            switch (article.ArticleType.sectionid)
             {
                 case 2:
                     this.ViewBag.Section = "Geek";
@@ -82,8 +83,8 @@
 
         public ActionResult Preview(int id)
         {
-            Articles article = this._articleService.GetArticle(id);
-            this.ViewBag.Title = article.headline + "| Lisa Katherine ";
+            IArticle article = this._articleService.GetArticle(id);
+            this.ViewBag.Title = article.Headline + "| Lisa Katherine ";
             this.ViewBag.Section = "Photos";
 
             return View(article);

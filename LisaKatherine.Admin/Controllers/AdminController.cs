@@ -1,21 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using LisaKatherine.Models;
-
-namespace LisaKatherine.Controllers
+﻿namespace LisaKatherine.Admin.Controllers
 {
+    using System.Web.Mvc;
+
     public class AdminController : Controller
     {
-
         [Authorize]
         public ActionResult Index()
         {
-                return View();
+            return this.View();
         }
-
-       
     }
 }

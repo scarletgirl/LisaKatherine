@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LisaKatherine.Models.Users>
+﻿@model IEnumerable<LisaKatherine.Interface.IUser>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -29,20 +29,20 @@
     {
         <tr>
             <td>
-                @item.username
+                @item.Username
             </td>
             <td>
-                @item.password
+                @item.Password
             </td>
             <td>
-                @item.firstname
+                @item.FirstName
             </td>
             <td>
-                @item.lastname
+                @item.LastName
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.userId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.userId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.UserId })
             </td>
         </tr>
     }

@@ -1,54 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using LisaKatherine.Models;
-using System.Globalization;
-using Webdiyer.WebControls.Mvc;
-
-namespace LisaKatherine.Controllers
+﻿namespace LisaKatherine.Admin.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using System.Web.Mvc;
+
+    using LisaKatherine.Interface;
+    using LisaKatherine.Models;
+    using LisaKatherine.Services;
+
+    using Webdiyer.WebControls.Mvc;
+
     public class ArticlesController : Controller
     {
-        private readonly ArticleService _articleService = new ArticleService();
+        private readonly ArticleService articleService = new ArticleService();
+
+        private readonly ArticleTypeService articleTypeService = new ArticleTypeService();
+
+        private readonly UserService userFactory = new UserService();
 
         [Authorize]
         public ActionResult Index(string sortOrder, int? id)
         {
-            ViewBag.HeadlineSortParm = String.IsNullOrEmpty(sortOrder) ? "headline desc" : "";
-            ViewBag.CreatedSortParm = sortOrder == "dateCreated" ? "dateCreated desc" : "dateCreated";
-            ViewBag.PublishedSortParm = sortOrder == "datePublished" ? "datePublished desc" : "datePublished";
-            ViewBag.IsPublishedSortParm = sortOrder == "isPublished" ? "isPublished desc" : "isPublished";
-            ViewBag.ArticleTypeSortParm = sortOrder == "articleType" ? "articleType desc" : "articleType";
-            ViewBag.AuthorSortParm = sortOrder == "author" ? "author desc" : "author";
+            this.ViewBag.HeadlineSortParm = String.IsNullOrEmpty(sortOrder) ? "headline desc" : "";
+            this.ViewBag.CreatedSortParm = sortOrder == "dateCreated" ? "dateCreated desc" : "dateCreated";
+            this.ViewBag.PublishedSortParm = sortOrder == "datePublished" ? "datePublished desc" : "datePublished";
+            this.ViewBag.IsPublishedSortParm = sortOrder == "isPublished" ? "isPublished desc" : "isPublished";
+            this.ViewBag.ArticleTypeSortParm = sortOrder == "articleType" ? "articleType desc" : "articleType";
+            this.ViewBag.AuthorSortParm = sortOrder == "author" ? "author desc" : "author";
 
-            IEnumerable<Articles> articles = _articleService.GetList(0);
-
-            switch (sortOrder)
-            {
-                case "headline desc": articles = articles.OrderByDescending(a => a.headline); break;
-                case "dateCreated": articles = articles.OrderBy(a => a.dateCreated); break;
-                case "dateCreated desc": articles = articles.OrderByDescending(a => a.dateCreated); break;
-                case "datePublished": articles = articles.OrderBy(a => a.datePublished); break;
-                case "datePublished desc": articles = articles.OrderByDescending(a => a.datePublished); break;
-                case "isPublished": articles = articles.OrderBy(a => a.isPublished); break;
-                case "isPublished desc": articles = articles.OrderByDescending(a => a.isPublished); break;
-                case "articleType": articles = articles.OrderBy(a => a.articleType.articleTypeName); break;
-                case "articleType desc": articles = articles.OrderByDescending(a => a.articleType.articleTypeName); break;
-                case "author": articles = articles.OrderBy(a => a.user.firstname); break;
-                case "author desc": articles = articles.OrderByDescending(a => a.user.firstname); break;
-                default: articles = articles.OrderBy(a => a.headline); break;
-            }
-            PagedList<Articles> pagedarticles = new PagedList<Articles>(articles, id ?? 1, Settings.AdminPagerCount(), articles.Count());
-            return View(pagedarticles);
+            PagedList<IArticle> pagedarticles = this.GetPaging(sortOrder, id);
+            return this.View(pagedarticles);
         }
 
         [Authorize]
         public ActionResult Create()
         {
-            ViewData["articleTypeId_0"] = new SelectList(CreateArticleTypeList(0), "Value", "Text");
-            return View();
+            this.ViewData["articleTypeId_0"] = new SelectList(this.CreateArticleTypeList(0), "Value", "Text");
+            return this.View();
         }
 
         [Authorize]
@@ -56,35 +46,39 @@ namespace LisaKatherine.Controllers
         [ValidateInput(false)]
         public ActionResult Create(FormCollection form, string submitButton)
         {
-            ViewData["articleTypeId_0"] = new SelectList(CreateArticleTypeList(0), "Value", "Text");
+            this.ViewData["articleTypeId_0"] = new SelectList(this.CreateArticleTypeList(0), "Value", "Text");
             try
             {
-                var article = new Articles()
-                {
-
-                    articleTypeId = Convert.ToInt32(form["articleTypeId_0"]),
-                    body = form["Body"],
-                    dateCreated = DateTime.Now,
-                    headline = form["headline"],
-                    strapline = form["strapline"]
-                };
-
-                _articleService.CreateArticle(article);
-                Publish(form, submitButton, article);
-                return RedirectToAction("Index");
+                IArticleType articleType =
+                    this.articleTypeService.GetArticleType(Convert.ToInt32(form["articleTypeId_0"]));
+                IUser user = this.userFactory.CheckSession();
+                var article = new Article(
+                    form["headline"],
+                    form["strapline"],
+                    form["Body"],
+                    DateTime.Now,
+                    null,
+                    false,
+                    articleType.ArticleTypeId,
+                    user,
+                    articleType);
+                this.articleService.CreateArticle(article);
+                this.Publish(form, submitButton, article);
+                return this.RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return this.View();
             }
         }
 
         [Authorize]
         public ActionResult Edit(int id)
         {
-            var article = _articleService.GetArticle(id);
-            ViewData["articleTypeId_0"] = new SelectList(CreateArticleTypeList(article.articleTypeId), "Value", "Text", article.articleTypeId);
-            return View(article);
+            IArticle article = this.articleService.GetArticle(id);
+            this.ViewData["articleTypeId_0"] = new SelectList(
+                this.CreateArticleTypeList(article.ArticleTypeId), "Value", "Text", article.ArticleTypeId);
+            return this.View(article);
         }
 
         [Authorize]
@@ -92,66 +86,112 @@ namespace LisaKatherine.Controllers
         [ValidateInput(false)]
         public ActionResult Edit(FormCollection form, string submitButton)
         {
-            var article = new Articles()
-            {
-                articleTypeId = Convert.ToInt32(form["articleTypeId_0"]),
-                articleId = Convert.ToInt32(form["articleId"]),
-                body = form["Body"],
-                dateCreated = DateTime.Now,
-                headline = form["headline"],
-                strapline = form["strapline"],
-                userid = new Guid(form["userid"])
-            };
-            Publish(form, submitButton, article);
+            IArticleType articleType = this.articleTypeService.GetArticleType(Convert.ToInt32(form["articleTypeId_0"]));
+            IUser user = this.userFactory.GetUser(new Guid(form["userid"]));
+            var article = new Article(
+                form["headline"],
+                form["strapline"],
+                form["Body"],
+                DateTime.Now,
+                null,
+                false,
+                articleType.ArticleTypeId,
+                user,
+                articleType) { ArticleId = Convert.ToInt32(form["articleId"]) };
+            this.Publish(form, submitButton, article);
 
-            return RedirectToAction("Index");
+            return this.RedirectToAction("Index");
         }
 
         [Authorize]
         public ActionResult Delete(int id)
         {
-            _articleService.DeleteArticle(id);
-            return RedirectToAction("Index");
+            this.articleService.DeleteArticle(id);
+            return this.RedirectToAction("Index");
         }
-
-        [Authorize]
-        public ActionResult Details(int id)
-        {
-            var article = _articleService.GetArticle(id);
-            return View(article);
-        }
-
 
         /*** Functions ***/
 
         public List<SelectListItem> CreateArticleTypeList(int? articleTypeId)
         {
-            List<SelectListItem> items = new List<SelectListItem>();
-            foreach (ArticleTypes item in new ArticleTypeService().GetArticleTypesList())
-            {
-
-                items.Add(new SelectListItem { Text = item.articleTypeName, Value = item.articleTypeId.ToString() });
-            }
-            return items;
+            return
+                this.articleTypeService.GetArticleTypesList()
+                    .Select(
+                        item =>
+                        new SelectListItem
+                            {
+                                Text = item.ArticleTypeName,
+                                Value = item.ArticleTypeId.ToString(CultureInfo.InvariantCulture)
+                            })
+                    .ToList();
         }
+
         private static DateTime GetDatePublished(FormCollection form)
         {
             if (form["datePublished"] != String.Empty)
             {
-                CultureInfo culture = new CultureInfo("en-GB");
+                var culture = new CultureInfo("en-GB");
                 return Convert.ToDateTime(form["datePublished"], culture);
             }
             return DateTime.Now;
         }
-        private void Publish(FormCollection form, string submitButton, Articles article)
+
+        private PagedList<IArticle> GetPaging(string sortOrder, int? id)
+        {
+            IEnumerable<IArticle> articles = this.articleService.GetList(0);
+
+            switch (sortOrder)
+            {
+                case "headline desc":
+                    articles = articles.OrderByDescending(a => a.Headline);
+                    break;
+                case "dateCreated":
+                    articles = articles.OrderBy(a => a.DateCreated);
+                    break;
+                case "dateCreated desc":
+                    articles = articles.OrderByDescending(a => a.DateCreated);
+                    break;
+                case "datePublished":
+                    articles = articles.OrderBy(a => a.DatePublished);
+                    break;
+                case "datePublished desc":
+                    articles = articles.OrderByDescending(a => a.DatePublished);
+                    break;
+                case "isPublished":
+                    articles = articles.OrderBy(a => a.IsPublished);
+                    break;
+                case "isPublished desc":
+                    articles = articles.OrderByDescending(a => a.IsPublished);
+                    break;
+                case "articleType":
+                    articles = articles.OrderBy(a => a.ArticleType.ArticleTypeName);
+                    break;
+                case "articleType desc":
+                    articles = articles.OrderByDescending(a => a.ArticleType.ArticleTypeName);
+                    break;
+                case "author":
+                    articles = articles.OrderBy(a => a.User.FirstName);
+                    break;
+                case "author desc":
+                    articles = articles.OrderByDescending(a => a.User.FirstName);
+                    break;
+                default:
+                    articles = articles.OrderBy(a => a.Headline);
+                    break;
+            }
+            var pagedarticles = new PagedList<IArticle>(articles, id ?? 1, Settings.AdminPagerCount(), articles.Count());
+            return pagedarticles;
+        }
+
+        private void Publish(FormCollection form, string submitButton, Article article)
         {
             if (submitButton.Contains("Publish"))
             {
-                article.datePublished = GetDatePublished(form);
-                article.isPublished = true;
-                _articleService.PublishArticle(article);
+                article.DatePublished = GetDatePublished(form);
+                article.IsPublished = true;
+                this.articleService.PublishArticle(article);
             }
-            _articleService.EditArticle(article);
+            this.articleService.EditArticle(article);
         }
     }
 }

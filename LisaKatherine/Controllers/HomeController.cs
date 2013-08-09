@@ -1,41 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using LisaKatherine.Models;
-
-namespace LisaKatherine.Controllers
+﻿namespace LisaKatherine.Controllers
 {
+    using System.Web.Mvc;
+
+    using LisaKatherine.Models;
+    using LisaKatherine.Models.Extensions;
+
     public class HomeController : Controller
     {
-        readonly PublishedArticleService _publishedArticleService = new PublishedArticleService();
+        private readonly PublishedArticleService publishedArticleService = new PublishedArticleService();
+
         public ActionResult Index()
         {
-            var article = _publishedArticleService.GetArticleByArticleType(2);
+            PublishedArticles article = this.publishedArticleService.GetArticleByArticleType(2);
             if (article != null)
             {
-                ViewBag.headline = article.headline;
-                ViewBag.strapline = article.strapline;
-                ViewBag.body = article.body;
+                this.ViewBag.headline = article.headline;
+                this.ViewBag.strapline = article.strapline;
+                this.ViewBag.body = article.body;
             }
-            ViewBag.ShowPartial = "Twitter";
+            this.ViewBag.ShowPartial = "Twitter";
 
-            return View();
+            return this.View();
         }
 
         public ActionResult About()
         {
-            ViewBag.ShowPartial = "Twitter";
-            ViewBag.Message = "About Me";
-            return View();
+            this.ViewBag.ShowPartial = "Twitter";
+            this.ViewBag.Message = "About Me";
+            return this.View();
         }
 
         public ActionResult Contact()
         {
-            var article = _publishedArticleService.GetArticleByArticleType(5);
-            ViewBag.ShowPartial = "Twitter";
-            ViewBag.Message = "Contact";
+            PublishedArticles article = this.publishedArticleService.GetArticleByArticleType(5);
+            this.ViewBag.ShowPartial = "Twitter";
+            this.ViewBag.Message = "Contact";
             var cmv = new ContactViewModel();
             cmv.article = article;
             return View(cmv);
@@ -44,35 +43,35 @@ namespace LisaKatherine.Controllers
         [HttpPost]
         public ActionResult Contact(ContactViewModel contactVM)
         {
-            var article = _publishedArticleService.GetArticleByArticleType(5);
-            ViewBag.ShowPartial = "Twitter";
-            ViewBag.Message = "Contact";
+            PublishedArticles article = this.publishedArticleService.GetArticleByArticleType(5);
+            this.ViewBag.ShowPartial = "Twitter";
+            this.ViewBag.Message = "Contact";
             contactVM.article = article;
-            if (!ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
                 return View(contactVM);
             }
 
-            var contact = new Contact()
-            {
-                From = contactVM.From,
-                Subject = contactVM.Subject,
-                Message = contactVM.Message
-            };
+            var contact = new Contact
+                              {
+                                  From = contactVM.From,
+                                  Subject = contactVM.Subject,
+                                  Message = contactVM.Message
+                              };
 
             new Email().Send(contact);
 
-            return RedirectToAction("ContactConfirm");
+            return this.RedirectToAction("ContactConfirm");
         }
 
         public ActionResult ContactConfirm()
         {
-            return View();
+            return this.View();
         }
 
         public ActionResult Holding()
         {
-            return View();
+            return this.View();
         }
     }
 }

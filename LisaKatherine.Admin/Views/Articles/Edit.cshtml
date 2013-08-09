@@ -1,4 +1,4 @@
-﻿@model LisaKatherine.Models.Articles
+﻿@model LisaKatherine.Interface.IArticle
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -12,8 +12,8 @@
     @Html.ValidationSummary(true)
     <fieldset>
         <legend>Articles</legend>
-        @Html.HiddenFor(model => model.articleId)
-        @Html.HiddenFor(model => model.userid)
+        @Html.HiddenFor(model => model.ArticleId)
+        @Html.HiddenFor(model => model.Userid)
         <div class="editor-label">
             Article Type:
         </div>
@@ -21,47 +21,47 @@
             @Html.DropDownList("articleTypeId_0")
         </div>
         <div class="editor-label">
-            @Html.LabelFor(model => model.datePublished):
+            @Html.LabelFor(model => model.DatePublished):
         </div>
         <div class="editor-field">
-            @Html.TextBox("datePublished" , String.Format("{0:dd/MM/yyyy}",Model.datePublished)) 
+            @Html.TextBox("datePublished" , String.Format("{0:dd/MM/yyyy}",Model.DatePublished)) 
 
         </div>
         <div class="editor-label">
-            @Html.LabelFor(model => model.headline):
+            @Html.LabelFor(model => model.Headline):
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.headline)
-            @Html.ValidationMessageFor(model => model.headline)
+            @Html.EditorFor(model => model.Headline)
+            @Html.ValidationMessageFor(model => model.Headline)
         </div>
         <div class="editor-label">
-            @Html.LabelFor(model => model.strapline):
+            @Html.LabelFor(model => model.Strapline):
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.strapline)
-            @Html.ValidationMessageFor(model => model.strapline)
+            @Html.EditorFor(model => model.Strapline)
+            @Html.ValidationMessageFor(model => model.Strapline)
         </div>
         <div class="editor-label">
-            @Html.LabelFor(model => model.body):
+            @Html.LabelFor(model => model.Body):
         </div>
         <div class="editor-field">
-            @Html.TextAreaFor(model => model.body)
-            @Html.ValidationMessageFor(model => model.body)
+            @Html.TextAreaFor(model => model.Body)
+            @Html.ValidationMessageFor(model => model.Body)
         </div>
         <div class="display-label">
             Date Created:</div>
-        <div class="display-field">@String.Format("{0:dd/MM/yyyy}", Model.dateCreated)</div>
+        <div class="display-field">@String.Format("{0:dd/MM/yyyy}", Model.DateCreated)</div>
         <div class="display-label">
             Date Published:</div>
-        <div class="display-field">@String.Format("{0:dd/MM/yyyy}", Model.datePublished)</div>
+        <div class="display-field">@String.Format("{0:dd/MM/yyyy}", Model.DatePublished)</div>
         <div class="display-label">
             Author:
         </div>
-        <div class="display-field">@Model.user.firstname @Model.user.lastname</div>
+        <div class="display-field">@Model.User.firstname @Model.User.lastname</div>
         <p>
             <input type="submit" class="btn" value="Save" name="submitButton" />
             <input type="submit" class="btn" value="Save & Publish" name="submitButton" />
-            <input type="button" class="btn" value="Preview" name="submitButton" onclick="window.open('http://www.lisakatherine.com/blog/Preview/@Model.articleId', 'preview');return false;" />
+            <input type="button" class="btn" value="Preview" name="submitButton" onclick="window.open('http://www.lisakatherine.com/blog/Preview/@Model.ArticleId', 'preview');return false;" />
         </p>
     </fieldset>
 }

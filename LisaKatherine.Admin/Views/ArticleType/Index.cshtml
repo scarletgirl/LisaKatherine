@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LisaKatherine.Models.ArticleTypes>
+﻿@model IEnumerable<LisaKatherine.Interface.IArticleType>
 @{
     ViewBag.Title = "Article Types";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -24,15 +24,15 @@
       foreach (var item in Model)
       {
         <tr class='@(alternating ? "alt" : "nor")'>
-            <td>@item.articleTypeId
+            <td>@item.ArticleTypeId
             </td>
             <td>
-                @item.articleTypeName
+                @item.ArticleTypeName
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.articleTypeId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.articleTypeId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.articleTypeId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.ArticleTypeId }) |
+                @*@Html.ActionLink("Details", "Details", new { id = item.ArticleTypeId }) |*@
+                @Html.ActionLink("Delete", "Delete", new { id = item.ArticleTypeId })
             </td>
         </tr>
         alternating = !alternating;

@@ -21,6 +21,10 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -99,31 +103,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ArticleService.cs" />
-    <Compile Include="Models\ArticleTypeService.cs" />
-    <Compile Include="Models\FacebookComment.cs" />
-    <Compile Include="Models\Contact.cs" />
-    <Compile Include="Models\DataAnnotations\ContactViewModel.cs" />
-    <Compile Include="Models\DataAnnotations\ArticlesMD.cs" />
-    <Compile Include="Models\FacebookService.cs" />
-    <Compile Include="Models\Email.cs" />
-    <Compile Include="Models\Extensions\PublishedArticles.cs" />
-    <Compile Include="Models\FBAuthHandler.cs" />
-    <Compile Include="Models\FlickrImage.cs" />
-    <Compile Include="Models\FlickrImageService.cs" />
-    <Compile Include="Models\LKDataEntities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LKDataEntities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Enums.cs" />
-    <Compile Include="Models\PublishedArticleService.cs" />
-    <Compile Include="Models\Settings.cs" />
-    <Compile Include="Models\Twitter.cs" />
-    <Compile Include="Models\TwitterService.cs" />
-    <Compile Include="Models\UserService.cs" />
-    <Compile Include="Models\DataAnnotations\UsersMD.cs" />
-    <Compile Include="Models\Utils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -206,18 +185,13 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\App_LocalResources\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_TwitterFeed.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="Models\LKDataEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LKDataEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Blog\Index.cshtml" />
@@ -229,6 +203,14 @@
     <Content Include="Views\Shared\_BlogFeed.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LisaKatherine.DataEntities\LisaKatherine.DataEntitiesRepository.csproj">
+      <Project>{008b224d-b96c-460b-a72e-974f354408c8}</Project>
+      <Name>LisaKatherine.DataEntitiesRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LisaKatherine.Repository\LisaKatherine.Interface.csproj">
+      <Project>{403e9f91-0aa6-437a-9bf4-be55ba665eaa}</Project>
+      <Name>LisaKatherine.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MVCPager\MvcPager.csproj">
       <Project>{71DCE177-5227-4D7E-A5CB-298AFE33ABE1}</Project>
       <Name>MvcPager</Name>

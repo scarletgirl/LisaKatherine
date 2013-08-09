@@ -1,0 +1,11 @@
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\LisaKatherine.Services.dll
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\LisaKatherine.Services.pdb
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\LisaKatherine.DataEntitiesRepository.dll
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\LisaKatherine.Interface.dll
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\MvcPager.dll
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\LisaKatherine.DataEntitiesRepository.pdb
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\LisaKatherine.Interface.pdb
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\MvcPager.pdb
+S:\LisaKatherine\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.csprojResolveAssemblyReference.cache
+S:\LisaKatherine\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.dll
+S:\LisaKatherine\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.pdb

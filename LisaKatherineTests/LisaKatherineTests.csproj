@@ -34,6 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -47,15 +50,23 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\TwitterServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\FlickrImageServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LisaKatherine\LisaKatherine.csproj">
-      <Project>{AB23658E-972B-4A99-B8BC-AE438857FFFE}</Project>
-      <Name>LisaKatherine</Name>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LisaKatherine.DataEntities\LisaKatherine.DataEntitiesRepository.csproj">
+      <Project>{008b224d-b96c-460b-a72e-974f354408c8}</Project>
+      <Name>LisaKatherine.DataEntitiesRepository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LisaKatherine.Repository\LisaKatherine.Interface.csproj">
+      <Project>{403e9f91-0aa6-437a-9bf4-be55ba665eaa}</Project>
+      <Name>LisaKatherine.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

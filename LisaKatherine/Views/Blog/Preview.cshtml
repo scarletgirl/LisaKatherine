@@ -1,14 +1,14 @@
-﻿@model LisaKatherine.Models.Articles
+﻿@model LisaKatherine.Models.IArticle
 @{
-    ViewBag.Title = "PREVIEW " + Model.headline + " | Lisa Katherine Blog";
+    ViewBag.Title = "PREVIEW " + Model.Headline + " | Lisa Katherine Blog";
     Layout = "~/Views/Shared/_PreviewLayout.cshtml";
     string section = ViewBag.Section;
 }
 <div id="Blog">
-    <div class="date">@String.Format("{0:dddd d MMMM yyyy}", Model.datePublished)</div>
-    <h1>@Model.headline</h1>
-    <h3>@Model.strapline</h3>
-    <div class="articlebody">@Html.Raw(@Model.body)</div>
+    <div class="date">@String.Format("{0:dddd d MMMM yyyy}", Model.DatePublished)</div>
+    <h1>@Model.Headline</h1>
+    <h3>@Model.Strapline</h3>
+    <div class="articlebody">@Html.Raw(@Model.Body)</div>
     <div class="author">
-        By @Model.user.firstname @Model.user.lastname</div>
+        By @Model.User.firstname @Model.User.lastname</div>
 </div>

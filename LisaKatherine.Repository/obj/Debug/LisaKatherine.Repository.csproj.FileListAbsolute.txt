@@ -1,0 +1,7 @@
+S:\LisaKatherine\LisaKatherine.Repository\obj\Debug\LisaKatherine.Repository.csprojResolveAssemblyReference.cache
+S:\LisaKatherine\LisaKatherine.Repository\bin\Debug\LisaKatherine.Repository.dll
+S:\LisaKatherine\LisaKatherine.Repository\bin\Debug\LisaKatherine.Repository.pdb
+S:\LisaKatherine\LisaKatherine.Repository\bin\Debug\LisaKatherine.DataEntities.dll
+S:\LisaKatherine\LisaKatherine.Repository\bin\Debug\LisaKatherine.DataEntities.pdb
+S:\LisaKatherine\LisaKatherine.Repository\obj\Debug\LisaKatherine.Repository.dll
+S:\LisaKatherine\LisaKatherine.Repository\obj\Debug\LisaKatherine.Repository.pdb

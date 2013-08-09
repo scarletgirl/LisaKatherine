@@ -1,4 +1,4 @@
-﻿@model LisaKatherine.Models.PublishedArticles
+﻿@model LisaKatherine.Models.Extensions.PublishedArticles
 <div id="LatestBlog">
     <h3>
          @Html.ActionLink("Latest " + (string)ViewBag.Section + " Blog - " + Model.headline, "../Blog/Details/" + Model.headline.Replace(" ", "_"), new { id = Model.articleId }, new { @class = "readMore" })

@@ -1,0 +1,6 @@
+S:\LisaKatherine\LisaKatherine.DataEntities\obj\Debug\LisaKatherine.DataEntities.csprojResolveAssemblyReference.cache
+S:\LisaKatherine\LisaKatherine.DataEntities\bin\Debug\LisaKatherine.DataEntities.dll
+S:\LisaKatherine\LisaKatherine.DataEntities\bin\Debug\LisaKatherine.DataEntities.pdb
+S:\LisaKatherine\LisaKatherine.DataEntities\obj\Debug\LisaKatherine.DataEntities.dll
+S:\LisaKatherine\LisaKatherine.DataEntities\obj\Debug\LisaKatherine.DataEntities.pdb
+S:\LisaKatherine\LisaKatherine.DataEntities\bin\Debug\LisaKatherine.DataEntities.dll.config
