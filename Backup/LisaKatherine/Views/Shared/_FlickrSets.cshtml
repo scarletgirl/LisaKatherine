@@ -1,0 +1,8 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model PagedList<LisaKatherine.Models.FlickrSets>
+           
+@foreach (var item in Model)
+{
+    <div>@item.SetName</div>
+    <div>@Html.Raw(item.Description)</div>
+}

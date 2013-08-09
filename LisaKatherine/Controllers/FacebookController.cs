@@ -1,52 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Facebook;
-using LisaKatherine.Models;
-using System.Dynamic;
-
-namespace LisaKatherine.Controllers
+﻿namespace LisaKatherine.Controllers
 {
+    using System.Collections.Generic;
+    using System.Web.Mvc;
+
+    using LisaKatherine.Models;
+
     public class FacebookController : Controller
     {
-
-        private bool FacebookIsLoggedIn()
-        {
-
-            return true;
-        }
-
         public PartialViewResult FacebookLogin(int id)
         {
-            FacebookUser user = (FacebookUser)Session["FBUser"];
+            var user = (FacebookUser)this.Session["FBUser"];
 
             if (user == null)
             {
-                ViewBag.FBLoginButton = FBAuthHandler.generateLoginUrl(id);
-                ViewBag.FBLoginButtonVisible = true;
+                this.ViewBag.FBLoginButton = FbAuthHandler.GenerateLoginUrl(id);
+                this.ViewBag.FBLoginButtonVisible = true;
             }
             else
             {
-                ViewBag.FBLoginButtonVisible = false;
-                ViewBag.FBUserNameLabel = "Hello, " + user.name;
-                ViewBag.FBUserImage = "https://graph.facebook.com/" + user.facebookId + "/picture";
+                this.ViewBag.FBLoginButtonVisible = false;
+                this.ViewBag.FBUserNameLabel = "Hello, " + user.name;
+                this.ViewBag.FBUserImage = "https://graph.facebook.com/" + user.facebookId + "/picture";
             }
 
-            return PartialView("_FacebookLogin");
+            return this.PartialView("_FacebookLogin");
         }
 
         public PartialViewResult FacebookComments(int id)
         {
-            FacebookUser user = (FacebookUser)Session["FBUser"];
+            var user = (FacebookUser)this.Session["FBUser"];
             if (user != null)
             {
-                var comments = new FacebookService().GetCommentsForArticle(id);
+                IEnumerable<FacebookComment> comments = new FacebookService().GetCommentsForArticle(id);
 
-                return PartialView("_FacebookComments", comments);
+                return this.PartialView("_FacebookComments", comments);
             }
             return null;
+        }
+
+        private bool FacebookIsLoggedIn()
+        {
+            return true;
         }
     }
 }

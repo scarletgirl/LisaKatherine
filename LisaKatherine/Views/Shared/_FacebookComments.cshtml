@@ -5,11 +5,11 @@
 @foreach (var item in Model)
 { 
 <div id="FacebookPost">
-<img src='@string.Format("https://graph.facebook.com/{0}/picture", item.FBuser.facebookId)' />
-<a class="fbuser" href='@string.Format("http://www.facebook.com/{0}", item.FBuser.facebookId)'>by @item.FBuser.name</a><br>
-@item.FBPost.dateAdded.ToString("dd MMM yyyy")
+<img src='@string.Format("https://graph.facebook.com/{0}/picture", item.FbUser.facebookId)' />
+<a class="fbuser" href='@string.Format("http://www.facebook.com/{0}", item.FbUser.facebookId)'>by @item.FbUser.name</a><br>
+@item.FbPost.dateAdded.ToString("dd MMM yyyy")
 <p>
-    @item.FBPost.post</p>
+    @item.FbPost.post</p>
 </div>
 }
 

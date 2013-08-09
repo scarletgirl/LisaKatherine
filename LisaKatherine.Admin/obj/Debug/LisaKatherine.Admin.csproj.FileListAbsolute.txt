@@ -10,3 +10,15 @@ C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\EntityFramework.xml
 C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.dll
 C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.pdb
+S:\LisaKatherine\LisaKatherine.Admin\bin\LisaKatherine.Admin.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\LisaKatherine.Admin.pdb
+S:\LisaKatherine\LisaKatherine.Admin\bin\EntityFramework.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\LisaKatherine.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\MvcPager.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\Facebook.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\LisaKatherine.pdb
+S:\LisaKatherine\LisaKatherine.Admin\bin\MvcPager.pdb
+S:\LisaKatherine\LisaKatherine.Admin\bin\EntityFramework.xml
+S:\LisaKatherine\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.csprojResolveAssemblyReference.cache
+S:\LisaKatherine\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.dll
+S:\LisaKatherine\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.pdb

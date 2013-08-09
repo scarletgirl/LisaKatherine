@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -221,6 +222,7 @@ namespace LisaKatherine.Models
         private ObjectSet<FacebookUser> _FacebookUsers;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -296,11 +298,11 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -329,6 +331,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -551,6 +554,7 @@ namespace LisaKatherine.Models
         partial void OnarticleTypeIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -691,6 +695,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -715,6 +720,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -793,6 +799,7 @@ namespace LisaKatherine.Models
         partial void OnsectionidChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -857,6 +864,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -889,6 +897,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1039,6 +1048,7 @@ namespace LisaKatherine.Models
         partial void OndateAddedChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1119,6 +1129,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1149,6 +1160,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1347,6 +1359,7 @@ namespace LisaKatherine.Models
         partial void OnpostsChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1373,6 +1386,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1397,6 +1411,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1475,6 +1490,7 @@ namespace LisaKatherine.Models
         partial void OnDescriptionChanged();
 
         #endregion
+
     
     }
     
@@ -1502,6 +1518,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1676,6 +1693,7 @@ namespace LisaKatherine.Models
         partial void OnuserIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1718,6 +1736,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1746,6 +1765,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1968,6 +1988,7 @@ namespace LisaKatherine.Models
         partial void OnarticleTypeIdChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2010,6 +2031,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2034,6 +2056,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2088,6 +2111,7 @@ namespace LisaKatherine.Models
         partial void OnsectionChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2114,6 +2138,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2138,6 +2163,7 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2264,6 +2290,7 @@ namespace LisaKatherine.Models
         partial void OnlastnameChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2312,8 +2339,10 @@ namespace LisaKatherine.Models
         }
 
         #endregion
+
     }
 
     #endregion
+
     
 }

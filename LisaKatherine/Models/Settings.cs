@@ -1,10 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.Web.Configuration;
-using System.Collections.Generic;
-
-namespace LisaKatherine.Models
+﻿namespace LisaKatherine.Models
 {
+    using System;
+    using System.Web.Configuration;
+
     public class Settings
     {
         public static int AdminPagerCount()

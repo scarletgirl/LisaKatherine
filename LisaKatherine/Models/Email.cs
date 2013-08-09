@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Net.Mail;
-using System.Configuration;
-
-namespace LisaKatherine.Models
+﻿namespace LisaKatherine.Models
 {
+    using System.Net.Mail;
+
     public class Email
     {
-                public void Send(Contact contact)
+        public void Send(Contact contact)
         {
-            MailMessage mail = new MailMessage(
-                contact.From,
-                "lisa@lisakatherine.com",
-                contact.Subject,
-                contact.Message);
-            SmtpClient client = new SmtpClient("localhost");
-            client.UseDefaultCredentials = true;
-    
+            var mail = new MailMessage(contact.From, "lisa@lisakatherine.com", contact.Subject, contact.Message);
+            var client = new SmtpClient("localhost") { UseDefaultCredentials = true };
+
             client.Send(mail);
         }
     }

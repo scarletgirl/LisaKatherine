@@ -1,0 +1,49 @@
+﻿@model IEnumerable<LisaKatherine.Models.Users>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>
+    Users</h1>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table cellspacing="0">
+    <tr>
+        <th>
+            Username
+        </th>
+        <th>
+            Password
+        </th>
+        <th>
+            First Name
+        </th>
+        <th>
+            Last Name
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.username
+            </td>
+            <td>
+                @item.password
+            </td>
+            <td>
+                @item.firstname
+            </td>
+            <td>
+                @item.lastname
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.userId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.userId })
+            </td>
+        </tr>
+    }
+</table>

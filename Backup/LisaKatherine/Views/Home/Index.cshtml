@@ -1,0 +1,18 @@
+﻿@using LisaKatherine.Models;
+@{
+    
+    ViewBag.Title = "Lisa Katherine - Web Designer, Photographer, Science Geek ";
+    ViewBag.Keywords = "Brighton, Web Designer, Photographer, Science Geek";
+}
+@{
+    bool isMobile = Utils.IsMobile(Request.UserAgent);
+    if (!isMobile) {
+        Html.RenderAction("FlickrPhotostream", "Flickr");
+    }
+}
+<h1>@ViewBag.Headline</h1>
+<div class="strapline">@ViewBag.Strapline</div>
+<div class="articlebody">@Html.Raw(ViewBag.Body)</div>
+@{Html.RenderAction("LatestBlog", "Blog", new { id = 1 });}
+@{Html.RenderAction("LatestBlog", "Blog", new { id = 7 });}
+@{Html.RenderAction("LatestBlog", "Blog", new { id = 8 });}
