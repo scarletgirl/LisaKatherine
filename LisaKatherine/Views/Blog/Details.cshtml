@@ -1,16 +1,16 @@
-﻿@model LisaKatherine.Models.Extensions.PublishedArticles
+﻿@model LisaKatherine.Interface.IPublishedArticle
 @{
-    //ViewBag.Title = Model.headline + " | Lisa Katherine Blog";
+    //ViewBag.Title = Model.Headline + " | Lisa Katherine Blog";
     ViewBag.Description = Model.Description;
     string section = ViewBag.Section;
 }
 <div id="Blog">@Html.Partial("_Social")
-    <div class="date">@String.Format("{0:dddd d MMMM yyyy}", Model.datePublished)</div>
-    <h1>@Model.headline</h1>
-    <h3>@Model.strapline</h3>
-    <div class="articlebody">@Html.Raw(@Model.body)</div>
+    <div class="date">@String.Format("{0:dddd d MMMM yyyy}", Model.DatePublished)</div>
+    <h1>@Model.Headline</h1>
+    <h3>@Model.Strapline</h3>
+    <div class="articlebody">@Html.Raw(@Model.Body)</div>
     <div class="author">
-        By @Model.User.firstname @Model.User.lastname</div>
+        By @Model.User.FirstName @Model.User.LastName</div>
 </div>
 <div class="actionlink">@Html.ActionLink("<< Back", "Index", section)</div>
 

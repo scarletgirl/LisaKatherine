@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PhotoFactoryEntities.cs" />
     <Compile Include="PublishArticleFactoryEntities.cs" />
     <Compile Include="ArticleTypeFactoryEntities.cs" />
     <Compile Include="ArticleFactoryEntities.cs" />

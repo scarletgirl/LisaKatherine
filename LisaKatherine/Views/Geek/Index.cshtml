@@ -1,4 +1,4 @@
-﻿@model LisaKatherine.Models.Extensions.PublishedArticles
+﻿@model LisaKatherine.Interface.IPublishedArticle
 @{
     ViewBag.Title = "Lisa Katherine - Science Geekdom";
     ViewBag.Section = "geek";
@@ -6,7 +6,7 @@
     ViewBag.Keywords = "Brighton, Web Designer, Photographer, Science Geek";
 }
 <h1>@ViewBag.Headline</h1>
-<div class="strapline">@ViewBag.Strapline</div>
+<div class="Strapline">@ViewBag.Strapline</div>
 <div class="articlebody">@Html.Raw(ViewBag.Body)</div>
 <div class="line">
 </div>

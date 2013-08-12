@@ -1,4 +1,4 @@
-﻿@model LisaKatherine.Models.IArticle
+﻿@model LisaKatherine.Interface.IArticle
 @{
     ViewBag.Title = "PREVIEW " + Model.Headline + " | Lisa Katherine Blog";
     Layout = "~/Views/Shared/_PreviewLayout.cshtml";
@@ -10,5 +10,5 @@
     <h3>@Model.Strapline</h3>
     <div class="articlebody">@Html.Raw(@Model.Body)</div>
     <div class="author">
-        By @Model.User.firstname @Model.User.lastname</div>
+        By @Model.User.FirstName @Model.User.LastName</div>
 </div>

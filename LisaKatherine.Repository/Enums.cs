@@ -1,4 +1,4 @@
-namespace LisaKatherine.Services
+namespace LisaKatherine.Interface
 {
     public enum Orientation
     {

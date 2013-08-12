@@ -1,6 +1,6 @@
-﻿namespace LisaKatherine.Services
+﻿namespace LisaKatherine.Interface
 {
-    public class FlickrImage
+    public class Photo : IPhoto
     {
         public string Title { get; set; }
 

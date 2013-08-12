@@ -43,11 +43,8 @@
   <ItemGroup>
     <Compile Include="ArticleService.cs" />
     <Compile Include="ArticleTypeService.cs" />
-    <Compile Include="Contact.cs" />
     <Compile Include="Email.cs" />
-    <Compile Include="Enums.cs" />
-    <Compile Include="FlickrImage.cs" />
-    <Compile Include="FlickrImageService.cs" />
+    <Compile Include="PhotoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublishedArticleService.cs" />
     <Compile Include="Settings.cs" />

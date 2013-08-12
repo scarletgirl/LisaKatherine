@@ -1,45 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
-using LisaKatherine.Models;
-using Webdiyer.WebControls.Mvc;
-
-namespace LisaKatherine.Controllers
+﻿namespace LisaKatherine.Controllers
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.Mvc;
+
+    using LisaKatherine.Interface;
+    using LisaKatherine.Services;
+
+    using Webdiyer.WebControls.Mvc;
+
     public class PhotosController : Controller
     {
         //
         // GET: /Photos/
-        private readonly PublishedArticleService _publishedArticleService = new PublishedArticleService();
-        private readonly FlickrImageService _flickrImageService = new FlickrImageService();
+        private readonly PublishedArticleService publishedArticleService = new PublishedArticleService();
+
+        private readonly PhotoService photoService = new PhotoService();
+
         public ActionResult Index()
         {
-            var article = _publishedArticleService.GetArticleByArticleType(10);
+            IPublishedArticle article = this.publishedArticleService.GetArticleByArticleType(10);
             if (article != null)
             {
-                ViewBag.headline = article.headline;
-                ViewBag.strapline = article.strapline;
-                ViewBag.body = article.body;
+                this.ViewBag.Headline = article.Headline;
+                this.ViewBag.Strapline = article.Strapline;
+                this.ViewBag.Body = article.Body;
             }
-            return View();
+            return this.View();
         }
 
-        public ActionResult PhotoSet(long id) {
-            return View();
+        public ActionResult PhotoSet(long id)
+        {
+            return this.View();
         }
 
         public PartialViewResult RenderFlickrSetList(int? id)
         {
-            IEnumerable<FlickrSets> flickrSets = _flickrImageService.GetList();
-            PagedList<FlickrSets> fs = new PagedList<FlickrSets>(flickrSets, id ?? 1, 5, flickrSets.Count());
+            IEnumerable<IPhotoSet> flickrSets = this.photoService.GetList();
+            var fs = new PagedList<IPhotoSet>(flickrSets, id ?? 1, 5, flickrSets.Count());
 
-            return PartialView("_FlickrSets", fs);
+            return this.PartialView("_FlickrSets", fs);
         }
 
-        public PartialViewResult BlogList(int? page) { 
-            return PartialView("_BlogList", _publishedArticleService.GetBlogList(1, page));
+        public PartialViewResult BlogList(int? page)
+        {
+            return this.PartialView("_BlogList", this.publishedArticleService.GetBlogList(1, page));
         }
-
     }
 }

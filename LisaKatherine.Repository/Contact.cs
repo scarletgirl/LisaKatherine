@@ -1,6 +1,6 @@
-﻿namespace LisaKatherine.Services
+﻿namespace LisaKatherine.Interface
 {
-    public class Contact
+    public class Contact : IContact
     {
         public string From { get; set; }
 

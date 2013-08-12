@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LisaKatherine.Admin", "Lisa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LisaKatherine.Services", "LisaKatherine.Services\LisaKatherine.Services.csproj", "{36675A33-9151-42B2-8001-1DECBB165671}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LisaKatherine", "LisaKatherine\LisaKatherine.csproj", "{AB23658E-972B-4A99-B8BC-AE438857FFFE}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = LisaKatherine.vsmdi
@@ -53,6 +55,10 @@ Global
 		{36675A33-9151-42B2-8001-1DECBB165671}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36675A33-9151-42B2-8001-1DECBB165671}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36675A33-9151-42B2-8001-1DECBB165671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB23658E-972B-4A99-B8BC-AE438857FFFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB23658E-972B-4A99-B8BC-AE438857FFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB23658E-972B-4A99-B8BC-AE438857FFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB23658E-972B-4A99-B8BC-AE438857FFFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

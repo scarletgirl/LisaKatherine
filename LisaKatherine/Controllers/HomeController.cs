@@ -2,8 +2,8 @@
 {
     using System.Web.Mvc;
 
-    using LisaKatherine.Models;
-    using LisaKatherine.Models.Extensions;
+    using LisaKatherine.Interface;
+    using LisaKatherine.Services;
 
     public class HomeController : Controller
     {
@@ -11,12 +11,12 @@
 
         public ActionResult Index()
         {
-            PublishedArticles article = this.publishedArticleService.GetArticleByArticleType(2);
+            IPublishedArticle article = this.publishedArticleService.GetArticleByArticleType(2);
             if (article != null)
             {
-                this.ViewBag.headline = article.headline;
-                this.ViewBag.strapline = article.strapline;
-                this.ViewBag.body = article.body;
+                this.ViewBag.Headline = article.Headline;
+                this.ViewBag.Strapline = article.Strapline;
+                this.ViewBag.Body = article.Body;
             }
             this.ViewBag.ShowPartial = "Twitter";
 
@@ -32,31 +32,30 @@
 
         public ActionResult Contact()
         {
-            PublishedArticles article = this.publishedArticleService.GetArticleByArticleType(5);
+            IPublishedArticle article = this.publishedArticleService.GetArticleByArticleType(5);
             this.ViewBag.ShowPartial = "Twitter";
             this.ViewBag.Message = "Contact";
-            var cmv = new ContactViewModel();
-            cmv.article = article;
+            var cmv = new ContactArticle { PublishedArticle = article };
             return View(cmv);
         }
 
         [HttpPost]
-        public ActionResult Contact(ContactViewModel contactVM)
+        public ActionResult Contact(IContactArticle contactArticle)
         {
-            PublishedArticles article = this.publishedArticleService.GetArticleByArticleType(5);
+            IPublishedArticle article = this.publishedArticleService.GetArticleByArticleType(5);
             this.ViewBag.ShowPartial = "Twitter";
             this.ViewBag.Message = "Contact";
-            contactVM.article = article;
+            contactArticle.PublishedArticle = article;
             if (!this.ModelState.IsValid)
             {
-                return View(contactVM);
+                return View(contactArticle);
             }
 
             var contact = new Contact
                               {
-                                  From = contactVM.From,
-                                  Subject = contactVM.Subject,
-                                  Message = contactVM.Message
+                                  From = contactArticle.Contact.From,
+                                  Subject = contactArticle.Contact.Subject,
+                                  Message = contactArticle.Contact.Message
                               };
 
             new Email().Send(contact);

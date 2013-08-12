@@ -1,32 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
-using LisaKatherine.Models;
-using Webdiyer.WebControls.Mvc;
-
-namespace LisaKatherine.Controllers
+﻿namespace LisaKatherine.Controllers
 {
+    using System.Web.Mvc;
+
+    using LisaKatherine.Services;
+
     public class GeekController : Controller
     {
+        private readonly PublishedArticleService _publishedArticleService = new PublishedArticleService();
 
-        readonly PublishedArticleService _publishedArticleService = new PublishedArticleService();
         public ActionResult Index()
         {
-            var article = _publishedArticleService.GetArticleByArticleType(9);
+            var article = this._publishedArticleService.GetArticleByArticleType(9);
             if (article != null)
             {
-                ViewBag.headline = article.headline;
-                ViewBag.strapline = article.strapline;
-                ViewBag.body = article.body;
+                this.ViewBag.Headline = article.Headline;
+                this.ViewBag.Strapline = article.Strapline;
+                this.ViewBag.Body = article.Body;
             }
-            return View();
+            return this.View();
         }
 
         public PartialViewResult BlogList(int? page)
         {
-            return PartialView("_BlogList", _publishedArticleService.GetBlogList(7, page));
+            return this.PartialView("_BlogList", this._publishedArticleService.GetBlogList(7, page));
         }
-
     }
 }

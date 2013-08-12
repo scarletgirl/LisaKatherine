@@ -5,16 +5,16 @@
     using System.Linq;
     using System.Web.Mvc;
 
-    using LisaKatherine.Models;
-    using LisaKatherine.Models.Extensions;
+    using LisaKatherine.Interface;
+    using LisaKatherine.Services;
 
     using Webdiyer.WebControls.Mvc;
 
     public class BlogController : Controller
     {
-        private readonly PublishedArticleService _publishedArticleService = new PublishedArticleService();
+        private readonly PublishedArticleService publishedArticleService = new PublishedArticleService();
 
-        private readonly ArticleService _articleService = new ArticleService();
+        private readonly ArticleService articleService = new ArticleService();
 
         public ActionResult Index(int? id)
         {
@@ -23,28 +23,28 @@
 
         public PartialViewResult BlogList(int? page)
         {
-            IEnumerable<PublishedArticles> articles = this._publishedArticleService.GetPublishedList(1);
-            var pa = new PagedList<PublishedArticles>(articles, page ?? 1, 5, articles.Count());
+            IEnumerable<IPublishedArticle> articles = this.publishedArticleService.GetPublishedList(1);
+            var pa = new PagedList<IPublishedArticle>(articles, page ?? 1, 5, articles.Count());
             return this.PartialView("_BlogList", pa);
         }
 
         public ActionResult Details(int id)
         {
-            PublishedArticles article = this._publishedArticleService.GetPublishedArticle(id);
+            IPublishedArticle article = this.publishedArticleService.GetPublishedArticle(id);
 
-            switch (article.ArticleType.sectionid)
+            switch (article.ArticleType.SectionId)
             {
                 case 2:
                     this.ViewBag.Section = "Geek";
-                    this.ViewBag.Title = article.headline + " | Lisa Katherine Geekery";
+                    this.ViewBag.Title = article.Headline + " | Lisa Katherine Geekery";
                     break;
                 case 3:
                     this.ViewBag.Section = "Work";
-                    this.ViewBag.Title = article.headline + " | Lisa Katherine Work";
+                    this.ViewBag.Title = article.Headline + " | Lisa Katherine Work";
                     break;
                 default:
                     this.ViewBag.Section = "Photos";
-                    this.ViewBag.Title = article.headline + " | Lisa Katherine Photography";
+                    this.ViewBag.Title = article.Headline + " | Lisa Katherine Photography";
                     break;
             }
 
@@ -53,17 +53,17 @@
 
         public ActionResult _BlogFeed()
         {
-            IEnumerable<PublishedArticles> articles =
-                this._publishedArticleService.GetPublishedList(1).OrderByDescending(item => item.datePublished);
+            IEnumerable<IPublishedArticle> articles =
+                this.publishedArticleService.GetPublishedList(1).OrderByDescending(item => item.DatePublished);
             return PartialView(articles);
         }
 
         public PartialViewResult RenderBlogFeed()
         {
             int[] x = { 1, 7, 8 };
-            IEnumerable<PublishedArticles> articles =
-                this._publishedArticleService.GetPublishedArticlesManyTypes(new List<int>(x))
-                    .OrderByDescending(item => item.datePublished);
+            IEnumerable<IPublishedArticle> articles =
+                this.publishedArticleService.GetPublishedArticlesManyTypes(new List<int>(x))
+                    .OrderByDescending(item => item.DatePublished);
             return this.PartialView("_BlogFeed", articles);
         }
 
@@ -71,8 +71,8 @@
         {
             if (id != null)
             {
-                PublishedArticles article = this._publishedArticleService.GetPublishedArticle((int)id);
-                this.ViewBag.BlogMonth = String.Format("{0:yyMM}", article.datePublished);
+                IPublishedArticle article = this.publishedArticleService.GetPublishedArticle((int)id);
+                this.ViewBag.BlogMonth = String.Format("{0:yyMM}", article.DatePublished);
                 return this.PartialView("_BlogJs");
             }
             else
@@ -83,7 +83,7 @@
 
         public ActionResult Preview(int id)
         {
-            IArticle article = this._articleService.GetArticle(id);
+            IArticle article = this.articleService.GetArticle(id);
             this.ViewBag.Title = article.Headline + "| Lisa Katherine ";
             this.ViewBag.Section = "Photos";
 
@@ -92,16 +92,16 @@
 
         public PartialViewResult LatestBlog(int id)
         {
-            PublishedArticles article = this._publishedArticleService.GetArticleLatestBlog(id);
+            IPublishedArticle article = this.publishedArticleService.GetArticleLatestBlog(id);
             this.ViewBag.Section = Utils.GetSection(id);
             this.ViewBag.Image = "/Content/images/" + this.ViewBag.Section + "_sm.gif";
-            article.body = Utils.GetSummary(Utils.StripHtml(article.body), 255);
+            article.Body = Utils.GetSummary(Utils.StripHtml(article.Body), 255);
             return this.PartialView("_LatestBlog", article);
         }
 
-        public ActionResult FBAuthorise(int id)
+        public ActionResult FbAuthorise(int id)
         {
-            FbAuthHandler.HandleOAuthResult(System.Web.HttpContext.Current.Request, id);
+            //FbAuthHandler.HandleOAuthResult(System.Web.HttpContext.Current.Request, id);
             return this.View();
         }
     }

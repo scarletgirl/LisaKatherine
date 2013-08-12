@@ -132,7 +132,7 @@ div#twtr-widget-1.twtr-widget { font-family: Rancho, Sans-Serif !important; font
 #BlogList .middle { width: 190px; padding:0 10px; }
 #BlogList .bottom { height: 54px; width: 210px; }
 #BlogList .slide { border:none; padding: 4px 0; cursor:pointer; }
-#BlogList .headline { padding-left:4px }
+#BlogList .Headline { padding-left:4px }
 #Blog img { padding: 5px; }
 #LatestBlog { width:50%; padding:1em; -moz-box-shadow: 6px 6px 6px -3px #ccc; -webkit-box-shadow: 6px 6px 6px -3px #ccc; box-shadow: 6px 6px 6px -3px #ccc; position:relative; border:1px #eee solid; }
 #LatestBlog h3 { width:300px; margin-bottom:5px;}

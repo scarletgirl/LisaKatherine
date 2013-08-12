@@ -1,4 +1,4 @@
-﻿@using LisaKatherine.Models;
+﻿@using LisaKatherine.Services
 @{
     
     ViewBag.Title = "Lisa Katherine - Web Designer, Photographer, Science Geek ";
@@ -11,7 +11,7 @@
     }
 }
 <h1>@ViewBag.Headline</h1>
-<div class="strapline">@ViewBag.Strapline</div>
+<div class="Strapline">@ViewBag.Strapline</div>
 <div class="articlebody">@Html.Raw(ViewBag.Body)</div>
 @{Html.RenderAction("LatestBlog", "Blog", new { id = 1 });}
 @{Html.RenderAction("LatestBlog", "Blog", new { id = 7 });}
