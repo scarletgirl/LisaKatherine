@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="LisaKatherineModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-  <EntityContainer Name="LisaKatherineEntities" annotation:LazyLoadingEnabled="true">
+<Schema Namespace="LisaKatherineModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LisaKatherineEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
     <EntitySet Name="Articles1" EntityType="LisaKatherineModel.Articles" />
     <EntitySet Name="tblPhotos" EntityType="LisaKatherineModel.Photos" />
     <EntitySet Name="Users1" EntityType="LisaKatherineModel.Users" />
@@ -43,7 +43,7 @@
     <Key>
       <PropertyRef Name="articleId" />
     </Key>
-    <Property Name="articleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="articleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="headline" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
     <Property Name="strapline" Type="String" MaxLength="800" Unicode="true" FixedLength="false" />
     <Property Name="body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
@@ -61,7 +61,7 @@
     <Key>
       <PropertyRef Name="photoId" />
     </Key>
-    <Property Name="photoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="photoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Name="alt" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="width" Type="Int32" />
     <Property Name="height" Type="Int32" />
@@ -110,7 +110,7 @@
     <Key>
       <PropertyRef Name="articleTypeId" />
     </Key>
-    <Property Type="Int32" Name="articleTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="articleTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="String" Name="articleTypeName" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tblArticles" Relationship="LisaKatherineModel.FK_tblArticle_tblArticleType" FromRole="tblArticleType" ToRole="Articles" />
     <Property Type="Int32" Name="sectionid" />
@@ -167,7 +167,7 @@
     <Key>
       <PropertyRef Name="sectionId" />
     </Key>
-    <Property Type="Int32" Name="sectionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="sectionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="String" Name="section" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tblArticleTypes" Relationship="LisaKatherineModel.FK_tblArticleType_tblSection" FromRole="Section" ToRole="ArticleTypes" />
   </EntityType>
@@ -187,7 +187,7 @@
     <Key>
       <PropertyRef Name="postId" />
     </Key>
-    <Property Type="Int32" Name="postId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="postId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="Int64" Name="facebookId" Nullable="false" />
     <Property Type="Int32" Name="articleId" Nullable="false" />
     <Property Type="String" Name="post" MaxLength="Max" FixedLength="false" Unicode="true" />

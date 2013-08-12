@@ -7,7 +7,6 @@
     using System.Web.Mvc;
 
     using LisaKatherine.Interface;
-    using LisaKatherine.Models;
     using LisaKatherine.Services;
 
     using Webdiyer.WebControls.Mvc;

@@ -1,4 +1,4 @@
-﻿@model LisaKatherine.Models.Users
+﻿@model LisaKatherine.Interface.IUser
 
 @{
     ViewBag.Title = "Log On";
@@ -18,19 +18,19 @@
             <legend>Account Information</legend>
 
             <div class="editor-label">
-                @Html.LabelFor(m => m.username)
+                @Html.LabelFor(m => m.Username)
             </div>
             <div class="editor-field">
-                @Html.TextBoxFor(m => m.username)
-                @Html.ValidationMessageFor(m => m.username)
+                @Html.TextBoxFor(m => m.Username)
+                @Html.ValidationMessageFor(m => m.Username)
             </div>
 
             <div class="editor-label">
-                @Html.LabelFor(m => m.password)
+                @Html.LabelFor(m => m.Password)
             </div>
             <div class="editor-field">
-                @Html.PasswordFor(m => m.password)
-                @Html.ValidationMessageFor(m => m.password)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
             </div>
 
 

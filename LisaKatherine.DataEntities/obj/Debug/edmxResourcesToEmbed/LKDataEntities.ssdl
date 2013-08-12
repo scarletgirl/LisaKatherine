@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="LisaKatherineModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+<Schema Namespace="LisaKatherineModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="LisaKatherineModelStoreContainer">
-    <EntitySet Name="tblArticle" EntityType="LisaKatherineModel.Store.tblArticle" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tblArticlePublished" EntityType="LisaKatherineModel.Store.tblArticlePublished" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tblArticleType" EntityType="LisaKatherineModel.Store.tblArticleType" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tblFacebookPost" EntityType="LisaKatherineModel.Store.tblFacebookPost" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tblFacebookUsers" EntityType="LisaKatherineModel.Store.tblFacebookUsers" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tblPhotos" EntityType="LisaKatherineModel.Store.tblPhotos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tblPhotoSets" EntityType="LisaKatherineModel.Store.tblPhotoSets" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tblSection" EntityType="LisaKatherineModel.Store.tblSection" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tblUsers" EntityType="LisaKatherineModel.Store.tblUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblArticle" EntityType="LisaKatherineModel.Store.tblArticle" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tblArticlePublished" EntityType="LisaKatherineModel.Store.tblArticlePublished" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tblArticleType" EntityType="LisaKatherineModel.Store.tblArticleType" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tblFacebookPost" EntityType="LisaKatherineModel.Store.tblFacebookPost" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tblFacebookUsers" EntityType="LisaKatherineModel.Store.tblFacebookUsers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tblPhotos" EntityType="LisaKatherineModel.Store.tblPhotos" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tblPhotoSets" EntityType="LisaKatherineModel.Store.tblPhotoSets" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tblSection" EntityType="LisaKatherineModel.Store.tblSection" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tblUsers" EntityType="LisaKatherineModel.Store.tblUsers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
     <AssociationSet Name="FK_tblArticle_tblArticleType" Association="LisaKatherineModel.Store.FK_tblArticle_tblArticleType">
       <End Role="tblArticleType" EntitySet="tblArticleType" />
       <End Role="tblArticle" EntitySet="tblArticle" />

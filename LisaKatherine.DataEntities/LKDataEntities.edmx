@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- EF Runtime content -->
     <edmx:Runtime>
         <!-- SSDL content -->
         <edmx:StorageModels>
-        <Schema Namespace="LisaKatherineModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <Schema Namespace="LisaKatherineModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="LisaKatherineModelStoreContainer">
-          <EntitySet Name="tblArticle" EntityType="LisaKatherineModel.Store.tblArticle" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblArticlePublished" EntityType="LisaKatherineModel.Store.tblArticlePublished" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblArticleType" EntityType="LisaKatherineModel.Store.tblArticleType" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblFacebookPost" EntityType="LisaKatherineModel.Store.tblFacebookPost" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblFacebookUsers" EntityType="LisaKatherineModel.Store.tblFacebookUsers" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblPhotos" EntityType="LisaKatherineModel.Store.tblPhotos" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblPhotoSets" EntityType="LisaKatherineModel.Store.tblPhotoSets" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblSection" EntityType="LisaKatherineModel.Store.tblSection" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tblUsers" EntityType="LisaKatherineModel.Store.tblUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblArticle" EntityType="LisaKatherineModel.Store.tblArticle" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblArticlePublished" EntityType="LisaKatherineModel.Store.tblArticlePublished" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblArticleType" EntityType="LisaKatherineModel.Store.tblArticleType" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblFacebookPost" EntityType="LisaKatherineModel.Store.tblFacebookPost" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblFacebookUsers" EntityType="LisaKatherineModel.Store.tblFacebookUsers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblPhotos" EntityType="LisaKatherineModel.Store.tblPhotos" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblPhotoSets" EntityType="LisaKatherineModel.Store.tblPhotoSets" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblSection" EntityType="LisaKatherineModel.Store.tblSection" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tblUsers" EntityType="LisaKatherineModel.Store.tblUsers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <AssociationSet Name="FK_tblArticle_tblArticleType" Association="LisaKatherineModel.Store.FK_tblArticle_tblArticleType">
             <End Role="tblArticleType" EntitySet="tblArticleType" />
             <End Role="tblArticle" EntitySet="tblArticle" />
@@ -214,8 +214,8 @@
       </Schema></edmx:StorageModels>
         <!-- CSDL content -->
         <edmx:ConceptualModels>
-            <Schema Namespace="LisaKatherineModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-                <EntityContainer Name="LisaKatherineEntities" annotation:LazyLoadingEnabled="true">
+            <Schema Namespace="LisaKatherineModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+                <EntityContainer Name="LisaKatherineEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
                     <EntitySet Name="Articles1" EntityType="LisaKatherineModel.Articles" />
                     <EntitySet Name="tblPhotos" EntityType="LisaKatherineModel.Photos" />
                     <EntitySet Name="Users1" EntityType="LisaKatherineModel.Users" />
@@ -258,7 +258,7 @@
                     <Key>
                         <PropertyRef Name="articleId" />
                     </Key>
-                    <Property Name="articleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+                    <Property Name="articleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
                     <Property Name="headline" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
                     <Property Name="strapline" Type="String" MaxLength="800" Unicode="true" FixedLength="false" />
                     <Property Name="body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
@@ -276,7 +276,7 @@
                     <Key>
                         <PropertyRef Name="photoId" />
                     </Key>
-                    <Property Name="photoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+                    <Property Name="photoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
                     <Property Name="alt" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
                     <Property Name="width" Type="Int32" />
                     <Property Name="height" Type="Int32" />
@@ -325,7 +325,7 @@
                     <Key>
                         <PropertyRef Name="articleTypeId" />
                     </Key>
-                    <Property Type="Int32" Name="articleTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+                    <Property Type="Int32" Name="articleTypeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
                     <Property Type="String" Name="articleTypeName" MaxLength="20" FixedLength="false" Unicode="true" />
                     <NavigationProperty Name="tblArticles" Relationship="LisaKatherineModel.FK_tblArticle_tblArticleType" FromRole="tblArticleType" ToRole="Articles" />
           <Property Type="Int32" Name="sectionid" />
@@ -382,7 +382,7 @@
           <Key>
             <PropertyRef Name="sectionId" />
           </Key>
-          <Property Type="Int32" Name="sectionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="sectionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="section" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="tblArticleTypes" Relationship="LisaKatherineModel.FK_tblArticleType_tblSection" FromRole="Section" ToRole="ArticleTypes" />
         </EntityType>
@@ -402,7 +402,7 @@
           <Key>
             <PropertyRef Name="postId" />
           </Key>
-          <Property Type="Int32" Name="postId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="postId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="Int64" Name="facebookId" Nullable="false" />
           <Property Type="Int32" Name="articleId" Nullable="false" />
           <Property Type="String" Name="post" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -453,7 +453,7 @@
         </edmx:ConceptualModels>
         <!-- C-S mapping content -->
         <edmx:Mappings>
-            <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+            <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
                 <EntityContainerMapping StorageEntityContainer="LisaKatherineModelStoreContainer" CdmEntityContainer="LisaKatherineEntities">
                     <EntitySetMapping Name="Articles1">
                         <EntityTypeMapping TypeName="LisaKatherineModel.Articles">
@@ -566,66 +566,66 @@
         </edmx:Mappings>
     </edmx:Runtime>
     <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-    <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
-        <Connection>
-            <DesignerInfoPropertySet>
-                <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
-            </DesignerInfoPropertySet>
-        </Connection>
-        <Options>
-            <DesignerInfoPropertySet>
-                <DesignerProperty Name="ValidateOnBuild" Value="true" />
-                <DesignerProperty Name="EnablePluralization" Value="True" />
-                <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-            </DesignerInfoPropertySet>
-        </Options>
+    <edmx:Designer>
+        <edmx:Connection>
+            <edmx:DesignerInfoPropertySet>
+                <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+            </edmx:DesignerInfoPropertySet>
+        </edmx:Connection>
+        <edmx:Options>
+            <edmx:DesignerInfoPropertySet>
+                <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+                <edmx:DesignerProperty Name="EnablePluralization" Value="True" />
+                <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+            </edmx:DesignerInfoPropertySet>
+        </edmx:Options>
         <!-- Diagram content (shape and connector positions) -->
-        <Diagrams>
-            <Diagram Name="LKDataEntities">
-                <EntityTypeShape EntityType="LisaKatherineModel.Articles" Width="1.5" PointX="3" PointY="1.125" Height="2.7494921874999996" IsExpanded="true" />
-                <EntityTypeShape EntityType="LisaKatherineModel.Photos" Width="1.5" PointX="3" PointY="4.625" Height="2.5571907552083335" IsExpanded="true" />
-                <EntityTypeShape EntityType="LisaKatherineModel.Users" Width="1.5" PointX="0.75" PointY="3" Height="2.3648893229166656" IsExpanded="true" />
-                <AssociationConnector Association="LisaKatherineModel.FK_tblArticle_tblUsers" ManuallyRouted="false">
-                    <ConnectorPoint PointX="2.25" PointY="3.8218489583333328" />
-                    <ConnectorPoint PointX="3" PointY="3.8218489583333328" />
-                </AssociationConnector>
-                <AssociationConnector Association="LisaKatherineModel.FK_tblPhotos_tblUsers" ManuallyRouted="false">
-                    <ConnectorPoint PointX="2.25" PointY="4.9949446614583328" />
-                    <ConnectorPoint PointX="3" PointY="4.9949446614583328" />
-                </AssociationConnector>
-                <EntityTypeShape EntityType="LisaKatherineModel.ArticleTypes" Width="1.5" PointX="5.375" PointY="0.875" Height="1.5956835937499996" />
-                <AssociationConnector Association="LisaKatherineModel.FK_tblArticle_tblArticleType" >
-                    <ConnectorPoint PointX="5.375" PointY="1.9901432291666665" />
-                    <ConnectorPoint PointX="4.5" PointY="1.9901432291666665" />
-                </AssociationConnector>
-        <EntityTypeShape EntityType="LisaKatherineModel.PublishedArticles" Width="1.5" PointX="5.25" PointY="3.375" Height="2.941793619791667" />
-        <AssociationConnector Association="LisaKatherineModel.FK_tblArticlePublished_tblArticle" >
-          <ConnectorPoint PointX="4.5" PointY="4.0093489583333328" />
-          <ConnectorPoint PointX="5.25" PointY="4.0093489583333328" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="LisaKatherineModel.FlickrSets" Width="1.5" PointX="7.375" PointY="0.75" Height="1.5956835937499996" />
-        <EntityTypeShape EntityType="LisaKatherineModel.Section" Width="1.5" PointX="7.375" PointY="3.75" Height="1.4033821614583317" />
-        <AssociationConnector Association="LisaKatherineModel.FK_tblArticleType_tblSection" >
-          <ConnectorPoint PointX="7.375" PointY="4.547841796875" />
-          <ConnectorPoint PointX="7" PointY="4.547841796875" />
-          <ConnectorPoint PointX="7" PointY="3.1250000000000004" />
-          <ConnectorPoint PointX="6.125" PointY="3.1250000000000004" />
-          <ConnectorPoint PointX="6.125" PointY="2.8552864583333331" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="LisaKatherineModel.FacebookPost" Width="1.5" PointX="9.375" PointY="4.75" Height="2.192587890625" />
-        <EntityTypeShape EntityType="LisaKatherineModel.FacebookUser" Width="1.5" PointX="11.375" PointY="3.75" Height="2.5571907552083317" />
-        <AssociationConnector Association="LisaKatherineModel.FK_tblFacebookPost_tblArticle" >
-          <ConnectorPoint PointX="4.5" PointY="3.0213932291666667" />
-          <ConnectorPoint PointX="6.041666666666667" PointY="3.0213932291666663" />
-          <ConnectorPoint PointX="6.208333333333333" PointY="3.0213932291666667" />
-          <ConnectorPoint PointX="10.125" PointY="3.0213932291666667" />
-          <ConnectorPoint PointX="10.125" PointY="4.75" />
-        </AssociationConnector>
-        <AssociationConnector Association="LisaKatherineModel.FK_tblFacebookPost_tblFacebookUsers" >
-          <ConnectorPoint PointX="11.375" PointY="5.62474609375" />
-          <ConnectorPoint PointX="10.875" PointY="5.62474609375" />
-        </AssociationConnector>
-            </Diagram>
-        </Diagrams>
-    </Designer>
+        <edmx:Diagrams>
+            <edmx:Diagram Name="LKDataEntities">
+                <edmx:EntityTypeShape EntityType="LisaKatherineModel.Articles" Width="1.5" PointX="3" PointY="1.125" Height="2.7494921874999996" IsExpanded="true" />
+                <edmx:EntityTypeShape EntityType="LisaKatherineModel.Photos" Width="1.5" PointX="3" PointY="4.625" Height="2.5571907552083335" IsExpanded="true" />
+                <edmx:EntityTypeShape EntityType="LisaKatherineModel.Users" Width="1.5" PointX="0.75" PointY="3" Height="2.3648893229166656" IsExpanded="true" />
+                <edmx:AssociationConnector Association="LisaKatherineModel.FK_tblArticle_tblUsers" ManuallyRouted="false">
+                    <edmx:ConnectorPoint PointX="2.25" PointY="3.8218489583333328" />
+                    <edmx:ConnectorPoint PointX="3" PointY="3.8218489583333328" />
+                </edmx:AssociationConnector>
+                <edmx:AssociationConnector Association="LisaKatherineModel.FK_tblPhotos_tblUsers" ManuallyRouted="false">
+                    <edmx:ConnectorPoint PointX="2.25" PointY="4.9949446614583328" />
+                    <edmx:ConnectorPoint PointX="3" PointY="4.9949446614583328" />
+                </edmx:AssociationConnector>
+                <edmx:EntityTypeShape EntityType="LisaKatherineModel.ArticleTypes" Width="1.5" PointX="5.375" PointY="0.875" Height="1.5956835937499996" />
+                <edmx:AssociationConnector Association="LisaKatherineModel.FK_tblArticle_tblArticleType">
+                    <edmx:ConnectorPoint PointX="5.375" PointY="1.9901432291666665" />
+                    <edmx:ConnectorPoint PointX="4.5" PointY="1.9901432291666665" />
+                </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="LisaKatherineModel.PublishedArticles" Width="1.5" PointX="5.25" PointY="3.375" Height="2.941793619791667" />
+        <edmx:AssociationConnector Association="LisaKatherineModel.FK_tblArticlePublished_tblArticle">
+          <edmx:ConnectorPoint PointX="4.5" PointY="4.0093489583333328" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="4.0093489583333328" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="LisaKatherineModel.FlickrSets" Width="1.5" PointX="7.375" PointY="0.75" Height="1.5956835937499996" />
+        <edmx:EntityTypeShape EntityType="LisaKatherineModel.Section" Width="1.5" PointX="7.375" PointY="3.75" Height="1.4033821614583317" />
+        <edmx:AssociationConnector Association="LisaKatherineModel.FK_tblArticleType_tblSection">
+          <edmx:ConnectorPoint PointX="7.375" PointY="4.547841796875" />
+          <edmx:ConnectorPoint PointX="7" PointY="4.547841796875" />
+          <edmx:ConnectorPoint PointX="7" PointY="3.1250000000000004" />
+          <edmx:ConnectorPoint PointX="6.125" PointY="3.1250000000000004" />
+          <edmx:ConnectorPoint PointX="6.125" PointY="2.8552864583333331" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="LisaKatherineModel.FacebookPost" Width="1.5" PointX="9.375" PointY="4.75" Height="2.192587890625" />
+        <edmx:EntityTypeShape EntityType="LisaKatherineModel.FacebookUser" Width="1.5" PointX="11.375" PointY="3.75" Height="2.5571907552083317" />
+        <edmx:AssociationConnector Association="LisaKatherineModel.FK_tblFacebookPost_tblArticle">
+          <edmx:ConnectorPoint PointX="4.5" PointY="3.0213932291666667" />
+          <edmx:ConnectorPoint PointX="6.041666666666667" PointY="3.0213932291666663" />
+          <edmx:ConnectorPoint PointX="6.208333333333333" PointY="3.0213932291666667" />
+          <edmx:ConnectorPoint PointX="10.125" PointY="3.0213932291666667" />
+          <edmx:ConnectorPoint PointX="10.125" PointY="4.75" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="LisaKatherineModel.FK_tblFacebookPost_tblFacebookUsers">
+          <edmx:ConnectorPoint PointX="11.375" PointY="5.62474609375" />
+          <edmx:ConnectorPoint PointX="10.875" PointY="5.62474609375" />
+        </edmx:AssociationConnector>
+            </edmx:Diagram>
+        </edmx:Diagrams>
+    </edmx:Designer>
 </edmx:Edmx>

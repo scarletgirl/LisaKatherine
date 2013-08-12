@@ -80,7 +80,7 @@
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult LogOn(IUser user)
+        public ActionResult LogOn(User user)
         {
             IUser authUser = this.userService.AuthenticateUser(user.Username, user.Password);
             if (authUser != null)
