@@ -9,3 +9,7 @@ S:\LisaKatherine\LisaKatherine.Services\bin\Debug\MvcPager.pdb
 S:\LisaKatherine\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.csprojResolveAssemblyReference.cache
 S:\LisaKatherine\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.dll
 S:\LisaKatherine\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.pdb
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\LisaKatherine.Services.dll.config
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\Newtonsoft.Json.dll
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\oAuthTwitterWrapper.dll
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\Newtonsoft.Json.xml

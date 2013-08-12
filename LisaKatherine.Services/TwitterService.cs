@@ -1,45 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Xml;
-using System.Xml.Linq;
-
-namespace LisaKatherine.Models
+﻿namespace LisaKatherine.Services
 {
+    using OAuthTwitterWrapper;
+
     public class TwitterService
     {
-        public List<Tweet> GetTweets()
+        private readonly IOAuthTwitterWrapper oAuthTwitterWrapper;
+
+        public TwitterService(IOAuthTwitterWrapper oAuthTwitterWrapper)
         {
-            var xml = GetXDocument();
-            var tweetList = from x in xml.Descendants("item")
-                         select new
-                         {
-                             Title = x.Element("title").Value,
-                             Description = x.Element("description").Value,
-                             PubDate = x.Element("pubDate").Value,
-                             Link = x.Element("link").Value
-
-                         };
-
-            return tweetList.Select(t => new Tweet {Description = t.Description, Link = t.Link, PubDate = Convert.ToDateTime(t.PubDate), Title = t.Title}).ToList();
+            this.oAuthTwitterWrapper = oAuthTwitterWrapper;
         }
 
-        public XDocument GetXDocument()
+        public TwitterService()
         {
-            var rdr = new XmlTextReader("https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=scarlet_girl");
-            var xml = new XmlDocument();
-            xml.Load(rdr);
-            return ToXDocument(xml);
+            this.oAuthTwitterWrapper = new OAuthTwitterWrapper();
         }
 
-        public XDocument ToXDocument(XmlDocument xmlDocument)
+        public string GetTimeLine()
         {
-            using (var nodeReader = new XmlNodeReader(xmlDocument))
-            {
-                nodeReader.MoveToContent();
-                return XDocument.Load(nodeReader);
-            }
+            return this.oAuthTwitterWrapper.GetMyTimeline();
         }
-
     }
 }

@@ -25,3 +25,6 @@ S:\LisaKatherine\LisaKatherine\bin\MvcPager.pdb
 S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.DataEntitiesRepository.pdb
 S:\LisaKatherine\LisaKatherine\obj\Debug\LisaKatherine.dll
 S:\LisaKatherine\LisaKatherine\obj\Debug\LisaKatherine.pdb
+S:\LisaKatherine\LisaKatherine\bin\oAuthTwitterWrapper.dll
+S:\LisaKatherine\LisaKatherine\bin\Newtonsoft.Json.dll
+S:\LisaKatherine\LisaKatherine\bin\Newtonsoft.Json.xml

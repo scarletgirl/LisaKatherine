@@ -1,4 +1,4 @@
-﻿@using LisaKatherine.Models;
+﻿@using LisaKatherine.Services
 @{
     bool isMobile = Utils.IsMobile(Request.UserAgent);
     if (isMobile) {
@@ -6,6 +6,5 @@
     } else {
         Layout = "~/Views/Shared/_Layout.cshtml";
     };
-    
-    
+ 
 }

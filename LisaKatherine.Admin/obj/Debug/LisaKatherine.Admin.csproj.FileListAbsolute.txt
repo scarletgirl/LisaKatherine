@@ -23,3 +23,6 @@ S:\LisaKatherine\LisaKatherine.Admin\bin\Debug\MvcPager.pdb
 S:\LisaKatherine\LisaKatherine.Admin\bin\Debug\LisaKatherine.DataEntitiesRepository.pdb
 S:\LisaKatherine\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.dll
 S:\LisaKatherine\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.pdb
+S:\LisaKatherine\LisaKatherine.Admin\bin\Debug\oAuthTwitterWrapper.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\Debug\Newtonsoft.Json.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\Debug\Newtonsoft.Json.xml
