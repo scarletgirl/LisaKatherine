@@ -14,6 +14,6 @@
 
         void Add(IArticle article);
 
-        void Public(IArticle article);
+        void Publish(IArticle article);
     }
 }

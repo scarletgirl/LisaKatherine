@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.Specialized;
     using System.Globalization;
     using System.Linq;
     using System.Web.Mvc;
@@ -22,6 +23,10 @@
         [Authorize]
         public ActionResult Index(string sortOrder, int? id)
         {
+            if (id == null)
+            {
+                id = 0;
+            }
             this.ViewBag.HeadlineSortParm = String.IsNullOrEmpty(sortOrder) ? "headline desc" : "";
             this.ViewBag.CreatedSortParm = sortOrder == "dateCreated" ? "dateCreated desc" : "dateCreated";
             this.ViewBag.PublishedSortParm = sortOrder == "datePublished" ? "datePublished desc" : "datePublished";
@@ -45,22 +50,12 @@
         [ValidateInput(false)]
         public ActionResult Create(FormCollection form, string submitButton)
         {
-            this.ViewData["articleTypeId_0"] = new SelectList(this.CreateArticleTypeList(0), "Value", "Text");
+            this.ViewData["ArticleTypeId_0"] = new SelectList(this.CreateArticleTypeList(0), "Value", "Text");
             try
             {
-                IArticleType articleType =
-                    this.articleTypeService.GetArticleType(Convert.ToInt32(form["articleTypeId_0"]));
+                IArticleType articleType = this.articleTypeService.GetArticleType(Convert.ToInt32(form["ArticleTypeId_0"]));
                 IUser user = this.userFactory.CheckSession();
-                var article = new Article(
-                    form["headline"],
-                    form["strapline"],
-                    form["Body"],
-                    DateTime.Now,
-                    null,
-                    false,
-                    articleType.ArticleTypeId,
-                    user,
-                    articleType);
+                var article = new Article(form["Headline"], form["Strapline"], form["Body"], DateTime.Now, null, false, articleType.ArticleTypeId, user, articleType);
                 this.articleService.CreateArticle(article);
                 this.Publish(form, submitButton, article);
                 return this.RedirectToAction("Index");
@@ -75,8 +70,7 @@
         public ActionResult Edit(int id)
         {
             IArticle article = this.articleService.GetArticle(id);
-            this.ViewData["articleTypeId_0"] = new SelectList(
-                this.CreateArticleTypeList(article.ArticleTypeId), "Value", "Text", article.ArticleTypeId);
+            this.ViewData["ArticleTypeId_0"] = new SelectList(this.CreateArticleTypeList(article.ArticleTypeId), "Value", "Text", article.ArticleTypeId);
             return this.View(article);
         }
 
@@ -85,18 +79,17 @@
         [ValidateInput(false)]
         public ActionResult Edit(FormCollection form, string submitButton)
         {
-            IArticleType articleType = this.articleTypeService.GetArticleType(Convert.ToInt32(form["articleTypeId_0"]));
-            IUser user = this.userFactory.GetUser(new Guid(form["userid"]));
-            var article = new Article(
-                form["headline"],
-                form["strapline"],
-                form["Body"],
-                DateTime.Now,
-                null,
-                false,
-                articleType.ArticleTypeId,
-                user,
-                articleType) { ArticleId = Convert.ToInt32(form["articleId"]) };
+            IArticleType articleType = this.articleTypeService.GetArticleType(Convert.ToInt32(form["ArticleTypeId_0"]));
+            IUser user = this.userFactory.GetUser(new Guid(form["User.UserId"]));
+            var article = new Article(form["Headline"], form["Strapline"], form["Body"], DateTime.Now, null, false, articleType.ArticleTypeId, user, articleType)
+                              {
+                                  ArticleId =
+                                      Convert
+                                      .ToInt32(
+                                          form[
+                                              "ArticleId"
+                                      ])
+                              };
             this.Publish(form, submitButton, article);
 
             return this.RedirectToAction("Index");
@@ -115,29 +108,27 @@
         {
             return
                 this.articleTypeService.GetArticleTypesList()
-                    .Select(
-                        item =>
-                        new SelectListItem
-                            {
-                                Text = item.ArticleTypeName,
-                                Value = item.ArticleTypeId.ToString(CultureInfo.InvariantCulture)
-                            })
+                    .Select(item => new SelectListItem { Text = item.ArticleTypeName, Value = item.ArticleTypeId.ToString(CultureInfo.InvariantCulture) })
                     .ToList();
         }
 
-        private static DateTime GetDatePublished(FormCollection form)
+        private static DateTime GetDatePublished(NameValueCollection form)
         {
-            if (form["datePublished"] != String.Empty)
+            if (form["DatePublished"] != String.Empty)
             {
                 var culture = new CultureInfo("en-GB");
-                return Convert.ToDateTime(form["datePublished"], culture);
+                return Convert.ToDateTime(form["DatePublished"], culture);
             }
             return DateTime.Now;
         }
 
         private PagedList<IArticle> GetPaging(string sortOrder, int? id)
         {
-            IEnumerable<IArticle> articles = this.articleService.GetList(0);
+            if (id == null)
+            {
+                id = 0;
+            }
+            IEnumerable<IArticle> articles = this.articleService.GetList((int)id);
 
             switch (sortOrder)
             {

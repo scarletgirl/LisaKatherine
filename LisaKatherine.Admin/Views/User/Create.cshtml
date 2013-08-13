@@ -1,4 +1,4 @@
-﻿@model LisaKatherine.Models.Users
+﻿@model LisaKatherine.Interface.User
 
 @{
     ViewBag.Title = "Create";
@@ -16,35 +16,35 @@
         <legend>Users</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.username)
+            @Html.LabelFor(model => model.Username)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.username)
-            @Html.ValidationMessageFor(model => model.username)
+            @Html.EditorFor(model => model.Username)
+            @Html.ValidationMessageFor(model => model.Username)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.password)
+            @Html.LabelFor(model => model.Password)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.password)
-            @Html.ValidationMessageFor(model => model.password)
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.firstname)
+            @Html.LabelFor(model => model.FirstName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.firstname)
-            @Html.ValidationMessageFor(model => model.firstname)
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.lastname)
+            @Html.LabelFor(model => model.LastName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.lastname)
-            @Html.ValidationMessageFor(model => model.lastname)
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
         </div>
 
         <p>

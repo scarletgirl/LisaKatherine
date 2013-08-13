@@ -19,12 +19,12 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("LisaKatherineModel", "FK_tblArticle_tblUsers", "tblUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LisaKatherine.DataEntitiesRepository.Users), "tblArticle", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LisaKatherine.DataEntitiesRepository.Articles), true)]
-[assembly: EdmRelationshipAttribute("LisaKatherineModel", "FK_tblPhotos_tblUsers", "tblUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LisaKatherine.DataEntitiesRepository.Users), "tblPhotos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LisaKatherine.DataEntitiesRepository.Photos), true)]
-[assembly: EdmRelationshipAttribute("LisaKatherineModel", "FK_tblArticle_tblArticleType", "tblArticleType", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LisaKatherine.DataEntitiesRepository.ArticleTypes), "Articles", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LisaKatherine.DataEntitiesRepository.Articles), true)]
-[assembly: EdmRelationshipAttribute("LisaKatherineModel", "FK_tblArticlePublished_tblArticle", "Articles", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LisaKatherine.DataEntitiesRepository.Articles), "tblArticlePublished", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LisaKatherine.DataEntitiesRepository.PublishedArticles), true)]
-[assembly: EdmRelationshipAttribute("LisaKatherineModel", "FK_tblArticleType_tblSection", "Section", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LisaKatherine.DataEntitiesRepository.Section), "ArticleTypes", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LisaKatherine.DataEntitiesRepository.ArticleTypes), true)]
-[assembly: EdmRelationshipAttribute("LisaKatherineModel", "FK_tblFacebookPost_tblArticle", "Articles", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LisaKatherine.DataEntitiesRepository.Articles), "FacebookPost", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LisaKatherine.DataEntitiesRepository.FacebookPost), true)]
+[assembly: EdmRelationshipAttribute("LisaKatherineModel", "FK_tblArticle_tblUsers", "tblUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LisaKatherine.DataEntitiesRepository.UserEntity), "tblArticle", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LisaKatherine.DataEntitiesRepository.ArticleEntity), true)]
+[assembly: EdmRelationshipAttribute("LisaKatherineModel", "FK_tblPhotos_tblUsers", "tblUsers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LisaKatherine.DataEntitiesRepository.UserEntity), "tblPhotos", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LisaKatherine.DataEntitiesRepository.Photos), true)]
+[assembly: EdmRelationshipAttribute("LisaKatherineModel", "FK_tblArticle_tblArticleType", "tblArticleType", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LisaKatherine.DataEntitiesRepository.ArticleTypeEntity), "Articles", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LisaKatherine.DataEntitiesRepository.ArticleEntity), true)]
+[assembly: EdmRelationshipAttribute("LisaKatherineModel", "FK_tblArticlePublished_tblArticle", "Articles", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LisaKatherine.DataEntitiesRepository.ArticleEntity), "tblArticlePublished", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LisaKatherine.DataEntitiesRepository.PublishedArticleEntity), true)]
+[assembly: EdmRelationshipAttribute("LisaKatherineModel", "FK_tblArticleType_tblSection", "Section", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LisaKatherine.DataEntitiesRepository.Section), "ArticleTypes", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LisaKatherine.DataEntitiesRepository.ArticleTypeEntity), true)]
+[assembly: EdmRelationshipAttribute("LisaKatherineModel", "FK_tblFacebookPost_tblArticle", "Articles", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LisaKatherine.DataEntitiesRepository.ArticleEntity), "FacebookPost", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LisaKatherine.DataEntitiesRepository.FacebookPost), true)]
 [assembly: EdmRelationshipAttribute("LisaKatherineModel", "FK_tblFacebookPost_tblFacebookUsers", "FacebookUser", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LisaKatherine.DataEntitiesRepository.FacebookUser), "FacebookPost", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LisaKatherine.DataEntitiesRepository.FacebookPost), true)]
 
 #endregion
@@ -80,18 +80,18 @@ namespace LisaKatherine.DataEntitiesRepository
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Articles> Articles1
+        public ObjectSet<ArticleEntity> Articles1
         {
             get
             {
                 if ((_Articles1 == null))
                 {
-                    _Articles1 = base.CreateObjectSet<Articles>("Articles1");
+                    _Articles1 = base.CreateObjectSet<ArticleEntity>("Articles1");
                 }
                 return _Articles1;
             }
         }
-        private ObjectSet<Articles> _Articles1;
+        private ObjectSet<ArticleEntity> _Articles1;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -112,50 +112,50 @@ namespace LisaKatherine.DataEntitiesRepository
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<Users> Users1
+        public ObjectSet<UserEntity> Users1
         {
             get
             {
                 if ((_Users1 == null))
                 {
-                    _Users1 = base.CreateObjectSet<Users>("Users1");
+                    _Users1 = base.CreateObjectSet<UserEntity>("Users1");
                 }
                 return _Users1;
             }
         }
-        private ObjectSet<Users> _Users1;
+        private ObjectSet<UserEntity> _Users1;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<ArticleTypes> ArticleTypes1
+        public ObjectSet<ArticleTypeEntity> ArticleTypes1
         {
             get
             {
                 if ((_ArticleTypes1 == null))
                 {
-                    _ArticleTypes1 = base.CreateObjectSet<ArticleTypes>("ArticleTypes1");
+                    _ArticleTypes1 = base.CreateObjectSet<ArticleTypeEntity>("ArticleTypes1");
                 }
                 return _ArticleTypes1;
             }
         }
-        private ObjectSet<ArticleTypes> _ArticleTypes1;
+        private ObjectSet<ArticleTypeEntity> _ArticleTypes1;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<PublishedArticles> PublishedArticles
+        public ObjectSet<PublishedArticleEntity> PublishedArticles
         {
             get
             {
                 if ((_PublishedArticles == null))
                 {
-                    _PublishedArticles = base.CreateObjectSet<PublishedArticles>("PublishedArticles");
+                    _PublishedArticles = base.CreateObjectSet<PublishedArticleEntity>("PublishedArticles");
                 }
                 return _PublishedArticles;
             }
         }
-        private ObjectSet<PublishedArticles> _PublishedArticles;
+        private ObjectSet<PublishedArticleEntity> _PublishedArticles;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -228,7 +228,7 @@ namespace LisaKatherine.DataEntitiesRepository
         /// <summary>
         /// Deprecated Method for adding a new object to the Articles1 EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToArticles1(Articles articles)
+        public void AddToArticles1(ArticleEntity articles)
         {
             base.AddObject("Articles1", articles);
         }
@@ -244,7 +244,7 @@ namespace LisaKatherine.DataEntitiesRepository
         /// <summary>
         /// Deprecated Method for adding a new object to the Users1 EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToUsers1(Users users)
+        public void AddToUsers1(UserEntity users)
         {
             base.AddObject("Users1", users);
         }
@@ -252,7 +252,7 @@ namespace LisaKatherine.DataEntitiesRepository
         /// <summary>
         /// Deprecated Method for adding a new object to the ArticleTypes1 EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToArticleTypes1(ArticleTypes articleTypes)
+        public void AddToArticleTypes1(ArticleTypeEntity articleTypes)
         {
             base.AddObject("ArticleTypes1", articleTypes);
         }
@@ -260,7 +260,7 @@ namespace LisaKatherine.DataEntitiesRepository
         /// <summary>
         /// Deprecated Method for adding a new object to the PublishedArticles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToPublishedArticles(PublishedArticles publishedArticles)
+        public void AddToPublishedArticles(PublishedArticleEntity publishedArticles)
         {
             base.AddObject("PublishedArticles", publishedArticles);
         }
@@ -311,7 +311,7 @@ namespace LisaKatherine.DataEntitiesRepository
     [EdmEntityTypeAttribute(NamespaceName="LisaKatherineModel", Name="Articles")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Articles : EntityObject
+    public partial class ArticleEntity : EntityObject
     {
         #region Factory Method
     
@@ -321,9 +321,9 @@ namespace LisaKatherine.DataEntitiesRepository
         /// <param name="articleId">Initial value of the articleId property.</param>
         /// <param name="dateCreated">Initial value of the dateCreated property.</param>
         /// <param name="isPublished">Initial value of the isPublished property.</param>
-        public static Articles CreateArticles(global::System.Int32 articleId, global::System.DateTime dateCreated, global::System.Boolean isPublished)
+        public static ArticleEntity CreateArticles(global::System.Int32 articleId, global::System.DateTime dateCreated, global::System.Boolean isPublished)
         {
-            Articles articles = new Articles();
+            ArticleEntity articles = new ArticleEntity();
             articles.articleId = articleId;
             articles.dateCreated = dateCreated;
             articles.isPublished = isPublished;
@@ -564,15 +564,15 @@ namespace LisaKatherine.DataEntitiesRepository
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LisaKatherineModel", "FK_tblArticle_tblUsers", "tblUsers")]
-        public Users tblUser
+        public UserEntity tblUser
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Users>("LisaKatherineModel.FK_tblArticle_tblUsers", "tblUsers").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserEntity>("LisaKatherineModel.FK_tblArticle_tblUsers", "tblUsers").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Users>("LisaKatherineModel.FK_tblArticle_tblUsers", "tblUsers").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserEntity>("LisaKatherineModel.FK_tblArticle_tblUsers", "tblUsers").Value = value;
             }
         }
         /// <summary>
@@ -580,17 +580,17 @@ namespace LisaKatherine.DataEntitiesRepository
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Users> tblUserReference
+        public EntityReference<UserEntity> tblUserReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Users>("LisaKatherineModel.FK_tblArticle_tblUsers", "tblUsers");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserEntity>("LisaKatherineModel.FK_tblArticle_tblUsers", "tblUsers");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Users>("LisaKatherineModel.FK_tblArticle_tblUsers", "tblUsers", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<UserEntity>("LisaKatherineModel.FK_tblArticle_tblUsers", "tblUsers", value);
                 }
             }
         }
@@ -602,15 +602,15 @@ namespace LisaKatherine.DataEntitiesRepository
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LisaKatherineModel", "FK_tblArticle_tblArticleType", "tblArticleType")]
-        public ArticleTypes tblArticleType
+        public ArticleTypeEntity tblArticleType
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArticleTypes>("LisaKatherineModel.FK_tblArticle_tblArticleType", "tblArticleType").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArticleTypeEntity>("LisaKatherineModel.FK_tblArticle_tblArticleType", "tblArticleType").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArticleTypes>("LisaKatherineModel.FK_tblArticle_tblArticleType", "tblArticleType").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArticleTypeEntity>("LisaKatherineModel.FK_tblArticle_tblArticleType", "tblArticleType").Value = value;
             }
         }
         /// <summary>
@@ -618,17 +618,17 @@ namespace LisaKatherine.DataEntitiesRepository
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<ArticleTypes> tblArticleTypeReference
+        public EntityReference<ArticleTypeEntity> tblArticleTypeReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArticleTypes>("LisaKatherineModel.FK_tblArticle_tblArticleType", "tblArticleType");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArticleTypeEntity>("LisaKatherineModel.FK_tblArticle_tblArticleType", "tblArticleType");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ArticleTypes>("LisaKatherineModel.FK_tblArticle_tblArticleType", "tblArticleType", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ArticleTypeEntity>("LisaKatherineModel.FK_tblArticle_tblArticleType", "tblArticleType", value);
                 }
             }
         }
@@ -640,15 +640,15 @@ namespace LisaKatherine.DataEntitiesRepository
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LisaKatherineModel", "FK_tblArticlePublished_tblArticle", "tblArticlePublished")]
-        public PublishedArticles tblArticlePublished
+        public PublishedArticleEntity tblArticlePublished
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PublishedArticles>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "tblArticlePublished").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PublishedArticleEntity>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "tblArticlePublished").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PublishedArticles>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "tblArticlePublished").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PublishedArticleEntity>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "tblArticlePublished").Value = value;
             }
         }
         /// <summary>
@@ -656,17 +656,17 @@ namespace LisaKatherine.DataEntitiesRepository
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<PublishedArticles> tblArticlePublishedReference
+        public EntityReference<PublishedArticleEntity> tblArticlePublishedReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PublishedArticles>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "tblArticlePublished");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PublishedArticleEntity>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "tblArticlePublished");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PublishedArticles>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "tblArticlePublished", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PublishedArticleEntity>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "tblArticlePublished", value);
                 }
             }
         }
@@ -703,7 +703,7 @@ namespace LisaKatherine.DataEntitiesRepository
     [EdmEntityTypeAttribute(NamespaceName="LisaKatherineModel", Name="ArticleTypes")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class ArticleTypes : EntityObject
+    public partial class ArticleTypeEntity : EntityObject
     {
         #region Factory Method
     
@@ -711,9 +711,9 @@ namespace LisaKatherine.DataEntitiesRepository
         /// Create a new ArticleTypes object.
         /// </summary>
         /// <param name="articleTypeId">Initial value of the articleTypeId property.</param>
-        public static ArticleTypes CreateArticleTypes(global::System.Int32 articleTypeId)
+        public static ArticleTypeEntity CreateArticleTypes(global::System.Int32 articleTypeId)
         {
-            ArticleTypes articleTypes = new ArticleTypes();
+            ArticleTypeEntity articleTypes = new ArticleTypeEntity();
             articleTypes.articleTypeId = articleTypeId;
             return articleTypes;
         }
@@ -808,17 +808,17 @@ namespace LisaKatherine.DataEntitiesRepository
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LisaKatherineModel", "FK_tblArticle_tblArticleType", "Articles")]
-        public EntityCollection<Articles> tblArticles
+        public EntityCollection<ArticleEntity> tblArticles
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Articles>("LisaKatherineModel.FK_tblArticle_tblArticleType", "Articles");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ArticleEntity>("LisaKatherineModel.FK_tblArticle_tblArticleType", "Articles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Articles>("LisaKatherineModel.FK_tblArticle_tblArticleType", "Articles", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ArticleEntity>("LisaKatherineModel.FK_tblArticle_tblArticleType", "Articles", value);
                 }
             }
         }
@@ -1056,15 +1056,15 @@ namespace LisaKatherine.DataEntitiesRepository
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LisaKatherineModel", "FK_tblFacebookPost_tblArticle", "Articles")]
-        public Articles tblArticle
+        public ArticleEntity tblArticle
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Articles>("LisaKatherineModel.FK_tblFacebookPost_tblArticle", "Articles").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArticleEntity>("LisaKatherineModel.FK_tblFacebookPost_tblArticle", "Articles").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Articles>("LisaKatherineModel.FK_tblFacebookPost_tblArticle", "Articles").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArticleEntity>("LisaKatherineModel.FK_tblFacebookPost_tblArticle", "Articles").Value = value;
             }
         }
         /// <summary>
@@ -1072,17 +1072,17 @@ namespace LisaKatherine.DataEntitiesRepository
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Articles> tblArticleReference
+        public EntityReference<ArticleEntity> tblArticleReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Articles>("LisaKatherineModel.FK_tblFacebookPost_tblArticle", "Articles");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArticleEntity>("LisaKatherineModel.FK_tblFacebookPost_tblArticle", "Articles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Articles>("LisaKatherineModel.FK_tblFacebookPost_tblArticle", "Articles", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ArticleEntity>("LisaKatherineModel.FK_tblFacebookPost_tblArticle", "Articles", value);
                 }
             }
         }
@@ -1698,15 +1698,15 @@ namespace LisaKatherine.DataEntitiesRepository
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LisaKatherineModel", "FK_tblPhotos_tblUsers", "tblUsers")]
-        public Users tblUser
+        public UserEntity tblUser
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Users>("LisaKatherineModel.FK_tblPhotos_tblUsers", "tblUsers").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserEntity>("LisaKatherineModel.FK_tblPhotos_tblUsers", "tblUsers").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Users>("LisaKatherineModel.FK_tblPhotos_tblUsers", "tblUsers").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserEntity>("LisaKatherineModel.FK_tblPhotos_tblUsers", "tblUsers").Value = value;
             }
         }
         /// <summary>
@@ -1714,17 +1714,17 @@ namespace LisaKatherine.DataEntitiesRepository
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Users> tblUserReference
+        public EntityReference<UserEntity> tblUserReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Users>("LisaKatherineModel.FK_tblPhotos_tblUsers", "tblUsers");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserEntity>("LisaKatherineModel.FK_tblPhotos_tblUsers", "tblUsers");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Users>("LisaKatherineModel.FK_tblPhotos_tblUsers", "tblUsers", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<UserEntity>("LisaKatherineModel.FK_tblPhotos_tblUsers", "tblUsers", value);
                 }
             }
         }
@@ -1739,7 +1739,7 @@ namespace LisaKatherine.DataEntitiesRepository
     [EdmEntityTypeAttribute(NamespaceName="LisaKatherineModel", Name="PublishedArticles")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class PublishedArticles : EntityObject
+    public partial class PublishedArticleEntity : EntityObject
     {
         #region Factory Method
     
@@ -1749,9 +1749,9 @@ namespace LisaKatherine.DataEntitiesRepository
         /// <param name="articleId">Initial value of the articleId property.</param>
         /// <param name="dateCreated">Initial value of the dateCreated property.</param>
         /// <param name="isPublished">Initial value of the isPublished property.</param>
-        public static PublishedArticles CreatePublishedArticles(global::System.Int32 articleId, global::System.DateTime dateCreated, global::System.Boolean isPublished)
+        public static PublishedArticleEntity CreatePublishedArticles(global::System.Int32 articleId, global::System.DateTime dateCreated, global::System.Boolean isPublished)
         {
-            PublishedArticles publishedArticles = new PublishedArticles();
+            PublishedArticleEntity publishedArticles = new PublishedArticleEntity();
             publishedArticles.articleId = articleId;
             publishedArticles.dateCreated = dateCreated;
             publishedArticles.isPublished = isPublished;
@@ -1992,15 +1992,15 @@ namespace LisaKatherine.DataEntitiesRepository
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LisaKatherineModel", "FK_tblArticlePublished_tblArticle", "Articles")]
-        public Articles tblArticle
+        public ArticleEntity tblArticle
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Articles>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "Articles").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArticleEntity>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "Articles").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Articles>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "Articles").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArticleEntity>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "Articles").Value = value;
             }
         }
         /// <summary>
@@ -2008,17 +2008,17 @@ namespace LisaKatherine.DataEntitiesRepository
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Articles> tblArticleReference
+        public EntityReference<ArticleEntity> tblArticleReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Articles>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "Articles");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ArticleEntity>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "Articles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Articles>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "Articles", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ArticleEntity>("LisaKatherineModel.FK_tblArticlePublished_tblArticle", "Articles", value);
                 }
             }
         }
@@ -2114,17 +2114,17 @@ namespace LisaKatherine.DataEntitiesRepository
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LisaKatherineModel", "FK_tblArticleType_tblSection", "ArticleTypes")]
-        public EntityCollection<ArticleTypes> tblArticleTypes
+        public EntityCollection<ArticleTypeEntity> tblArticleTypes
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ArticleTypes>("LisaKatherineModel.FK_tblArticleType_tblSection", "ArticleTypes");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ArticleTypeEntity>("LisaKatherineModel.FK_tblArticleType_tblSection", "ArticleTypes");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ArticleTypes>("LisaKatherineModel.FK_tblArticleType_tblSection", "ArticleTypes", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ArticleTypeEntity>("LisaKatherineModel.FK_tblArticleType_tblSection", "ArticleTypes", value);
                 }
             }
         }
@@ -2139,7 +2139,7 @@ namespace LisaKatherine.DataEntitiesRepository
     [EdmEntityTypeAttribute(NamespaceName="LisaKatherineModel", Name="Users")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Users : EntityObject
+    public partial class UserEntity : EntityObject
     {
         #region Factory Method
     
@@ -2147,9 +2147,9 @@ namespace LisaKatherine.DataEntitiesRepository
         /// Create a new Users object.
         /// </summary>
         /// <param name="userId">Initial value of the userId property.</param>
-        public static Users CreateUsers(global::System.Guid userId)
+        public static UserEntity CreateUsers(global::System.Guid userId)
         {
-            Users users = new Users();
+            UserEntity users = new UserEntity();
             users.userId = userId;
             return users;
         }
@@ -2292,17 +2292,17 @@ namespace LisaKatherine.DataEntitiesRepository
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LisaKatherineModel", "FK_tblArticle_tblUsers", "tblArticle")]
-        public EntityCollection<Articles> tblArticles
+        public EntityCollection<ArticleEntity> tblArticles
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Articles>("LisaKatherineModel.FK_tblArticle_tblUsers", "tblArticle");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ArticleEntity>("LisaKatherineModel.FK_tblArticle_tblUsers", "tblArticle");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Articles>("LisaKatherineModel.FK_tblArticle_tblUsers", "tblArticle", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ArticleEntity>("LisaKatherineModel.FK_tblArticle_tblUsers", "tblArticle", value);
                 }
             }
         }

@@ -55,16 +55,16 @@
             @item.IsPublished
         </td>
         <td>
-            @item.ArticleType.articleTypeName
+            @item.ArticleType.ArticleTypeName
         </td>
         <td>
-            @item.User.firstname 
-            @item.User.lastname 
+            @item.User.FirstName 
+            @item.User.LastName 
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ArticleId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ArticleId }) |
-            @Html.ActionLink("Preview", "../Blog/Preview", new { id = item.ArticleId }, new { target = "_blank" })
+            @Html.ActionLink("Preview", "http://www.lisakatherine.com/Blog/Preview", new { id = item.ArticleId }, new { target = "_blank" })
         </td>
     </tr>
         alternating = !alternating;

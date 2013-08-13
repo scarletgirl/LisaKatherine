@@ -21,28 +21,29 @@
 
         public IArticleType Get(int articleTypeId)
         {
-            ArticleTypes articletype =
-                (from a in this.dataModel.ArticleTypes1 where a.articleTypeId == articleTypeId select a).First();
+            ArticleTypeEntity articletype = (from a in this.dataModel.ArticleTypes1 where a.articleTypeId == articleTypeId select a).First();
+
             return new ArticleType(articleTypeId, articletype.articleTypeName, articletype.sectionid);
         }
 
         public IEnumerable<IArticleType> GetList()
         {
-            return
-                this.dataModel.ArticleTypes1.OrderBy(a => a.articleTypeName)
-                    .Select(aT => new ArticleType(aT.articleTypeId, aT.articleTypeName, aT.sectionid))
-                    .ToList();
+            var list = new List<IArticleType>();
+
+            foreach (ArticleTypeEntity a in this.dataModel.ArticleTypes1)
+            {
+                list.Add(new ArticleType(a.articleTypeId, a.articleTypeName, a.sectionid));
+            }
+
+            return list;
         }
 
         public bool Delete(int articleTypeId)
         {
-            IQueryable<Articles> articleList = from a in this.dataModel.Articles1
-                                               where a.articleTypeId == articleTypeId
-                                               select a;
+            IQueryable<ArticleEntity> articleList = from a in this.dataModel.Articles1 where a.articleTypeId == articleTypeId select a;
             if (!articleList.Any())
             {
-                ArticleTypes originalArticleType =
-                    (from at in this.dataModel.ArticleTypes1 where at.articleTypeId == articleTypeId select at).First();
+                ArticleTypeEntity originalArticleType = (from at in this.dataModel.ArticleTypes1 where at.articleTypeId == articleTypeId select at).First();
                 this.dataModel.DeleteObject(originalArticleType);
                 this.dataModel.SaveChanges();
                 return true;
@@ -53,24 +54,24 @@
 
         public void Update(IArticleType articleType)
         {
-            ArticleTypes originalArticleType =
-                (from at in this.dataModel.ArticleTypes1 where at.articleTypeId == articleType.ArticleTypeId select at)
-                    .First();
+            ArticleTypeEntity originalArticleType = (from at in this.dataModel.ArticleTypes1 where at.articleTypeId == articleType.ArticleTypeId select at).First();
 
-            this.dataModel.ApplyCurrentValues(originalArticleType.EntityKey.EntitySetName, articleType);
+            ArticleTypeEntity art = ConvertToEntity(articleType);
+            this.dataModel.ApplyCurrentValues(originalArticleType.EntityKey.EntitySetName, art);
             this.dataModel.SaveChanges();
         }
 
         public void Add(IArticleType articleType)
         {
             this.dataModel.AddToArticleTypes1(
-                new ArticleTypes
-                    {
-                        articleTypeId = articleType.ArticleTypeId,
-                        articleTypeName = articleType.ArticleTypeName,
-                        sectionid = articleType.SectionId
-                    });
+                new ArticleTypeEntity { articleTypeId = articleType.ArticleTypeId, articleTypeName = articleType.ArticleTypeName, sectionid = articleType.SectionId });
             this.dataModel.SaveChanges();
+        }
+
+        private static ArticleTypeEntity ConvertToEntity(IArticleType articleType)
+        {
+            var art = new ArticleTypeEntity { articleTypeId = articleType.ArticleTypeId, articleTypeName = articleType.ArticleTypeName, sectionid = articleType.SectionId };
+            return art;
         }
     }
 }

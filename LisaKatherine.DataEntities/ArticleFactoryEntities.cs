@@ -21,8 +21,7 @@
             this.articleTypeFactory = new ArticleTypeFactoryEntities();
         }
 
-        public ArticleFactoryEntities(
-            LisaKatherineEntities dataModel, IUserFactory userFactory, IArticleTypeFactory articleTypeFactory)
+        public ArticleFactoryEntities(LisaKatherineEntities dataModel, IUserFactory userFactory, IArticleTypeFactory articleTypeFactory)
         {
             this.dataModel = dataModel;
             this.articleTypeFactory = articleTypeFactory;
@@ -31,8 +30,91 @@
 
         public IArticle Get(int articleId)
         {
-            Articles x = (from a in this.dataModel.Articles1 where a.articleId == articleId select a).First();
-            IUser user = null;
+            ArticleEntity x = (from a in this.dataModel.Articles1 where a.articleId == articleId select a).First();
+            return this.SetArticle(articleId, x);
+        }
+
+        public IEnumerable<IArticle> GetList(int orderby)
+        {
+            IOrderedQueryable<ArticleEntity> articleList = this.dataModel.Articles1.OrderBy(a => a.headline);
+            var list = new List<IArticle>();
+            foreach (ArticleEntity a in articleList)
+            {
+                list.Add(this.SetArticle(a.articleId, a));
+            }
+            return list;
+        }
+
+        public void Delete(int articleId)
+        {
+            this.dataModel.DeleteObject(this.Get(articleId));
+        }
+
+        public void Update(IArticle article)
+        {
+            ArticleEntity originalArticle = (from a in this.dataModel.Articles1 where a.articleId == article.ArticleId select a).First();
+
+            this.dataModel.ApplyCurrentValues(originalArticle.EntityKey.EntitySetName, ConvertArticleEntity(article, originalArticle));
+            this.dataModel.SaveChanges();
+        }
+
+        public void Add(IArticle article)
+        {
+            article.DateCreated = DateTime.Now;
+            if (article.User != null)
+            {
+                this.dataModel.AddToArticles1(ConvertArticleEntity(article));
+                this.dataModel.SaveChanges();
+            }
+        }
+
+        public void Publish(IArticle article)
+        {
+            IQueryable<PublishedArticleEntity> originalPublishedArticle = (from pa in this.dataModel.PublishedArticles where pa.articleId == article.ArticleId select pa);
+
+            if (originalPublishedArticle.Any())
+            {
+                this.dataModel.ApplyCurrentValues(originalPublishedArticle.First().EntityKey.EntitySetName, ConvertArticleEntity(article));
+            }
+            else
+            {
+                this.dataModel.AddToPublishedArticles(PublishArticleFactoryEntities.ConvertPublishArticleEntity(article));
+            }
+
+            this.dataModel.SaveChanges();
+        }
+
+        private static ArticleEntity ConvertArticleEntity(IArticle article, ArticleEntity originalArticle = null)
+        {
+            DateTime dc = article.DateCreated;
+            if (originalArticle != null)
+            {
+                dc = originalArticle.dateCreated;
+            }
+
+            DateTime? dp = article.DatePublished;
+            if (originalArticle != null)
+            {
+                dp = originalArticle.datePublished;
+            }
+
+            return new ArticleEntity
+                       {
+                           articleTypeId = article.ArticleTypeId,
+                           articleId = article.ArticleId,
+                           body = article.Body,
+                           headline = article.Headline,
+                           isPublished = article.IsPublished,
+                           dateCreated = dc,
+                           datePublished = dp,
+                           strapline = article.Strapline,
+                           userid = article.User.UserId,
+                       };
+        }
+
+        private IArticle SetArticle(int articleId, ArticleEntity x)
+        {
+            IUser user = new User();
             if (x.userid != null)
             {
                 user = this.userFactory.Get((Guid)x.userid);
@@ -44,94 +126,7 @@
                 articleType = this.articleTypeFactory.Get((int)x.articleTypeId);
             }
 
-            return new Article(
-                x.headline,
-                x.strapline,
-                x.body,
-                x.dateCreated,
-                x.datePublished,
-                x.isPublished,
-                x.articleTypeId,
-                user,
-                articleType) { ArticleId = articleId };
-        }
-
-        public IEnumerable<IArticle> GetList(int orderby)
-        {
-            IOrderedQueryable<Articles> articleList = this.dataModel.Articles1.OrderBy(a => a.headline);
-            return articleList.Select(a => this.Get(a.articleId)).ToList();
-        }
-
-        public void Delete(int articleId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(IArticle article)
-        {
-            Articles originalArticle =
-                (from a in this.dataModel.Articles1 where a.articleId == article.ArticleId select a).First();
-
-            if (originalArticle.datePublished.HasValue)
-            {
-                article.DatePublished = originalArticle.datePublished;
-            }
-            article.DateCreated = originalArticle.dateCreated;
-
-            this.dataModel.ApplyCurrentValues(originalArticle.EntityKey.EntitySetName, article);
-            this.dataModel.SaveChanges();
-        }
-
-        public void Add(IArticle article)
-        {
-            article.DateCreated = DateTime.Now;
-            if (article.User != null)
-            {
-                var a = new Articles
-                            {
-                                articleId = article.ArticleId,
-                                articleTypeId = article.ArticleTypeId,
-                                body = article.Body,
-                                dateCreated = DateTime.Now,
-                                headline = article.Headline,
-                                isPublished = article.IsPublished,
-                                strapline = article.Strapline,
-                                userid = article.User.UserId
-                            };
-
-                this.dataModel.AddToArticles1(a);
-                this.dataModel.SaveChanges();
-            }
-        }
-
-        public void Public(IArticle article)
-        {
-            var articleToPublish = new PublishedArticles
-                                       {
-                                           articleId = article.ArticleId,
-                                           articleTypeId = article.ArticleTypeId,
-                                           body = article.Body,
-                                           headline = article.Headline,
-                                           strapline = article.Strapline,
-                                           userid = article.Userid,
-                                           datePublished = article.DatePublished,
-                                           isPublished = true
-                                       };
-
-            IQueryable<PublishedArticles> originalPublishedArticle =
-                (from pa in this.dataModel.PublishedArticles where pa.articleId == article.ArticleId select pa);
-
-            if (originalPublishedArticle.Any())
-            {
-                this.dataModel.ApplyCurrentValues(
-                    originalPublishedArticle.First().EntityKey.EntitySetName, articleToPublish);
-            }
-            else
-            {
-                this.dataModel.AddToPublishedArticles(articleToPublish);
-            }
-
-            this.dataModel.SaveChanges();
+            return new Article(x.headline, x.strapline, x.body, x.dateCreated, x.datePublished, x.isPublished, x.articleTypeId, user, articleType) { ArticleId = articleId };
         }
     }
 }

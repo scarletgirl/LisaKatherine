@@ -4,7 +4,6 @@
 
     using LisaKatherine.DataEntitiesRepository;
     using LisaKatherine.Interface;
-    using LisaKatherine.Models;
 
     public class ArticleService
     {
@@ -58,7 +57,7 @@
 
         public void PublishArticle(IArticle article)
         {
-            this.articleFactory.Public(article);
+            this.articleFactory.Publish(article);
         }
     }
 }

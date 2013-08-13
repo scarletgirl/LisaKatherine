@@ -13,18 +13,18 @@
     <fieldset>
         <legend>Articles</legend>
         @Html.HiddenFor(model => model.ArticleId)
-        @Html.HiddenFor(model => model.Userid)
+        @Html.HiddenFor(model => model.User.UserId)
         <div class="editor-label">
             Article Type:
         </div>
         <div class="editor-field">
-            @Html.DropDownList("articleTypeId_0")
+            @Html.DropDownList("ArticleTypeId_0")
         </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.DatePublished):
         </div>
         <div class="editor-field">
-            @Html.TextBox("datePublished" , String.Format("{0:dd/MM/yyyy}",Model.DatePublished)) 
+            @Html.TextBox("DatePublished" , String.Format("{0:dd/MM/yyyy}",Model.DatePublished)) 
 
         </div>
         <div class="editor-label">
@@ -57,7 +57,7 @@
         <div class="display-label">
             Author:
         </div>
-        <div class="display-field">@Model.User.firstname @Model.User.lastname</div>
+        <div class="display-field">@Model.User.FirstName @Model.User.LastName</div>
         <p>
             <input type="submit" class="btn" value="Save" name="submitButton" />
             <input type="submit" class="btn" value="Save & Publish" name="submitButton" />

@@ -1,4 +1,4 @@
-﻿@model LisaKatherine.Models.ArticleTypes
+﻿@model LisaKatherine.Interface.ArticleType
 
 @{
     ViewBag.Title = "Create";
@@ -16,11 +16,11 @@
         <legend>Article Type</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.articleTypeName)
+            @Html.LabelFor(model => model.ArticleTypeName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.articleTypeName)
-            @Html.ValidationMessageFor(model => model.articleTypeName)
+            @Html.EditorFor(model => model.ArticleTypeName)
+            @Html.ValidationMessageFor(model => model.ArticleTypeName)
         </div>
 
         <p>

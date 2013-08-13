@@ -28,9 +28,8 @@
             return this.userFactory.GetList();
         }
 
-        public IUser CreateUser(string username, string firstname, string lastname, string password)
+        public IUser CreateUser(IUser user)
         {
-            var user = new User(Guid.NewGuid(), username, password, firstname, lastname);
             this.userFactory.Add(user);
             return user;
         }
@@ -52,22 +51,13 @@
 
         public IUser AuthenticateUser(string username, string password)
         {
-            IEnumerable<IUser> users =
-                (from u in this.GetList() where u.Username == username && u.Password == password select u);
+            IEnumerable<IUser> users = (from u in this.GetList() where u.Username == username && u.Password == password select u);
             if (users.Any())
             {
                 IUser user = users.First();
-                var authTicket = new FormsAuthenticationTicket(
-                    1, user.Username, DateTime.Now, DateTime.Now.AddMinutes(400), true, user.UserId.ToString());
+                var authTicket = new FormsAuthenticationTicket(1, user.Username, DateTime.Now, DateTime.Now.AddMinutes(400), true, user.UserId.ToString());
                 string encryptedticket = FormsAuthentication.Encrypt(authTicket);
-                var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedticket)
-                                     {
-                                         Expires =
-                                             DateTime
-                                             .Now
-                                             .AddHours(
-                                                 4)
-                                     };
+                var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedticket) { Expires = DateTime.Now.AddHours(4) };
                 HttpContext.Current.Response.Cookies.Add(authCookie);
 
                 return user;

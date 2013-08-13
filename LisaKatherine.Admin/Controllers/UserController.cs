@@ -11,7 +11,6 @@
     {
         private readonly UserService userService = new UserService();
 
-        [Authorize]
         public ActionResult Index()
         {
             IEnumerable<IUser> users = this.userService.GetList();
@@ -26,11 +25,11 @@
 
         [Authorize]
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Create([Bind(Exclude = "UserId")] IUser user)
+        public ActionResult Create([Bind(Exclude = "UserId")] User user)
         {
             try
             {
-                this.userService.CreateUser(user.Username, user.FirstName, user.LastName, user.Password);
+                this.userService.CreateUser(user);
 
                 return this.RedirectToAction("Index");
             }
@@ -49,22 +48,14 @@
 
         [Authorize]
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Edit(IUser user)
+        public ActionResult Edit(User user)
         {
-            try
+            if (this.ModelState.IsValid)
             {
-                if (this.ModelState.IsValid)
-                {
-                    this.userService.EditUser(user);
-                }
-
-                return this.RedirectToAction("Index");
+                this.userService.EditUser(user);
             }
 
-            catch
-            {
-                return this.View();
-            }
+            return this.RedirectToAction("Index");
         }
 
         [Authorize]
