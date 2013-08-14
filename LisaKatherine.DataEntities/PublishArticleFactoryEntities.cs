@@ -30,8 +30,8 @@
 
         public IArticle Get(int articleId)
         {
-            PublishedArticleEntity x = (from a in this.dataModel.PublishedArticles where a.articleId == articleId select a).First();
-            return this.SetArticle(articleId, x);
+            PublishedArticleEntity articleEntity = (from a in this.dataModel.PublishedArticles where a.articleId == articleId select a).First();
+            return this.SetArticle(articleId, articleEntity);
         }
 
         public IEnumerable<IArticle> GetList(int orderby)
@@ -43,12 +43,14 @@
             {
                 list.Add(this.SetArticle(a.articleId, a));
             }
-            return articleList.Select(a => this.Get(a.articleId)).ToList();
+            return list;
         }
 
         public void Delete(int articleId)
         {
-            this.dataModel.DeleteObject(this.Get(articleId));
+            PublishedArticleEntity articleEntity = (from a in this.dataModel.PublishedArticles where a.articleId == articleId select a).First();
+            this.dataModel.DeleteObject(articleEntity);
+            this.dataModel.SaveChanges();
         }
 
         public void Update(IArticle article)

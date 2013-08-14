@@ -153,7 +153,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\App_LocalResources\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Contact.cshtml" />
@@ -171,6 +170,10 @@
     <Content Include="Views\Shared\_BlogFeed.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LisaKatherine.DataEntities\LisaKatherine.DataEntitiesRepository.csproj">
+      <Project>{008b224d-b96c-460b-a72e-974f354408c8}</Project>
+      <Name>LisaKatherine.DataEntitiesRepository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LisaKatherine.Repository\LisaKatherine.Interface.csproj">
       <Project>{403e9f91-0aa6-437a-9bf4-be55ba665eaa}</Project>
       <Name>LisaKatherine.Interface</Name>

@@ -47,7 +47,10 @@
 
         public void Delete(int articleId)
         {
-            this.dataModel.DeleteObject(this.Get(articleId));
+            ArticleEntity articleEntity = (from a in this.dataModel.Articles1 where a.articleId == articleId select a).First();
+
+            this.dataModel.DeleteObject(articleEntity);
+            this.dataModel.SaveChanges();
         }
 
         public void Update(IArticle article)

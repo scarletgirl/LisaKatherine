@@ -25,7 +25,7 @@
         {
             if (id == null)
             {
-                id = 0;
+                id = 1;
             }
             this.ViewBag.HeadlineSortParm = String.IsNullOrEmpty(sortOrder) ? "headline desc" : "";
             this.ViewBag.CreatedSortParm = sortOrder == "dateCreated" ? "dateCreated desc" : "dateCreated";
@@ -88,7 +88,10 @@
                                       .ToInt32(
                                           form[
                                               "ArticleId"
-                                      ])
+                                      ]),
+                                  Userid =
+                                      user
+                                      .UserId
                               };
             this.Publish(form, submitButton, article);
 

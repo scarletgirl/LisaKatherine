@@ -14,16 +14,16 @@ C:\Users\Red 2\LKB\LisaKatherine\obj\Debug\LisaKatherine.dll
 C:\Users\Red 2\LKB\LisaKatherine\obj\Debug\LisaKatherine.pdb
 S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.dll
 S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.pdb
+S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.DataEntitiesRepository.dll
 S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.Interface.dll
 S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.Services.dll
 S:\LisaKatherine\LisaKatherine\bin\MvcPager.dll
 S:\LisaKatherine\LisaKatherine\bin\oAuthTwitterWrapper.dll
-S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.DataEntitiesRepository.dll
 S:\LisaKatherine\LisaKatherine\bin\Newtonsoft.Json.dll
+S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.DataEntitiesRepository.pdb
 S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.Interface.pdb
 S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.Services.pdb
 S:\LisaKatherine\LisaKatherine\bin\MvcPager.pdb
-S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.DataEntitiesRepository.pdb
 S:\LisaKatherine\LisaKatherine\bin\Newtonsoft.Json.xml
 S:\LisaKatherine\LisaKatherine\obj\Debug\LisaKatherine.csprojResolveAssemblyReference.cache
 S:\LisaKatherine\LisaKatherine\obj\Debug\LisaKatherine.dll

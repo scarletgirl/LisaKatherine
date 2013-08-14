@@ -1,5 +1,6 @@
 ﻿namespace LisaKatherine.Services
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -28,8 +29,7 @@
 
         public IPublishedArticle GetPublishedArticle(int id)
         {
-            IArticle article =
-                (from a in this.publishedArticleFactory.GetList(0) where a.ArticleId == id select a).First();
+            IArticle article = (from a in this.publishedArticleFactory.GetList(0) where a.ArticleId == id select a).First();
 
             return this.ExtendPublishedArticle(article);
         }
@@ -37,10 +37,7 @@
         public IPublishedArticle GetArticleByArticleType(int articleTypeId)
         {
             IArticle article = null;
-            IEnumerable<IArticle> articles = (from a in this.publishedArticleFactory.GetList(0)
-                                                             where a.ArticleTypeId == articleTypeId
-                                                             orderby a.DatePublished descending
-                                                             select a);
+            IEnumerable<IArticle> articles = (from a in this.publishedArticleFactory.GetList(0) where a.ArticleTypeId == articleTypeId orderby a.DatePublished descending select a);
             if (articles.Any())
             {
                 article = articles.First();
@@ -58,7 +55,7 @@
         public IEnumerable<IPublishedArticle> GetPublishedList(int articleTypeId)
         {
             var articleList = new List<IPublishedArticle>();
-            foreach (var article in publishedArticleFactory.GetList(0))
+            foreach (IArticle article in this.publishedArticleFactory.GetList(0))
             {
                 article.Body = Utils.GetSummary(Utils.StripHtml(article.Body), 255);
                 articleList.Add(this.ExtendPublishedArticle(article));
@@ -87,11 +84,16 @@
 
         private IPublishedArticle ExtendPublishedArticle(IArticle article)
         {
-            article.User = (from u in this.userService.GetList() where u.UserId == article.Userid select u).First();
-            article.ArticleType =
-                (from at in new ArticleTypeService().GetArticleTypesList()
-                 where at.ArticleTypeId == article.ArticleTypeId
-                 select at).First();
+            try
+            {
+                article.User = (from u in this.userService.GetList() where u.UserId == article.Userid select u).First();
+            }
+            catch (Exception)
+            {
+                article.User = new User();
+            }
+
+            article.ArticleType = (from at in new ArticleTypeService().GetArticleTypesList() where at.ArticleTypeId == article.ArticleTypeId select at).First();
 
             var publishedArticle = new PublishedArticle(
                 article.Headline,
@@ -105,9 +107,7 @@
                 article.ArticleType)
                                        {
                                            Description = Utils.GetSummary(Utils.StripHtml(article.Body), 255),
-                                           Url =
-                                               string.Format(
-                                                   "{0}/{1}", Utils.StripInvalid(article.Headline), article.ArticleId)
+                                           Url = string.Format("{0}/{1}", Utils.StripInvalid(article.Headline), article.ArticleId)
                                        };
 
             return publishedArticle;

@@ -1,4 +1,4 @@
-﻿namespace LisaKatherine.Controllers
+﻿namespace LisaKatherine.Admin.Controllers
 {
     using System;
     using System.Collections.Generic;
@@ -10,16 +10,14 @@
 
     public class ArticleTypeController : Controller
     {
-        private readonly ArticleTypeService _articleTypeService = new ArticleTypeService();
+        private readonly ArticleTypeService articleTypeService = new ArticleTypeService();
 
         [Authorize]
         public ActionResult Index(string sortOrder)
         {
-            IEnumerable<IArticleType> articleTypes = this._articleTypeService.GetArticleTypesList();
+            IEnumerable<IArticleType> articleTypes = this.articleTypeService.GetArticleTypesList();
             this.ViewBag.IdSortParm = String.IsNullOrEmpty(sortOrder) ? "articleTypeId desc" : "";
-            this.ViewBag.ArticleTypeSortParm = sortOrder == "articleTypeName"
-                                                   ? "articleTypeName desc"
-                                                   : "articleTypeName";
+            this.ViewBag.ArticleTypeSortParm = sortOrder == "articleTypeName" ? "articleTypeName desc" : "articleTypeName";
 
             switch (sortOrder)
             {
@@ -37,7 +35,7 @@
                     articleTypes = articleTypes.OrderBy(a => a.ArticleTypeId);
                     break;
             }
-            return View(articleTypes);
+            return this.View(articleTypes);
         }
 
         [Authorize]
@@ -48,19 +46,19 @@
 
         [Authorize]
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Create(IArticleType articleType)
+        public ActionResult Create(ArticleType articleType)
         {
-            this._articleTypeService.CreateArticleType(articleType);
+            this.articleTypeService.CreateArticleType(articleType);
             return this.RedirectToAction("Index");
         }
 
         [Authorize]
         public ActionResult Edit(int id)
         {
-            IArticleType articleType = this._articleTypeService.GetArticleType(id);
+            IArticleType articleType = this.articleTypeService.GetArticleType(id);
             if (articleType != null)
             {
-                return View(articleType);
+                return this.View(articleType);
             }
             else
             {
@@ -70,25 +68,23 @@
 
         [Authorize]
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Edit(IArticleType articleType)
+        public ActionResult Edit(ArticleType articleType)
         {
-            this._articleTypeService.EditArticleType(articleType);
+            this.articleTypeService.EditArticleType(articleType);
             return this.RedirectToAction("Index");
         }
 
         [Authorize]
         public ActionResult Delete(int id)
         {
-            Boolean deleted = this._articleTypeService.DeleteArticleType(id);
+            Boolean deleted = this.articleTypeService.DeleteArticleType(id);
             if (deleted)
             {
                 return this.RedirectToAction("Index");
             }
-            else
-            {
-                IArticleType articleType = this._articleTypeService.GetArticleType(id);
-                return View(articleType);
-            }
+
+            IArticleType articleType = this.articleTypeService.GetArticleType(id);
+            return this.View(articleType);
         }
     }
 }

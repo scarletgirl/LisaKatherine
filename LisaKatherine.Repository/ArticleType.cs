@@ -2,6 +2,10 @@
 {
     public class ArticleType : IArticleType
     {
+        public ArticleType()
+        {
+        }
+
         public ArticleType(int articleTypeId, string articleTypeName, int? sectionId)
         {
             this.SectionId = sectionId;

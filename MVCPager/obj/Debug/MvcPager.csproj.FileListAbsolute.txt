@@ -13,6 +13,5 @@ S:\LisaKatherine\MVCPager\bin\Debug\MvcPager.pdb
 S:\LisaKatherine\MVCPager\bin\Debug\Moq.dll
 S:\LisaKatherine\MVCPager\bin\Debug\Moq.pdb
 S:\LisaKatherine\MVCPager\bin\Debug\Moq.xml
-S:\LisaKatherine\MVCPager\obj\Debug\MvcPager.csprojResolveAssemblyReference.cache
 S:\LisaKatherine\MVCPager\obj\Debug\MvcPager.dll
 S:\LisaKatherine\MVCPager\obj\Debug\MvcPager.pdb
