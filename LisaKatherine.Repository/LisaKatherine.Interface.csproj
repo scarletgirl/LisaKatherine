@@ -53,6 +53,8 @@
     <Compile Include="FacebookUser.cs" />
     <Compile Include="IContactArticle.cs" />
     <Compile Include="IFacebookUser.cs" />
+    <Compile Include="ITweet.cs" />
+    <Compile Include="ITwitter.cs" />
     <Compile Include="Photo.cs" />
     <Compile Include="IArticle.cs" />
     <Compile Include="IArticleFactory.cs" />
@@ -68,6 +70,8 @@
     <Compile Include="PhotoSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublishedArticle.cs" />
+    <Compile Include="Tweet.cs" />
+    <Compile Include="Twitter.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>

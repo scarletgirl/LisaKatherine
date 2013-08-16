@@ -5,3 +5,4 @@ S:\LisaKatherine\LisaKatherine.Repository\bin\Debug\Moq.pdb
 S:\LisaKatherine\LisaKatherine.Repository\bin\Debug\Moq.xml
 S:\LisaKatherine\LisaKatherine.Repository\obj\Debug\LisaKatherine.Interface.dll
 S:\LisaKatherine\LisaKatherine.Repository\obj\Debug\LisaKatherine.Interface.pdb
+S:\LisaKatherine\LisaKatherine.Repository\obj\Debug\LisaKatherine.Interface.csprojResolveAssemblyReference.cache

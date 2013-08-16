@@ -1,4 +1,4 @@
-﻿@model List<Tweet>
+﻿@model List<LisaKatherine.Interface.Tweet>
 <div id="Twitter">
     <div class="top">       
     </div>
@@ -10,7 +10,7 @@
                 <ul id="twitter_update_list">
 @foreach(var item in Model)
 {
-    @item.Description;
+    @item.Text;
                <br/><br/><br/>
 }
                         

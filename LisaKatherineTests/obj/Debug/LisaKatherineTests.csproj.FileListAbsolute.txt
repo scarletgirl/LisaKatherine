@@ -28,3 +28,4 @@ S:\LisaKatherine\LisaKatherineTests\bin\Debug\MvcPager.pdb
 S:\LisaKatherine\LisaKatherineTests\obj\Debug\LisaKatherineTests.csprojResolveAssemblyReference.cache
 S:\LisaKatherine\LisaKatherineTests\obj\Debug\LisaKatherineTests.dll
 S:\LisaKatherine\LisaKatherineTests\obj\Debug\LisaKatherineTests.pdb
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\Resources\tweets.txt
