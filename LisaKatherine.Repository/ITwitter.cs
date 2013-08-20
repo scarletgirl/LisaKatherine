@@ -10,8 +10,10 @@
 
         string Description { get; set; }
 
-        List<Tweet> Tweets { get; set; }
+        IEnumerable<ITweet> Tweets { get; set; }
 
         long UserId { get; set; }
+
+        string ScreenName { get; set; }
     }
 }

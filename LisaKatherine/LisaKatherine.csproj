@@ -158,7 +158,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_TwitterFeed.cshtml" />
+    <Content Include="Views\Shared\TwitterFeed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Blog\Index.cshtml" />

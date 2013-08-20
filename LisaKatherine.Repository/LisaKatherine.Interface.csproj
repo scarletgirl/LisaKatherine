@@ -55,6 +55,9 @@
     <Compile Include="IFacebookUser.cs" />
     <Compile Include="ITweet.cs" />
     <Compile Include="ITwitter.cs" />
+    <Compile Include="ITwitterHashTag.cs" />
+    <Compile Include="ITwitterMention.cs" />
+    <Compile Include="ITwitterUrl.cs" />
     <Compile Include="Photo.cs" />
     <Compile Include="IArticle.cs" />
     <Compile Include="IArticleFactory.cs" />
@@ -72,6 +75,9 @@
     <Compile Include="PublishedArticle.cs" />
     <Compile Include="Tweet.cs" />
     <Compile Include="Twitter.cs" />
+    <Compile Include="TwitterHashTag.cs" />
+    <Compile Include="TwitterMention.cs" />
+    <Compile Include="TwitterUrl.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>

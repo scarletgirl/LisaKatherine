@@ -2,7 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
+    using System.Linq;
 
     using LisaKatherine.Interface;
     using LisaKatherine.Services;
@@ -17,29 +17,6 @@
     {
         [TestMethod]
         public void GetTwitterResponse()
-        {
-            var t = new TwitterService();
-            string json = t.GetTimeLine();
-
-            var reader = new JsonTextReader(new StringReader(json));
-            string s = string.Empty;
-            while (reader.Read())
-            {
-                if (reader.Value != null)
-                {
-                    s += string.Format("<{0} = {1}\n", reader.TokenType, reader.Value);
-                }
-                else
-                {
-                    s += string.Format("{0}\n", reader.TokenType);
-                }
-            }
-
-            Assert.IsNotNull(s);
-        }
-
-        [TestMethod]
-        public void GetTwitterResponse2()
         {
             var t = new TwitterService();
             string json = t.GetTimeLine();
@@ -75,6 +52,21 @@
             Assert.AreEqual(365761998572630016, tweet.TweetId);
             Assert.AreEqual("The Red Balloons http://t.co/qobDs201XJ", tweet.Text);
             Assert.AreEqual(DateTime.Parse("09/08/2013 10:10:30"), tweet.CreatedAt);
+        }
+
+        [TestMethod]
+        public void GetTwitter()
+        {
+            string tweetString = Utils.GetFileContents("tweets.txt");
+            var t = new TwitterService();
+            var twitter = t.GetTwitter(tweetString);
+
+            Assert.AreEqual("Heading to single middle age at a depressingly faster pace!", twitter.Description);
+            Assert.AreEqual("scarlet_girl", twitter.ScreenName);
+            Assert.AreEqual("http://twitter.com/scarlet_girl", twitter.Link);
+            Assert.AreEqual("Lisa Katherine", twitter.Title);
+            Assert.AreEqual(3, twitter.Tweets.Count());
+            Assert.AreEqual(19838040, twitter.UserId);
         }
     }
 }
