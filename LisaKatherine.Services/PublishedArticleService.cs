@@ -1,6 +1,5 @@
 ﻿namespace LisaKatherine.Services
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -55,7 +54,7 @@
         public IEnumerable<IPublishedArticle> GetPublishedList(int articleTypeId)
         {
             var articleList = new List<IPublishedArticle>();
-            foreach (IArticle article in this.publishedArticleFactory.GetList(0))
+            foreach (IArticle article in this.publishedArticleFactory.GetList(0, articleTypeId))
             {
                 article.Body = Utils.GetSummary(Utils.StripHtml(article.Body), 255);
                 articleList.Add(this.ExtendPublishedArticle(article));
@@ -84,15 +83,6 @@
 
         private IPublishedArticle ExtendPublishedArticle(IArticle article)
         {
-            try
-            {
-                article.User = (from u in this.userService.GetList() where u.UserId == article.Userid select u).First();
-            }
-            catch (Exception)
-            {
-                article.User = new User();
-            }
-
             article.ArticleType = (from at in new ArticleTypeService().GetArticleTypesList() where at.ArticleTypeId == article.ArticleTypeId select at).First();
 
             var publishedArticle = new PublishedArticle(
@@ -106,6 +96,7 @@
                 article.User,
                 article.ArticleType)
                                        {
+                                           ArticleId = article.ArticleId,
                                            Description = Utils.GetSummary(Utils.StripHtml(article.Body), 255),
                                            Url = string.Format("{0}/{1}", Utils.StripInvalid(article.Headline), article.ArticleId)
                                        };

@@ -6,7 +6,7 @@
     <div class="blogImage"><img src="@ViewBag.Image" /></div>
     <div class="date">@String.Format("{0:dddd d MMMM yyyy}", Model.DatePublished)</div>
     
-    <div class="articlebody">@Html.Raw(@Model.Body) @Html.ActionLink("Read More...", "../Blog/Details/" + Model.Url, new { id = Model.ArticleId }, new { @class = "readMore" })</div>
+    <div class="articlebody">@Html.Raw(@Model.Body) @Html.ActionLink("Read More...", "../Blog/Details/" + Model.Headline.Replace(" ", "_"), new { id = Model.ArticleId }, new { @class = "readMore" })</div>
 </div>
 <br />
 <br />

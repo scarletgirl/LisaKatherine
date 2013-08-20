@@ -34,9 +34,10 @@
             return this.SetArticle(articleId, articleEntity);
         }
 
-        public IEnumerable<IArticle> GetList(int orderby)
+        public IEnumerable<IArticle> GetList(int orderby, int articleTypeId = 0)
         {
-            IOrderedQueryable<PublishedArticleEntity> articleList = this.dataModel.PublishedArticles.OrderBy(a => a.headline);
+            IOrderedQueryable<PublishedArticleEntity> articleList =
+                this.dataModel.PublishedArticles.Where(a => a.articleTypeId == articleTypeId || articleTypeId == 0).OrderByDescending(a => a.datePublished);
             var list = new List<IArticle>();
 
             foreach (PublishedArticleEntity a in articleList)
