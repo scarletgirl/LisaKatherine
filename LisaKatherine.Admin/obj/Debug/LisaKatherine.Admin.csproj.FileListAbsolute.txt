@@ -1,15 +1,3 @@
-C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.Admin.dll
-C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.Admin.pdb
-C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\EntityFramework.dll
-C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.dll
-C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\MvcPager.dll
-C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\Facebook.dll
-C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.pdb
-C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\MvcPager.pdb
-C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\EntityFramework.xml
-C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.dll
-C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.pdb
 S:\LisaKatherine\LisaKatherine.Admin\bin\LisaKatherine.Admin.dll
 S:\LisaKatherine\LisaKatherine.Admin\bin\LisaKatherine.Admin.pdb
 S:\LisaKatherine\LisaKatherine.Admin\bin\LisaKatherine.DataEntitiesRepository.dll
@@ -26,3 +14,19 @@ S:\LisaKatherine\LisaKatherine.Admin\bin\Newtonsoft.Json.xml
 S:\LisaKatherine\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.csprojResolveAssemblyReference.cache
 S:\LisaKatherine\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.dll
 S:\LisaKatherine\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.Admin.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.Admin.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.Interface.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.Services.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\MvcPager.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\oAuthTwitterWrapper.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\Newtonsoft.Json.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.DataEntitiesRepository.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.Interface.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.Services.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\MvcPager.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\Newtonsoft.Json.xml
+C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.DataEntitiesRepository.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.csprojResolveAssemblyReference.cache
+C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.dll
+C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.pdb

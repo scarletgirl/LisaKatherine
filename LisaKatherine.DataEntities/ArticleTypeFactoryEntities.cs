@@ -21,7 +21,7 @@
 
         public IArticleType Get(int articleTypeId)
         {
-            ArticleTypeEntity articletype = (from a in this.dataModel.ArticleTypes1 where a.articleTypeId == articleTypeId select a).First();
+            ArticleTypeEntity articletype = (from a in this.dataModel.ArticleTypeEntity where a.articleTypeId == articleTypeId select a).First();
 
             return new ArticleType(articleTypeId, articletype.articleTypeName, articletype.sectionid);
         }
@@ -30,7 +30,7 @@
         {
             var list = new List<IArticleType>();
 
-            foreach (ArticleTypeEntity a in this.dataModel.ArticleTypes1)
+            foreach (ArticleTypeEntity a in this.dataModel.ArticleTypeEntity)
             {
                 list.Add(new ArticleType(a.articleTypeId, a.articleTypeName, a.sectionid));
             }
@@ -40,10 +40,10 @@
 
         public bool Delete(int articleTypeId)
         {
-            IQueryable<ArticleEntity> articleList = from a in this.dataModel.Articles1 where a.articleTypeId == articleTypeId select a;
+            IQueryable<ArticleEntity> articleList = from a in this.dataModel.ArticleEntity where a.articleTypeId == articleTypeId select a;
             if (!articleList.Any())
             {
-                ArticleTypeEntity originalArticleType = (from at in this.dataModel.ArticleTypes1 where at.articleTypeId == articleTypeId select at).First();
+                ArticleTypeEntity originalArticleType = (from at in this.dataModel.ArticleTypeEntity where at.articleTypeId == articleTypeId select at).First();
                 this.dataModel.DeleteObject(originalArticleType);
                 this.dataModel.SaveChanges();
                 return true;
@@ -54,7 +54,7 @@
 
         public void Update(IArticleType articleType)
         {
-            ArticleTypeEntity originalArticleType = (from at in this.dataModel.ArticleTypes1 where at.articleTypeId == articleType.ArticleTypeId select at).First();
+            ArticleTypeEntity originalArticleType = (from at in this.dataModel.ArticleTypeEntity where at.articleTypeId == articleType.ArticleTypeId select at).First();
 
             ArticleTypeEntity art = ConvertToEntity(articleType);
             this.dataModel.ApplyCurrentValues(originalArticleType.EntityKey.EntitySetName, art);
@@ -63,7 +63,7 @@
 
         public void Add(IArticleType articleType)
         {
-            this.dataModel.AddToArticleTypes1(
+            this.dataModel.AddToArticleTypeEntity(
                 new ArticleTypeEntity { articleTypeId = articleType.ArticleTypeId, articleTypeName = articleType.ArticleTypeName, sectionid = articleType.SectionId });
             this.dataModel.SaveChanges();
         }

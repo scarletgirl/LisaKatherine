@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="LisaKatherineModelStoreContainer" CdmEntityContainer="LisaKatherineEntities">
-    <EntitySetMapping Name="Articles1">
-      <EntityTypeMapping TypeName="LisaKatherineModel.Articles">
+    <EntitySetMapping Name="ArticleEntity">
+      <EntityTypeMapping TypeName="LisaKatherineModel.ArticleEntity">
         <MappingFragment StoreEntitySet="tblArticle">
           <ScalarProperty Name="articleTypeId" ColumnName="articleTypeId" />
           <ScalarProperty Name="articleId" ColumnName="articleId" />
@@ -29,8 +29,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Users1">
-      <EntityTypeMapping TypeName="LisaKatherineModel.Users">
+    <EntitySetMapping Name="UserEntity">
+      <EntityTypeMapping TypeName="LisaKatherineModel.UserEntity">
         <MappingFragment StoreEntitySet="tblUsers">
           <ScalarProperty Name="userId" ColumnName="userId" />
           <ScalarProperty Name="username" ColumnName="username" />
@@ -40,8 +40,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ArticleTypes1">
-      <EntityTypeMapping TypeName="LisaKatherineModel.ArticleTypes">
+    <EntitySetMapping Name="ArticleTypeEntity">
+      <EntityTypeMapping TypeName="LisaKatherineModel.ArticleTypeEntity">
         <MappingFragment StoreEntitySet="tblArticleType">
           <ScalarProperty Name="sectionid" ColumnName="sectionid" />
           <ScalarProperty Name="articleTypeName" ColumnName="articleType" />
@@ -49,8 +49,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PublishedArticles">
-      <EntityTypeMapping TypeName="LisaKatherineModel.PublishedArticles">
+    <EntitySetMapping Name="PublishedArticleEntity">
+      <EntityTypeMapping TypeName="LisaKatherineModel.PublishedArticleEntity">
         <MappingFragment StoreEntitySet="tblArticlePublished">
           <ScalarProperty Name="articleTypeId" ColumnName="articleTypeId" />
           <ScalarProperty Name="userid" ColumnName="userid" />

@@ -25,7 +25,7 @@
         {
             try
             {
-                UserEntity user = (from u in this.dataModel.Users1 where u.userId == userId select u).First();
+                UserEntity user = (from u in this.dataModel.UserEntity where u.userId == userId select u).First();
                 return new User(userId, user.username, user.password, user.firstname, user.lastname);
             }
             catch (Exception)
@@ -37,7 +37,7 @@
 
         public IEnumerable<IUser> GetList()
         {
-            ObjectSet<UserEntity> users = this.dataModel.Users1;
+            ObjectSet<UserEntity> users = this.dataModel.UserEntity;
             var list = new List<IUser>();
             foreach (UserEntity u in users)
             {
@@ -48,7 +48,7 @@
 
         public void Update(IUser user)
         {
-            UserEntity originalUser = (from u in this.dataModel.Users1 where u.userId == user.UserId select u).First();
+            UserEntity originalUser = (from u in this.dataModel.UserEntity where u.userId == user.UserId select u).First();
 
             this.dataModel.ApplyCurrentValues(originalUser.EntityKey.EntitySetName, this.ConvertToUserEntity(user));
             this.dataModel.SaveChanges();
@@ -57,7 +57,7 @@
         public void Add(IUser user)
         {
             user.UserId = Guid.NewGuid();
-            this.dataModel.AddToUsers1(
+            this.dataModel.AddToUserEntity(
                 new UserEntity { firstname = user.FirstName, lastname = user.LastName, password = user.Password, userId = user.UserId, username = user.Username });
 
             this.dataModel.SaveChanges();
@@ -65,7 +65,7 @@
 
         public void Delete(Guid userId)
         {
-            this.dataModel.DeleteObject((from u in this.dataModel.Users1 where u.userId == userId select u).First());
+            this.dataModel.DeleteObject((from u in this.dataModel.UserEntity where u.userId == userId select u).First());
             this.dataModel.SaveChanges();
         }
 

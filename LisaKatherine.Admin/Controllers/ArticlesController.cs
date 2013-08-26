@@ -178,13 +178,13 @@
 
         private void Publish(FormCollection form, string submitButton, Article article)
         {
+            this.articleService.EditArticle(article);
             if (submitButton.Contains("Publish"))
             {
                 article.DatePublished = GetDatePublished(form);
                 article.IsPublished = true;
                 this.articleService.PublishArticle(article);
             }
-            this.articleService.EditArticle(article);
         }
     }
 }
