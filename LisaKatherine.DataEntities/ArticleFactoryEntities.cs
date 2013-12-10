@@ -30,13 +30,13 @@
 
         public IArticle Get(int articleId)
         {
-            ArticleEntity x = (from a in this.dataModel.Articles1 where a.articleId == articleId select a).First();
+            ArticleEntity x = (from a in this.dataModel.ArticleEntity where a.articleId == articleId select a).First();
             return this.SetArticle(articleId, x);
         }
 
         public IEnumerable<IArticle> GetList(int orderby, int articleTypeId = 0)
         {
-            IOrderedQueryable<ArticleEntity> articleList = this.dataModel.Articles1.Where(a => a.articleTypeId == articleTypeId || articleTypeId == 0).OrderBy(a => a.headline);
+            IOrderedQueryable<ArticleEntity> articleList = this.dataModel.ArticleEntity.Where(a => a.articleTypeId == articleTypeId || articleTypeId == 0).OrderBy(a => a.headline);
             var list = new List<IArticle>();
             foreach (ArticleEntity a in articleList)
             {
@@ -47,7 +47,7 @@
 
         public void Delete(int articleId)
         {
-            ArticleEntity articleEntity = (from a in this.dataModel.Articles1 where a.articleId == articleId select a).First();
+            ArticleEntity articleEntity = (from a in this.dataModel.ArticleEntity where a.articleId == articleId select a).First();
 
             this.dataModel.DeleteObject(articleEntity);
             this.dataModel.SaveChanges();
@@ -55,7 +55,7 @@
 
         public void Update(IArticle article)
         {
-            ArticleEntity originalArticle = (from a in this.dataModel.Articles1 where a.articleId == article.ArticleId select a).First();
+            ArticleEntity originalArticle = (from a in this.dataModel.ArticleEntity where a.articleId == article.ArticleId select a).First();
 
             this.dataModel.ApplyCurrentValues(originalArticle.EntityKey.EntitySetName, ConvertArticleEntity(article, originalArticle));
             this.dataModel.SaveChanges();
@@ -66,22 +66,22 @@
             article.DateCreated = DateTime.Now;
             if (article.User != null)
             {
-                this.dataModel.AddToArticles1(ConvertArticleEntity(article));
+                this.dataModel.AddToArticleEntity(ConvertArticleEntity(article));
                 this.dataModel.SaveChanges();
             }
         }
 
         public void Publish(IArticle article)
         {
-            IQueryable<PublishedArticleEntity> originalPublishedArticle = (from pa in this.dataModel.PublishedArticles where pa.articleId == article.ArticleId select pa);
+            IQueryable<PublishedArticleEntity> originalPublishedArticle = (from pa in this.dataModel.PublishedArticleEntity where pa.articleId == article.ArticleId select pa);
 
             if (originalPublishedArticle.Any())
             {
-                this.dataModel.ApplyCurrentValues(originalPublishedArticle.First().EntityKey.EntitySetName, ConvertArticleEntity(article));
+                this.dataModel.ApplyCurrentValues(originalPublishedArticle.First().EntityKey.EntitySetName, PublishArticleFactoryEntities.ConvertPublishArticleEntity(article));
             }
             else
             {
-                this.dataModel.AddToPublishedArticles(PublishArticleFactoryEntities.ConvertPublishArticleEntity(article));
+                this.dataModel.AddToPublishedArticleEntity(PublishArticleFactoryEntities.ConvertPublishArticleEntity(article));
             }
 
             this.dataModel.SaveChanges();

@@ -13,3 +13,18 @@ S:\LisaKatherine\LisaKatherine.Services\bin\Debug\Newtonsoft.Json.xml
 S:\LisaKatherine\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.csprojResolveAssemblyReference.cache
 S:\LisaKatherine\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.dll
 S:\LisaKatherine\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.csprojResolveAssemblyReference.cache
+C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\LisaKatherine.Services.dll.config
+C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\LisaKatherine.Services.dll
+C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\LisaKatherine.Services.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\LisaKatherine.DataEntitiesRepository.dll
+C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\LisaKatherine.Interface.dll
+C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\MvcPager.dll
+C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\oAuthTwitterWrapper.dll
+C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\LisaKatherine.DataEntitiesRepository.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\LisaKatherine.Interface.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\MvcPager.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Red 2\LKB\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.dll
+C:\Users\Red 2\LKB\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.pdb

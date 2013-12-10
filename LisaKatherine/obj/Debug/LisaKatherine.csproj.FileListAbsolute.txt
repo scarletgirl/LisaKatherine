@@ -5,13 +5,6 @@ J:\WorkProjects\LisaKatherine\LisaKatherine\obj\Debug\LisaKatherine.dll
 J:\WorkProjects\LisaKatherine\LisaKatherine\obj\Debug\LisaKatherine.pdb
 J:\WorkProjects\LisaKatherine\LisaKatherine\bin\MvcPager.dll
 J:\WorkProjects\LisaKatherine\LisaKatherine\bin\MvcPager.pdb
-C:\Users\Red 2\LKB\LisaKatherine\bin\LisaKatherine.dll
-C:\Users\Red 2\LKB\LisaKatherine\bin\LisaKatherine.pdb
-C:\Users\Red 2\LKB\LisaKatherine\bin\MvcPager.dll
-C:\Users\Red 2\LKB\LisaKatherine\bin\MvcPager.pdb
-C:\Users\Red 2\LKB\LisaKatherine\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Red 2\LKB\LisaKatherine\obj\Debug\LisaKatherine.dll
-C:\Users\Red 2\LKB\LisaKatherine\obj\Debug\LisaKatherine.pdb
 S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.dll
 S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.pdb
 S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.DataEntitiesRepository.dll
@@ -28,3 +21,19 @@ S:\LisaKatherine\LisaKatherine\bin\Newtonsoft.Json.xml
 S:\LisaKatherine\LisaKatherine\obj\Debug\LisaKatherine.csprojResolveAssemblyReference.cache
 S:\LisaKatherine\LisaKatherine\obj\Debug\LisaKatherine.dll
 S:\LisaKatherine\LisaKatherine\obj\Debug\LisaKatherine.pdb
+C:\Users\Red 2\LKB\LisaKatherine\bin\LisaKatherine.dll
+C:\Users\Red 2\LKB\LisaKatherine\bin\LisaKatherine.pdb
+C:\Users\Red 2\LKB\LisaKatherine\bin\LisaKatherine.DataEntitiesRepository.dll
+C:\Users\Red 2\LKB\LisaKatherine\bin\LisaKatherine.Interface.dll
+C:\Users\Red 2\LKB\LisaKatherine\bin\LisaKatherine.Services.dll
+C:\Users\Red 2\LKB\LisaKatherine\bin\MvcPager.dll
+C:\Users\Red 2\LKB\LisaKatherine\bin\oAuthTwitterWrapper.dll
+C:\Users\Red 2\LKB\LisaKatherine\bin\Newtonsoft.Json.dll
+C:\Users\Red 2\LKB\LisaKatherine\bin\LisaKatherine.DataEntitiesRepository.pdb
+C:\Users\Red 2\LKB\LisaKatherine\bin\LisaKatherine.Interface.pdb
+C:\Users\Red 2\LKB\LisaKatherine\bin\LisaKatherine.Services.pdb
+C:\Users\Red 2\LKB\LisaKatherine\bin\MvcPager.pdb
+C:\Users\Red 2\LKB\LisaKatherine\bin\Newtonsoft.Json.xml
+C:\Users\Red 2\LKB\LisaKatherine\obj\Debug\LisaKatherine.csprojResolveAssemblyReference.cache
+C:\Users\Red 2\LKB\LisaKatherine\obj\Debug\LisaKatherine.dll
+C:\Users\Red 2\LKB\LisaKatherine\obj\Debug\LisaKatherine.pdb

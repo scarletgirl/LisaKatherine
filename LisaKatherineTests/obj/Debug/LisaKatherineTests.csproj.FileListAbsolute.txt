@@ -1,13 +1,3 @@
-C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherineTests.dll
-C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherineTests.pdb
-C:\Users\Red 2\LKB\LisaKatherineTests\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Red 2\LKB\LisaKatherineTests\obj\Debug\LisaKatherineTests.dll
-C:\Users\Red 2\LKB\LisaKatherineTests\obj\Debug\LisaKatherineTests.pdb
-C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.dll
-C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\MvcPager.dll
-C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\Facebook.dll
-C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.pdb
-C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\MvcPager.pdb
 S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherineTests.dll.config
 S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherineTests.dll
 S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherineTests.pdb
@@ -29,3 +19,24 @@ S:\LisaKatherine\LisaKatherineTests\obj\Debug\LisaKatherineTests.csprojResolveAs
 S:\LisaKatherine\LisaKatherineTests\obj\Debug\LisaKatherineTests.dll
 S:\LisaKatherine\LisaKatherineTests\obj\Debug\LisaKatherineTests.pdb
 S:\LisaKatherine\LisaKatherineTests\bin\Debug\Resources\tweets.txt
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\Resources\tweets.txt
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherineTests.dll.config
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherineTests.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherineTests.pdb
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.DataEntitiesRepository.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.Interface.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.Services.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\Moq.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\oAuthTwitterWrapper.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\MvcPager.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.DataEntitiesRepository.pdb
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.Interface.pdb
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.Services.pdb
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\Moq.pdb
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\Moq.xml
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\MvcPager.pdb
+C:\Users\Red 2\LKB\LisaKatherineTests\obj\Debug\LisaKatherineTests.csprojResolveAssemblyReference.cache
+C:\Users\Red 2\LKB\LisaKatherineTests\obj\Debug\LisaKatherineTests.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\obj\Debug\LisaKatherineTests.pdb

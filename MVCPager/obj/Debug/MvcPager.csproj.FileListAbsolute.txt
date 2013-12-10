@@ -3,11 +3,6 @@ J:\WorkProjects\LisaKatherine\MVCPager\bin\Debug\MvcPager.dll
 J:\WorkProjects\LisaKatherine\MVCPager\bin\Debug\MvcPager.pdb
 J:\WorkProjects\LisaKatherine\MVCPager\obj\Debug\MvcPager.dll
 J:\WorkProjects\LisaKatherine\MVCPager\obj\Debug\MvcPager.pdb
-C:\Users\Red 2\LKB\MVCPager\bin\Debug\MvcPager.dll
-C:\Users\Red 2\LKB\MVCPager\bin\Debug\MvcPager.pdb
-C:\Users\Red 2\LKB\MVCPager\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Red 2\LKB\MVCPager\obj\Debug\MvcPager.dll
-C:\Users\Red 2\LKB\MVCPager\obj\Debug\MvcPager.pdb
 S:\LisaKatherine\MVCPager\bin\Debug\MvcPager.dll
 S:\LisaKatherine\MVCPager\bin\Debug\MvcPager.pdb
 S:\LisaKatherine\MVCPager\bin\Debug\Moq.dll
@@ -15,3 +10,11 @@ S:\LisaKatherine\MVCPager\bin\Debug\Moq.pdb
 S:\LisaKatherine\MVCPager\bin\Debug\Moq.xml
 S:\LisaKatherine\MVCPager\obj\Debug\MvcPager.dll
 S:\LisaKatherine\MVCPager\obj\Debug\MvcPager.pdb
+C:\Users\Red 2\LKB\MVCPager\bin\Debug\MvcPager.dll
+C:\Users\Red 2\LKB\MVCPager\bin\Debug\MvcPager.pdb
+C:\Users\Red 2\LKB\MVCPager\bin\Debug\Moq.dll
+C:\Users\Red 2\LKB\MVCPager\bin\Debug\Moq.pdb
+C:\Users\Red 2\LKB\MVCPager\bin\Debug\Moq.xml
+C:\Users\Red 2\LKB\MVCPager\obj\Debug\MvcPager.csprojResolveAssemblyReference.cache
+C:\Users\Red 2\LKB\MVCPager\obj\Debug\MvcPager.dll
+C:\Users\Red 2\LKB\MVCPager\obj\Debug\MvcPager.pdb

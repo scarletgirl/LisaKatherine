@@ -9,3 +9,14 @@ S:\LisaKatherine\LisaKatherine.DataEntities\bin\Debug\Moq.xml
 S:\LisaKatherine\LisaKatherine.DataEntities\obj\Debug\LisaKatherine.DataEntitiesRepository.csprojResolveAssemblyReference.cache
 S:\LisaKatherine\LisaKatherine.DataEntities\obj\Debug\LisaKatherine.DataEntitiesRepository.dll
 S:\LisaKatherine\LisaKatherine.DataEntities\obj\Debug\LisaKatherine.DataEntitiesRepository.pdb
+C:\Users\Red 2\LKB\LisaKatherine.DataEntities\bin\Debug\LisaKatherine.DataEntitiesRepository.dll.config
+C:\Users\Red 2\LKB\LisaKatherine.DataEntities\bin\Debug\LisaKatherine.DataEntitiesRepository.dll
+C:\Users\Red 2\LKB\LisaKatherine.DataEntities\bin\Debug\LisaKatherine.DataEntitiesRepository.pdb
+C:\Users\Red 2\LKB\LisaKatherine.DataEntities\bin\Debug\LisaKatherine.Interface.dll
+C:\Users\Red 2\LKB\LisaKatherine.DataEntities\bin\Debug\Moq.dll
+C:\Users\Red 2\LKB\LisaKatherine.DataEntities\bin\Debug\LisaKatherine.Interface.pdb
+C:\Users\Red 2\LKB\LisaKatherine.DataEntities\bin\Debug\Moq.pdb
+C:\Users\Red 2\LKB\LisaKatherine.DataEntities\bin\Debug\Moq.xml
+C:\Users\Red 2\LKB\LisaKatherine.DataEntities\obj\Debug\LisaKatherine.DataEntitiesRepository.csprojResolveAssemblyReference.cache
+C:\Users\Red 2\LKB\LisaKatherine.DataEntities\obj\Debug\LisaKatherine.DataEntitiesRepository.dll
+C:\Users\Red 2\LKB\LisaKatherine.DataEntities\obj\Debug\LisaKatherine.DataEntitiesRepository.pdb

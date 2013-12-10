@@ -30,14 +30,14 @@
 
         public IArticle Get(int articleId)
         {
-            PublishedArticleEntity articleEntity = (from a in this.dataModel.PublishedArticles where a.articleId == articleId select a).First();
+            PublishedArticleEntity articleEntity = (from a in this.dataModel.PublishedArticleEntity where a.articleId == articleId select a).First();
             return this.SetArticle(articleId, articleEntity);
         }
 
         public IEnumerable<IArticle> GetList(int orderby, int articleTypeId = 0)
         {
             IOrderedQueryable<PublishedArticleEntity> articleList =
-                this.dataModel.PublishedArticles.Where(a => a.articleTypeId == articleTypeId || articleTypeId == 0).OrderByDescending(a => a.datePublished);
+                this.dataModel.PublishedArticleEntity.Where(a => a.articleTypeId == articleTypeId || articleTypeId == 0).OrderByDescending(a => a.datePublished);
             var list = new List<IArticle>();
 
             foreach (PublishedArticleEntity a in articleList)
@@ -49,14 +49,14 @@
 
         public void Delete(int articleId)
         {
-            PublishedArticleEntity articleEntity = (from a in this.dataModel.PublishedArticles where a.articleId == articleId select a).First();
+            PublishedArticleEntity articleEntity = (from a in this.dataModel.PublishedArticleEntity where a.articleId == articleId select a).First();
             this.dataModel.DeleteObject(articleEntity);
             this.dataModel.SaveChanges();
         }
 
         public void Update(IArticle article)
         {
-            PublishedArticleEntity originalArticle = (from a in this.dataModel.PublishedArticles where a.articleId == article.ArticleId select a).First();
+            PublishedArticleEntity originalArticle = (from a in this.dataModel.PublishedArticleEntity where a.articleId == article.ArticleId select a).First();
 
             this.dataModel.ApplyCurrentValues(originalArticle.EntityKey.EntitySetName, ConvertPublishArticleEntity(article, originalArticle));
             this.dataModel.SaveChanges();
@@ -67,14 +67,14 @@
             article.DateCreated = DateTime.Now;
             if (article.User != null)
             {
-                this.dataModel.AddToPublishedArticles(ConvertPublishArticleEntity(article));
+                this.dataModel.AddToPublishedArticleEntity(ConvertPublishArticleEntity(article));
                 this.dataModel.SaveChanges();
             }
         }
 
         public void Publish(IArticle article)
         {
-            IQueryable<PublishedArticleEntity> originalPublishedArticle = (from pa in this.dataModel.PublishedArticles where pa.articleId == article.ArticleId select pa);
+            IQueryable<PublishedArticleEntity> originalPublishedArticle = (from pa in this.dataModel.PublishedArticleEntity where pa.articleId == article.ArticleId select pa);
 
             if (originalPublishedArticle.Any())
             {
@@ -82,7 +82,7 @@
             }
             else
             {
-                this.dataModel.AddToPublishedArticles(ConvertPublishArticleEntity(article));
+                this.dataModel.AddToPublishedArticleEntity(ConvertPublishArticleEntity(article));
             }
 
             this.dataModel.SaveChanges();
@@ -91,20 +91,20 @@
         public static PublishedArticleEntity ConvertPublishArticleEntity(IArticle article, PublishedArticleEntity originalArticle = null)
         {
             DateTime dc = article.DateCreated;
-            if (originalArticle != null)
+            if (dc == null)
             {
-                dc = originalArticle.dateCreated;
+                dc = DateTime.Now;
             }
 
             DateTime? dp = article.DatePublished;
-            if (originalArticle != null)
+            if (dp == null)
             {
-                dp = originalArticle.datePublished;
+                dp = DateTime.Now;
             }
 
             return new PublishedArticleEntity
                        {
-                           articleTypeId = article.ArticleId,
+                           articleTypeId = article.ArticleTypeId,
                            articleId = article.ArticleId,
                            body = article.Body,
                            headline = article.Headline,
@@ -127,6 +127,13 @@
             IArticleType articleType = null;
             if (x.articleTypeId != null)
             {
+                try { articleType = this.articleTypeFactory.Get((int)x.articleTypeId); }
+                catch (Exception ex)
+                {
+                    throw new Exception("Cannot find " + x.articleTypeId);
+                }
+
+
                 articleType = this.articleTypeFactory.Get((int)x.articleTypeId);
             }
 
