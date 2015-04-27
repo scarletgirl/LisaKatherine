@@ -18,3 +18,4 @@ C:\Users\Red 2\LKB\MVCPager\bin\Debug\Moq.xml
 C:\Users\Red 2\LKB\MVCPager\obj\Debug\MvcPager.csprojResolveAssemblyReference.cache
 C:\Users\Red 2\LKB\MVCPager\obj\Debug\MvcPager.dll
 C:\Users\Red 2\LKB\MVCPager\obj\Debug\MvcPager.pdb
+S:\LisaKatherine\MVCPager\obj\Debug\MvcPager.csprojResolveAssemblyReference.cache

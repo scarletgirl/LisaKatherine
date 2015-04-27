@@ -35,17 +35,16 @@
             IPublishedArticle article = this.publishedArticleService.GetArticleByArticleType(5);
             this.ViewBag.ShowPartial = "Twitter";
             this.ViewBag.Message = "Contact";
-            var cmv = new ContactArticle { PublishedArticle = article };
-            return View(cmv);
+            var cmv = new ContactArticle { PublishedArticle = (PublishedArticle) article, Contact = new Contact()};
+            return View();
         }
 
         [HttpPost]
-        public ActionResult Contact(IContactArticle contactArticle)
+        public ActionResult Contact(Contact contactArticle)
         {
             IPublishedArticle article = this.publishedArticleService.GetArticleByArticleType(5);
             this.ViewBag.ShowPartial = "Twitter";
             this.ViewBag.Message = "Contact";
-            contactArticle.PublishedArticle = article;
             if (!this.ModelState.IsValid)
             {
                 return View(contactArticle);
@@ -53,9 +52,9 @@
 
             var contact = new Contact
                               {
-                                  From = contactArticle.Contact.From,
-                                  Subject = contactArticle.Contact.Subject,
-                                  Message = contactArticle.Contact.Message
+                                  From = contactArticle.From,
+                                  Subject = contactArticle.Subject,
+                                  Message = contactArticle.Message
                               };
 
             new Email().Send(contact);
@@ -71,6 +70,12 @@
         public ActionResult Holding()
         {
             return this.View();
+        }
+
+        public PartialViewResult RenderContactArticle()
+        {
+            IPublishedArticle article = this.publishedArticleService.GetArticleByArticleType(5);
+            return this.PartialView("_Article", article);
         }
     }
 }

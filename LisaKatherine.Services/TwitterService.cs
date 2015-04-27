@@ -143,28 +143,36 @@
         public ITweet ProcessTweet(ITweet tweet)
         {
             string original = tweet.Text;
-            foreach (ITwitterUrl url in tweet.Urls)
+            try
             {
-                List<int> indices = url.Indices.ToList();
-                tweet.Text = tweet.Text.Replace(
-                    original.Substring(indices[0], indices[1] - indices[0]), string.Format("<a href='{0}' target='_blank'>{1}</a>", url.Url, url.DisplayUrl));
+                foreach (ITwitterUrl url in tweet.Urls)
+                {
+                    List<int> indices = url.Indices.ToList();
+                    tweet.Text = tweet.Text.Replace(
+                        original.Substring(indices[0], indices[1] - indices[0]), string.Format("<a href='{0}' target='_blank'>{1}</a>", url.Url, url.DisplayUrl));
+                }
+
+                foreach (ITwitterMention mention in tweet.Mentions)
+                {
+                    List<int> indices = mention.Indicies.ToList();
+                    tweet.Text = tweet.Text.Replace(
+                        original.Substring(indices[0], indices[1] - indices[0]),
+                        string.Format("<a href='http://twitter.com/{0}' target='_blank'>{1}</a>", mention.ScreenName, original.Substring(indices[0], indices[1])));
+                }
+
+                foreach (ITwitterHashTag hashTag in tweet.HashTags)
+                {
+                    List<int> indices = hashTag.Indices.ToList();
+                    tweet.Text = tweet.Text.Replace(
+                        original.Substring(indices[0], indices[1] - indices[0]),
+                        string.Format("<a href=https://twitter.com/search?q=%23{0}&src=hash' target='_blank'>{1}</a>", hashTag.Text, original.Substring(indices[0], indices[1])));
+                }
+            }
+            catch
+            {
+
             }
 
-            foreach (ITwitterMention mention in tweet.Mentions)
-            {
-                List<int> indices = mention.Indicies.ToList();
-                tweet.Text = tweet.Text.Replace(
-                    original.Substring(indices[0], indices[1] - indices[0]),
-                    string.Format("<a href='http://twitter.com/{0}' target='_blank'>{1}</a>", mention.ScreenName, original.Substring(indices[0], indices[1])));
-            }
-
-            foreach (ITwitterHashTag hashTag in tweet.HashTags)
-            {
-                List<int> indices = hashTag.Indices.ToList();
-                tweet.Text = tweet.Text.Replace(
-                    original.Substring(indices[0], indices[1] - indices[0]),
-                    string.Format("<a href=https://twitter.com/search?q=%23{0}&src=hash' target='_blank'>{1}</a>", hashTag.Text, original.Substring(indices[0], indices[1])));
-            }
             return tweet;
         }
     }
