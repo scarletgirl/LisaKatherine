@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- EF Runtime content -->
     <edmx:Runtime>
         <!-- SSDL content -->
         <edmx:StorageModels>
-        <Schema Namespace="LisaKatherineModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <Schema Namespace="LisaKatherineModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="LisaKatherineModelStoreContainer">
           <EntitySet Name="tblArticle" EntityType="LisaKatherineModel.Store.tblArticle" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
           <EntitySet Name="tblArticlePublished" EntityType="LisaKatherineModel.Store.tblArticlePublished" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
@@ -214,7 +214,7 @@
       </Schema></edmx:StorageModels>
         <!-- CSDL content -->
         <edmx:ConceptualModels>
-            <Schema Namespace="LisaKatherineModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Schema Namespace="LisaKatherineModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
                 <EntityContainer Name="LisaKatherineEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
                     <EntitySet Name="ArticleEntity" EntityType="LisaKatherineModel.ArticleEntity" />
                     <EntitySet Name="tblPhotos" EntityType="LisaKatherineModel.Photos" />
@@ -453,7 +453,7 @@
         </edmx:ConceptualModels>
         <!-- C-S mapping content -->
         <edmx:Mappings>
-            <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+            <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
                 <EntityContainerMapping StorageEntityContainer="LisaKatherineModelStoreContainer" CdmEntityContainer="LisaKatherineEntities">
                     <EntitySetMapping Name="ArticleEntity">
                         <EntityTypeMapping TypeName="LisaKatherineModel.ArticleEntity">

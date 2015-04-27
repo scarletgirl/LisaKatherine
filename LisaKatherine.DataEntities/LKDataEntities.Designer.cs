@@ -332,7 +332,7 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -351,7 +351,7 @@ namespace LisaKatherine.DataEntitiesRepository
                 {
                     OnarticleIdChanging(value);
                     ReportPropertyChanging("articleId");
-                    _articleId = StructuralObject.SetValidValue(value);
+                    _articleId = StructuralObject.SetValidValue(value, "articleId");
                     ReportPropertyChanged("articleId");
                     OnarticleIdChanged();
                 }
@@ -376,7 +376,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnheadlineChanging(value);
                 ReportPropertyChanging("headline");
-                _headline = StructuralObject.SetValidValue(value, true);
+                _headline = StructuralObject.SetValidValue(value, true, "headline");
                 ReportPropertyChanged("headline");
                 OnheadlineChanged();
             }
@@ -400,7 +400,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnstraplineChanging(value);
                 ReportPropertyChanging("strapline");
-                _strapline = StructuralObject.SetValidValue(value, true);
+                _strapline = StructuralObject.SetValidValue(value, true, "strapline");
                 ReportPropertyChanged("strapline");
                 OnstraplineChanged();
             }
@@ -424,7 +424,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnbodyChanging(value);
                 ReportPropertyChanging("body");
-                _body = StructuralObject.SetValidValue(value, true);
+                _body = StructuralObject.SetValidValue(value, true, "body");
                 ReportPropertyChanged("body");
                 OnbodyChanged();
             }
@@ -448,7 +448,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OndateCreatedChanging(value);
                 ReportPropertyChanging("dateCreated");
-                _dateCreated = StructuralObject.SetValidValue(value);
+                _dateCreated = StructuralObject.SetValidValue(value, "dateCreated");
                 ReportPropertyChanged("dateCreated");
                 OndateCreatedChanged();
             }
@@ -472,7 +472,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OndatePublishedChanging(value);
                 ReportPropertyChanging("datePublished");
-                _datePublished = StructuralObject.SetValidValue(value);
+                _datePublished = StructuralObject.SetValidValue(value, "datePublished");
                 ReportPropertyChanged("datePublished");
                 OndatePublishedChanged();
             }
@@ -496,7 +496,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnisPublishedChanging(value);
                 ReportPropertyChanging("isPublished");
-                _isPublished = StructuralObject.SetValidValue(value);
+                _isPublished = StructuralObject.SetValidValue(value, "isPublished");
                 ReportPropertyChanged("isPublished");
                 OnisPublishedChanged();
             }
@@ -520,7 +520,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnuseridChanging(value);
                 ReportPropertyChanging("userid");
-                _userid = StructuralObject.SetValidValue(value);
+                _userid = StructuralObject.SetValidValue(value, "userid");
                 ReportPropertyChanged("userid");
                 OnuseridChanged();
             }
@@ -544,7 +544,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnarticleTypeIdChanging(value);
                 ReportPropertyChanging("articleTypeId");
-                _articleTypeId = StructuralObject.SetValidValue(value);
+                _articleTypeId = StructuralObject.SetValidValue(value, "articleTypeId");
                 ReportPropertyChanged("articleTypeId");
                 OnarticleTypeIdChanged();
             }
@@ -555,7 +555,6 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -721,7 +720,7 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -740,7 +739,7 @@ namespace LisaKatherine.DataEntitiesRepository
                 {
                     OnarticleTypeIdChanging(value);
                     ReportPropertyChanging("articleTypeId");
-                    _articleTypeId = StructuralObject.SetValidValue(value);
+                    _articleTypeId = StructuralObject.SetValidValue(value, "articleTypeId");
                     ReportPropertyChanged("articleTypeId");
                     OnarticleTypeIdChanged();
                 }
@@ -765,7 +764,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnarticleTypeNameChanging(value);
                 ReportPropertyChanging("articleTypeName");
-                _articleTypeName = StructuralObject.SetValidValue(value, true);
+                _articleTypeName = StructuralObject.SetValidValue(value, true, "articleTypeName");
                 ReportPropertyChanged("articleTypeName");
                 OnarticleTypeNameChanged();
             }
@@ -789,7 +788,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnsectionidChanging(value);
                 ReportPropertyChanging("sectionid");
-                _sectionid = StructuralObject.SetValidValue(value);
+                _sectionid = StructuralObject.SetValidValue(value, "sectionid");
                 ReportPropertyChanged("sectionid");
                 OnsectionidChanged();
             }
@@ -800,7 +799,6 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -898,7 +896,7 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -917,7 +915,7 @@ namespace LisaKatherine.DataEntitiesRepository
                 {
                     OnpostIdChanging(value);
                     ReportPropertyChanging("postId");
-                    _postId = StructuralObject.SetValidValue(value);
+                    _postId = StructuralObject.SetValidValue(value, "postId");
                     ReportPropertyChanged("postId");
                     OnpostIdChanged();
                 }
@@ -942,7 +940,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnfacebookIdChanging(value);
                 ReportPropertyChanging("facebookId");
-                _facebookId = StructuralObject.SetValidValue(value);
+                _facebookId = StructuralObject.SetValidValue(value, "facebookId");
                 ReportPropertyChanged("facebookId");
                 OnfacebookIdChanged();
             }
@@ -966,7 +964,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnarticleIdChanging(value);
                 ReportPropertyChanging("articleId");
-                _articleId = StructuralObject.SetValidValue(value);
+                _articleId = StructuralObject.SetValidValue(value, "articleId");
                 ReportPropertyChanged("articleId");
                 OnarticleIdChanged();
             }
@@ -990,7 +988,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnpostChanging(value);
                 ReportPropertyChanging("post");
-                _post = StructuralObject.SetValidValue(value, true);
+                _post = StructuralObject.SetValidValue(value, true, "post");
                 ReportPropertyChanged("post");
                 OnpostChanged();
             }
@@ -1014,7 +1012,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnapprovedChanging(value);
                 ReportPropertyChanging("approved");
-                _approved = StructuralObject.SetValidValue(value);
+                _approved = StructuralObject.SetValidValue(value, "approved");
                 ReportPropertyChanged("approved");
                 OnapprovedChanged();
             }
@@ -1038,7 +1036,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OndateAddedChanging(value);
                 ReportPropertyChanging("dateAdded");
-                _dateAdded = StructuralObject.SetValidValue(value);
+                _dateAdded = StructuralObject.SetValidValue(value, "dateAdded");
                 ReportPropertyChanged("dateAdded");
                 OndateAddedChanged();
             }
@@ -1049,7 +1047,6 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -1161,7 +1158,7 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1180,7 +1177,7 @@ namespace LisaKatherine.DataEntitiesRepository
                 {
                     OnfacebookIdChanging(value);
                     ReportPropertyChanging("facebookId");
-                    _facebookId = StructuralObject.SetValidValue(value);
+                    _facebookId = StructuralObject.SetValidValue(value, "facebookId");
                     ReportPropertyChanged("facebookId");
                     OnfacebookIdChanged();
                 }
@@ -1205,7 +1202,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnaccessTokenChanging(value);
                 ReportPropertyChanging("accessToken");
-                _accessToken = StructuralObject.SetValidValue(value, true);
+                _accessToken = StructuralObject.SetValidValue(value, true, "accessToken");
                 ReportPropertyChanged("accessToken");
                 OnaccessTokenChanged();
             }
@@ -1229,7 +1226,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnnameChanging(value);
                 ReportPropertyChanging("name");
-                _name = StructuralObject.SetValidValue(value, true);
+                _name = StructuralObject.SetValidValue(value, true, "name");
                 ReportPropertyChanged("name");
                 OnnameChanged();
             }
@@ -1253,7 +1250,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OngenderChanging(value);
                 ReportPropertyChanging("gender");
-                _gender = StructuralObject.SetValidValue(value, true);
+                _gender = StructuralObject.SetValidValue(value, true, "gender");
                 ReportPropertyChanged("gender");
                 OngenderChanged();
             }
@@ -1277,7 +1274,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnfirstloginChanging(value);
                 ReportPropertyChanging("firstlogin");
-                _firstlogin = StructuralObject.SetValidValue(value);
+                _firstlogin = StructuralObject.SetValidValue(value, "firstlogin");
                 ReportPropertyChanged("firstlogin");
                 OnfirstloginChanged();
             }
@@ -1301,7 +1298,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnlastloginChanging(value);
                 ReportPropertyChanging("lastlogin");
-                _lastlogin = StructuralObject.SetValidValue(value);
+                _lastlogin = StructuralObject.SetValidValue(value, "lastlogin");
                 ReportPropertyChanged("lastlogin");
                 OnlastloginChanged();
             }
@@ -1325,7 +1322,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnactiveChanging(value);
                 ReportPropertyChanging("active");
-                _active = StructuralObject.SetValidValue(value);
+                _active = StructuralObject.SetValidValue(value, "active");
                 ReportPropertyChanged("active");
                 OnactiveChanged();
             }
@@ -1349,7 +1346,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnpostsChanging(value);
                 ReportPropertyChanging("posts");
-                _posts = StructuralObject.SetValidValue(value);
+                _posts = StructuralObject.SetValidValue(value, "posts");
                 ReportPropertyChanged("posts");
                 OnpostsChanged();
             }
@@ -1360,7 +1357,6 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -1412,7 +1408,7 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1431,7 +1427,7 @@ namespace LisaKatherine.DataEntitiesRepository
                 {
                     OnSetIdChanging(value);
                     ReportPropertyChanging("SetId");
-                    _SetId = StructuralObject.SetValidValue(value);
+                    _SetId = StructuralObject.SetValidValue(value, "SetId");
                     ReportPropertyChanged("SetId");
                     OnSetIdChanged();
                 }
@@ -1456,7 +1452,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnSetNameChanging(value);
                 ReportPropertyChanging("SetName");
-                _SetName = StructuralObject.SetValidValue(value, true);
+                _SetName = StructuralObject.SetValidValue(value, true, "SetName");
                 ReportPropertyChanged("SetName");
                 OnSetNameChanged();
             }
@@ -1480,7 +1476,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnDescriptionChanging(value);
                 ReportPropertyChanging("Description");
-                _Description = StructuralObject.SetValidValue(value, true);
+                _Description = StructuralObject.SetValidValue(value, true, "Description");
                 ReportPropertyChanged("Description");
                 OnDescriptionChanged();
             }
@@ -1491,7 +1487,6 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -1519,7 +1514,7 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1538,7 +1533,7 @@ namespace LisaKatherine.DataEntitiesRepository
                 {
                     OnphotoIdChanging(value);
                     ReportPropertyChanging("photoId");
-                    _photoId = StructuralObject.SetValidValue(value);
+                    _photoId = StructuralObject.SetValidValue(value, "photoId");
                     ReportPropertyChanged("photoId");
                     OnphotoIdChanged();
                 }
@@ -1563,7 +1558,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnaltChanging(value);
                 ReportPropertyChanging("alt");
-                _alt = StructuralObject.SetValidValue(value, true);
+                _alt = StructuralObject.SetValidValue(value, true, "alt");
                 ReportPropertyChanged("alt");
                 OnaltChanged();
             }
@@ -1587,7 +1582,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnwidthChanging(value);
                 ReportPropertyChanging("width");
-                _width = StructuralObject.SetValidValue(value);
+                _width = StructuralObject.SetValidValue(value, "width");
                 ReportPropertyChanged("width");
                 OnwidthChanged();
             }
@@ -1611,7 +1606,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnheightChanging(value);
                 ReportPropertyChanging("height");
-                _height = StructuralObject.SetValidValue(value);
+                _height = StructuralObject.SetValidValue(value, "height");
                 ReportPropertyChanged("height");
                 OnheightChanged();
             }
@@ -1635,7 +1630,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnuploadedChanging(value);
                 ReportPropertyChanging("uploaded");
-                _uploaded = StructuralObject.SetValidValue(value);
+                _uploaded = StructuralObject.SetValidValue(value, "uploaded");
                 ReportPropertyChanged("uploaded");
                 OnuploadedChanged();
             }
@@ -1659,7 +1654,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnisHomePageChanging(value);
                 ReportPropertyChanging("isHomePage");
-                _isHomePage = StructuralObject.SetValidValue(value);
+                _isHomePage = StructuralObject.SetValidValue(value, "isHomePage");
                 ReportPropertyChanged("isHomePage");
                 OnisHomePageChanged();
             }
@@ -1683,7 +1678,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnuserIdChanging(value);
                 ReportPropertyChanging("userId");
-                _userId = StructuralObject.SetValidValue(value);
+                _userId = StructuralObject.SetValidValue(value, "userId");
                 ReportPropertyChanged("userId");
                 OnuserIdChanged();
             }
@@ -1694,7 +1689,6 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -1766,7 +1760,7 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1785,7 +1779,7 @@ namespace LisaKatherine.DataEntitiesRepository
                 {
                     OnarticleIdChanging(value);
                     ReportPropertyChanging("articleId");
-                    _articleId = StructuralObject.SetValidValue(value);
+                    _articleId = StructuralObject.SetValidValue(value, "articleId");
                     ReportPropertyChanged("articleId");
                     OnarticleIdChanged();
                 }
@@ -1810,7 +1804,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnheadlineChanging(value);
                 ReportPropertyChanging("headline");
-                _headline = StructuralObject.SetValidValue(value, true);
+                _headline = StructuralObject.SetValidValue(value, true, "headline");
                 ReportPropertyChanged("headline");
                 OnheadlineChanged();
             }
@@ -1834,7 +1828,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnstraplineChanging(value);
                 ReportPropertyChanging("strapline");
-                _strapline = StructuralObject.SetValidValue(value, true);
+                _strapline = StructuralObject.SetValidValue(value, true, "strapline");
                 ReportPropertyChanged("strapline");
                 OnstraplineChanged();
             }
@@ -1858,7 +1852,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnbodyChanging(value);
                 ReportPropertyChanging("body");
-                _body = StructuralObject.SetValidValue(value, true);
+                _body = StructuralObject.SetValidValue(value, true, "body");
                 ReportPropertyChanged("body");
                 OnbodyChanged();
             }
@@ -1882,7 +1876,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OndateCreatedChanging(value);
                 ReportPropertyChanging("dateCreated");
-                _dateCreated = StructuralObject.SetValidValue(value);
+                _dateCreated = StructuralObject.SetValidValue(value, "dateCreated");
                 ReportPropertyChanged("dateCreated");
                 OndateCreatedChanged();
             }
@@ -1906,7 +1900,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OndatePublishedChanging(value);
                 ReportPropertyChanging("datePublished");
-                _datePublished = StructuralObject.SetValidValue(value);
+                _datePublished = StructuralObject.SetValidValue(value, "datePublished");
                 ReportPropertyChanged("datePublished");
                 OndatePublishedChanged();
             }
@@ -1930,7 +1924,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnisPublishedChanging(value);
                 ReportPropertyChanging("isPublished");
-                _isPublished = StructuralObject.SetValidValue(value);
+                _isPublished = StructuralObject.SetValidValue(value, "isPublished");
                 ReportPropertyChanged("isPublished");
                 OnisPublishedChanged();
             }
@@ -1954,7 +1948,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnuseridChanging(value);
                 ReportPropertyChanging("userid");
-                _userid = StructuralObject.SetValidValue(value);
+                _userid = StructuralObject.SetValidValue(value, "userid");
                 ReportPropertyChanged("userid");
                 OnuseridChanged();
             }
@@ -1978,7 +1972,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnarticleTypeIdChanging(value);
                 ReportPropertyChanging("articleTypeId");
-                _articleTypeId = StructuralObject.SetValidValue(value);
+                _articleTypeId = StructuralObject.SetValidValue(value, "articleTypeId");
                 ReportPropertyChanged("articleTypeId");
                 OnarticleTypeIdChanged();
             }
@@ -1989,7 +1983,6 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -2057,7 +2050,7 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2076,7 +2069,7 @@ namespace LisaKatherine.DataEntitiesRepository
                 {
                     OnsectionIdChanging(value);
                     ReportPropertyChanging("sectionId");
-                    _sectionId = StructuralObject.SetValidValue(value);
+                    _sectionId = StructuralObject.SetValidValue(value, "sectionId");
                     ReportPropertyChanged("sectionId");
                     OnsectionIdChanged();
                 }
@@ -2101,7 +2094,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnsectionChanging(value);
                 ReportPropertyChanging("section");
-                _section = StructuralObject.SetValidValue(value, true);
+                _section = StructuralObject.SetValidValue(value, true, "section");
                 ReportPropertyChanged("section");
                 OnsectionChanged();
             }
@@ -2112,7 +2105,6 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -2164,7 +2156,7 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2183,7 +2175,7 @@ namespace LisaKatherine.DataEntitiesRepository
                 {
                     OnuserIdChanging(value);
                     ReportPropertyChanging("userId");
-                    _userId = StructuralObject.SetValidValue(value);
+                    _userId = StructuralObject.SetValidValue(value, "userId");
                     ReportPropertyChanged("userId");
                     OnuserIdChanged();
                 }
@@ -2208,7 +2200,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnusernameChanging(value);
                 ReportPropertyChanging("username");
-                _username = StructuralObject.SetValidValue(value, true);
+                _username = StructuralObject.SetValidValue(value, true, "username");
                 ReportPropertyChanged("username");
                 OnusernameChanged();
             }
@@ -2232,7 +2224,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnpasswordChanging(value);
                 ReportPropertyChanging("password");
-                _password = StructuralObject.SetValidValue(value, true);
+                _password = StructuralObject.SetValidValue(value, true, "password");
                 ReportPropertyChanged("password");
                 OnpasswordChanged();
             }
@@ -2256,7 +2248,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnfirstnameChanging(value);
                 ReportPropertyChanging("firstname");
-                _firstname = StructuralObject.SetValidValue(value, true);
+                _firstname = StructuralObject.SetValidValue(value, true, "firstname");
                 ReportPropertyChanged("firstname");
                 OnfirstnameChanged();
             }
@@ -2280,7 +2272,7 @@ namespace LisaKatherine.DataEntitiesRepository
             {
                 OnlastnameChanging(value);
                 ReportPropertyChanging("lastname");
-                _lastname = StructuralObject.SetValidValue(value, true);
+                _lastname = StructuralObject.SetValidValue(value, true, "lastname");
                 ReportPropertyChanged("lastname");
                 OnlastnameChanged();
             }
@@ -2291,7 +2283,6 @@ namespace LisaKatherine.DataEntitiesRepository
 
         #endregion
 
-    
         #region Navigation Properties
     
         /// <summary>
@@ -2344,5 +2335,4 @@ namespace LisaKatherine.DataEntitiesRepository
 
     #endregion
 
-    
 }

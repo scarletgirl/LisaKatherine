@@ -37,3 +37,17 @@ C:\Users\Red 2\LKB\LisaKatherine\bin\Newtonsoft.Json.xml
 C:\Users\Red 2\LKB\LisaKatherine\obj\Debug\LisaKatherine.csprojResolveAssemblyReference.cache
 C:\Users\Red 2\LKB\LisaKatherine\obj\Debug\LisaKatherine.dll
 C:\Users\Red 2\LKB\LisaKatherine\obj\Debug\LisaKatherine.pdb
+S:\LisaKatherine\LisaKatherine\bin\LisaKatherine.dll.config
+S:\LisaKatherine\LisaKatherine\bin\Microsoft.Web.Infrastructure.dll
+S:\LisaKatherine\LisaKatherine\bin\System.Web.Helpers.dll
+S:\LisaKatherine\LisaKatherine\bin\System.Web.Mvc.dll
+S:\LisaKatherine\LisaKatherine\bin\System.Web.Razor.dll
+S:\LisaKatherine\LisaKatherine\bin\System.Web.WebPages.Deployment.dll
+S:\LisaKatherine\LisaKatherine\bin\System.Web.WebPages.dll
+S:\LisaKatherine\LisaKatherine\bin\System.Web.WebPages.Razor.dll
+S:\LisaKatherine\LisaKatherine\bin\System.Web.Helpers.xml
+S:\LisaKatherine\LisaKatherine\bin\System.Web.Mvc.xml
+S:\LisaKatherine\LisaKatherine\bin\System.Web.Razor.xml
+S:\LisaKatherine\LisaKatherine\bin\System.Web.WebPages.xml
+S:\LisaKatherine\LisaKatherine\bin\System.Web.WebPages.Deployment.xml
+S:\LisaKatherine\LisaKatherine\bin\System.Web.WebPages.Razor.xml

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="LisaKatherineModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+<Schema Namespace="LisaKatherineModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
   <EntityContainer Name="LisaKatherineEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
     <EntitySet Name="ArticleEntity" EntityType="LisaKatherineModel.ArticleEntity" />
     <EntitySet Name="tblPhotos" EntityType="LisaKatherineModel.Photos" />

@@ -30,3 +30,21 @@ C:\Users\Red 2\LKB\LisaKatherine.Admin\bin\LisaKatherine.DataEntitiesRepository.
 C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.csprojResolveAssemblyReference.cache
 C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.dll
 C:\Users\Red 2\LKB\LisaKatherine.Admin\obj\Debug\LisaKatherine.Admin.pdb
+S:\LisaKatherine\LisaKatherine.Admin\bin\LisaKatherine.Admin.dll.config
+S:\LisaKatherine\LisaKatherine.Admin\bin\EntityFramework.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\EntityFramework.SqlServer.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\Microsoft.Web.Infrastructure.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\System.Web.Helpers.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\System.Web.Mvc.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\System.Web.Razor.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\System.Web.WebPages.Deployment.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\System.Web.WebPages.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\System.Web.WebPages.Razor.dll
+S:\LisaKatherine\LisaKatherine.Admin\bin\EntityFramework.xml
+S:\LisaKatherine\LisaKatherine.Admin\bin\EntityFramework.SqlServer.xml
+S:\LisaKatherine\LisaKatherine.Admin\bin\System.Web.Helpers.xml
+S:\LisaKatherine\LisaKatherine.Admin\bin\System.Web.Mvc.xml
+S:\LisaKatherine\LisaKatherine.Admin\bin\System.Web.Razor.xml
+S:\LisaKatherine\LisaKatherine.Admin\bin\System.Web.WebPages.xml
+S:\LisaKatherine\LisaKatherine.Admin\bin\System.Web.WebPages.Deployment.xml
+S:\LisaKatherine\LisaKatherine.Admin\bin\System.Web.WebPages.Razor.xml

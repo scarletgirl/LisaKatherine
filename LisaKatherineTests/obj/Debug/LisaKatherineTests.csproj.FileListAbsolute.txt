@@ -11,7 +11,6 @@ S:\LisaKatherine\LisaKatherineTests\bin\Debug\MvcPager.dll
 S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherine.DataEntitiesRepository.pdb
 S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherine.Interface.pdb
 S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherine.Services.pdb
-S:\LisaKatherine\LisaKatherineTests\bin\Debug\Moq.pdb
 S:\LisaKatherine\LisaKatherineTests\bin\Debug\Moq.xml
 S:\LisaKatherine\LisaKatherineTests\bin\Debug\Newtonsoft.Json.xml
 S:\LisaKatherine\LisaKatherineTests\bin\Debug\MvcPager.pdb
@@ -40,3 +39,13 @@ C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\MvcPager.pdb
 C:\Users\Red 2\LKB\LisaKatherineTests\obj\Debug\LisaKatherineTests.csprojResolveAssemblyReference.cache
 C:\Users\Red 2\LKB\LisaKatherineTests\obj\Debug\LisaKatherineTests.dll
 C:\Users\Red 2\LKB\LisaKatherineTests\obj\Debug\LisaKatherineTests.pdb
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.Mvc.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.WebPages.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.Razor.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.WebPages.Razor.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.WebPages.Deployment.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.Mvc.xml
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.WebPages.xml
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.Razor.xml
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.WebPages.Razor.xml
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.WebPages.Deployment.xml

@@ -6,7 +6,6 @@ J:\WorkProjects\LisaKatherine\MVCPager\obj\Debug\MvcPager.pdb
 S:\LisaKatherine\MVCPager\bin\Debug\MvcPager.dll
 S:\LisaKatherine\MVCPager\bin\Debug\MvcPager.pdb
 S:\LisaKatherine\MVCPager\bin\Debug\Moq.dll
-S:\LisaKatherine\MVCPager\bin\Debug\Moq.pdb
 S:\LisaKatherine\MVCPager\bin\Debug\Moq.xml
 S:\LisaKatherine\MVCPager\obj\Debug\MvcPager.dll
 S:\LisaKatherine\MVCPager\obj\Debug\MvcPager.pdb
@@ -19,3 +18,17 @@ C:\Users\Red 2\LKB\MVCPager\obj\Debug\MvcPager.csprojResolveAssemblyReference.ca
 C:\Users\Red 2\LKB\MVCPager\obj\Debug\MvcPager.dll
 C:\Users\Red 2\LKB\MVCPager\obj\Debug\MvcPager.pdb
 S:\LisaKatherine\MVCPager\obj\Debug\MvcPager.csprojResolveAssemblyReference.cache
+S:\LisaKatherine\MVCPager\bin\Debug\MvcPager.dll.config
+S:\LisaKatherine\MVCPager\bin\Debug\Microsoft.Web.Infrastructure.dll
+S:\LisaKatherine\MVCPager\bin\Debug\System.Web.Helpers.dll
+S:\LisaKatherine\MVCPager\bin\Debug\System.Web.Mvc.dll
+S:\LisaKatherine\MVCPager\bin\Debug\System.Web.Razor.dll
+S:\LisaKatherine\MVCPager\bin\Debug\System.Web.WebPages.Deployment.dll
+S:\LisaKatherine\MVCPager\bin\Debug\System.Web.WebPages.dll
+S:\LisaKatherine\MVCPager\bin\Debug\System.Web.WebPages.Razor.dll
+S:\LisaKatherine\MVCPager\bin\Debug\System.Web.Helpers.xml
+S:\LisaKatherine\MVCPager\bin\Debug\System.Web.Mvc.xml
+S:\LisaKatherine\MVCPager\bin\Debug\System.Web.Razor.xml
+S:\LisaKatherine\MVCPager\bin\Debug\System.Web.WebPages.xml
+S:\LisaKatherine\MVCPager\bin\Debug\System.Web.WebPages.Deployment.xml
+S:\LisaKatherine\MVCPager\bin\Debug\System.Web.WebPages.Razor.xml

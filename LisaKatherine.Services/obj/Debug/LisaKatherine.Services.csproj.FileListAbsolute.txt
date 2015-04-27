@@ -28,3 +28,13 @@ C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\MvcPager.pdb
 C:\Users\Red 2\LKB\LisaKatherine.Services\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Red 2\LKB\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.dll
 C:\Users\Red 2\LKB\LisaKatherine.Services\obj\Debug\LisaKatherine.Services.pdb
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\System.Web.Mvc.dll
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\System.Web.WebPages.dll
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\System.Web.Razor.dll
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\System.Web.WebPages.Razor.dll
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\System.Web.WebPages.Deployment.dll
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\System.Web.Mvc.xml
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\System.Web.WebPages.xml
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\System.Web.Razor.xml
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\System.Web.WebPages.Razor.xml
+S:\LisaKatherine\LisaKatherine.Services\bin\Debug\System.Web.WebPages.Deployment.xml
