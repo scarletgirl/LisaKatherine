@@ -1,0 +1,18 @@
+﻿@model LisaKatherine.Interface.IPublishedArticle
+
+@{
+    ViewBag.Title = "Lisa Katherine  - Work Blog";
+    ViewBag.Section = "Work";
+    ViewBag.Keywords = "Brighton, Web Designer, Photographer, Science Geek";
+}
+
+<h1>@Model.Headline</h1>
+<h3>@Model.Strapline</h3>
+<div class="articlebody">@Html.Raw(@Model.Body)</div>
+
+
+<div class="line"></div>
+
+<h4>
+    Photo Blog</h4>
+@{Html.RenderAction("BlogList", "Work");}

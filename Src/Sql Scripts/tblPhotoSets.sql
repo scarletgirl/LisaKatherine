@@ -1,0 +1,29 @@
+USE [lisasor8301net7758_LisaKatherine]
+GO
+
+/****** Object:  Table [dbo].[tblPhotoSets]    Script Date: 29/04/2015 14:36:26 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[tblPhotoSets](
+	[SetId] [bigint] NOT NULL,
+	[SetName] [varchar](255) NULL,
+	[Description] [text] NULL,
+ CONSTRAINT [PK_tblPhotoSets] PRIMARY KEY CLUSTERED 
+(
+	[SetId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

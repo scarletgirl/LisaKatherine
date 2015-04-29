@@ -1,0 +1,10 @@
+﻿@model PagedList<LisaKatherine.Models.PublishedArticles>
+@using Webdiyer.WebControls.Mvc;
+
+@{
+    ViewBag.Title = "Lisa Katherine  - Blog";
+    ViewBag.Description = "My Blog";
+    ViewBag.Keywords = "Brighton, Web Designer, Photographer, Science Geek";
+}
+<h1>Blog</h1>
+@{Html.RenderAction("BlogList", "Blog");}

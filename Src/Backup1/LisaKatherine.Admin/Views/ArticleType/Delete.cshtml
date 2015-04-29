@@ -1,0 +1,18 @@
+﻿@model LisaKatherine.Interface.ArticleType
+@{
+    ViewBag.Title = "Unable to Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>
+    Delete</h1>
+<h3>
+    Sorry, this Article Type cannot be deleted as it is being used on an existing article</h3>
+<fieldset>
+    <legend>Article Type</legend>
+    <div class="display-label">
+        articleType</div>
+    <div class="display-field">@Model.ArticleTypeName</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

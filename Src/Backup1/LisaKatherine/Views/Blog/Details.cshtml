@@ -1,0 +1,15 @@
+﻿@model LisaKatherine.Interface.IPublishedArticle
+@{
+    //ViewBag.Title = Model.Headline + " | Lisa Katherine Blog";
+    ViewBag.Description = Model.Description;
+    string section = ViewBag.Section;
+}
+<div id="Blog">@Html.Partial("_Social")
+    <div class="date">@String.Format("{0:dddd d MMMM yyyy}", Model.DatePublished)</div>
+    <h1>@Model.Headline</h1>
+    <h3>@Model.Strapline</h3>
+    <div class="articlebody">@Html.Raw(@Model.Body)</div>
+    <div class="author">
+        By @Model.User.FirstName @Model.User.LastName</div>
+</div>
+<div class="actionlink">@Html.ActionLink("<< Back", "Index", section)</div>

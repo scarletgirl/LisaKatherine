@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EF5F5657-B9D6-4FF7-8F29-5D7704698C37}"
+	ProjectSection(SolutionItems) = preProject
+		LisaKatherine.vsmdi = LisaKatherine.vsmdi
+		Local.testsettings = Local.testsettings
+		Settings.StyleCop = Settings.StyleCop
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPager", "MVCPager\MvcPager.csproj", "{71DCE177-5227-4D7E-A5CB-298AFE33ABE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LisaKatherineTests", "LisaKatherineTests\LisaKatherineTests.csproj", "{AD8E64F8-AEFD-4402-AA26-532E300CF331}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LisaKatherine.Interface", "LisaKatherine.Repository\LisaKatherine.Interface.csproj", "{403E9F91-0AA6-437A-9BF4-BE55BA665EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LisaKatherine.DataEntitiesRepository", "LisaKatherine.DataEntities\LisaKatherine.DataEntitiesRepository.csproj", "{008B224D-B96C-460B-A72E-974F354408C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LisaKatherine.Admin", "LisaKatherine.Admin\LisaKatherine.Admin.csproj", "{4E75E340-B84E-416B-9EC2-A778DDF41B6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LisaKatherine.Services", "LisaKatherine.Services\LisaKatherine.Services.csproj", "{36675A33-9151-42B2-8001-1DECBB165671}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LisaKatherine", "LisaKatherine\LisaKatherine.csproj", "{AB23658E-972B-4A99-B8BC-AE438857FFFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Scripts", "SQL Scripts", "{8009BC60-DBB9-4140-A5E6-5EB8393FA0E8}"
+	ProjectSection(SolutionItems) = preProject
+		Sql Scripts\tblArticle.sql = Sql Scripts\tblArticle.sql
+		Sql Scripts\tblArticlePublished.sql = Sql Scripts\tblArticlePublished.sql
+		Sql Scripts\tblArticleType.sql = Sql Scripts\tblArticleType.sql
+		Sql Scripts\tblPhotos.sql = Sql Scripts\tblPhotos.sql
+		Sql Scripts\tblPhotoSets.sql = Sql Scripts\tblPhotoSets.sql
+		Sql Scripts\tblSection.sql = Sql Scripts\tblSection.sql
+		Sql Scripts\tblUsers.sql = Sql Scripts\tblUsers.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71DCE177-5227-4D7E-A5CB-298AFE33ABE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71DCE177-5227-4D7E-A5CB-298AFE33ABE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71DCE177-5227-4D7E-A5CB-298AFE33ABE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71DCE177-5227-4D7E-A5CB-298AFE33ABE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD8E64F8-AEFD-4402-AA26-532E300CF331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD8E64F8-AEFD-4402-AA26-532E300CF331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD8E64F8-AEFD-4402-AA26-532E300CF331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD8E64F8-AEFD-4402-AA26-532E300CF331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{403E9F91-0AA6-437A-9BF4-BE55BA665EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{403E9F91-0AA6-437A-9BF4-BE55BA665EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{403E9F91-0AA6-437A-9BF4-BE55BA665EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{403E9F91-0AA6-437A-9BF4-BE55BA665EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{008B224D-B96C-460B-A72E-974F354408C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{008B224D-B96C-460B-A72E-974F354408C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{008B224D-B96C-460B-A72E-974F354408C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{008B224D-B96C-460B-A72E-974F354408C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E75E340-B84E-416B-9EC2-A778DDF41B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E75E340-B84E-416B-9EC2-A778DDF41B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E75E340-B84E-416B-9EC2-A778DDF41B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E75E340-B84E-416B-9EC2-A778DDF41B6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36675A33-9151-42B2-8001-1DECBB165671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36675A33-9151-42B2-8001-1DECBB165671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36675A33-9151-42B2-8001-1DECBB165671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36675A33-9151-42B2-8001-1DECBB165671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB23658E-972B-4A99-B8BC-AE438857FFFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB23658E-972B-4A99-B8BC-AE438857FFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB23658E-972B-4A99-B8BC-AE438857FFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB23658E-972B-4A99-B8BC-AE438857FFFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = LisaKatherine.vsmdi
+	EndGlobalSection
+EndGlobal

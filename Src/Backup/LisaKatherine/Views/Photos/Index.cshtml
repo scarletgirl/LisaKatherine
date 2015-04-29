@@ -1,0 +1,17 @@
+﻿@model LisaKatherine.Models.FlickrSets
+@{
+    ViewBag.Title = "Lisa Katherine - Photos";
+    ViewBag.Section = "Photos";
+    ViewBag.Keywords = "Brighton, Web Designer, Photographer, Science Geek";
+}
+<h1>@ViewBag.Headline</h1>
+<h2>@ViewBag.Strapline</h2>
+<div class="articlebody">@Html.Raw(ViewBag.Body)</div>
+@*<h3>
+    Flickr Photos Sets</h3>
+@{Html.RenderAction("RenderFlickrSetList", "Photos");}*@
+<div class="line"></div>
+
+<h4>
+    Photo Blog</h4>
+@{Html.RenderAction("BlogList", "Photos");}

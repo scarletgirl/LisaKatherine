@@ -1,0 +1,22 @@
+S:\LisaKatherine\LisaKatherine.Repository\bin\Debug\LisaKatherine.Interface.dll
+S:\LisaKatherine\LisaKatherine.Repository\bin\Debug\LisaKatherine.Interface.pdb
+S:\LisaKatherine\LisaKatherine.Repository\bin\Debug\Moq.dll
+S:\LisaKatherine\LisaKatherine.Repository\bin\Debug\Moq.xml
+S:\LisaKatherine\LisaKatherine.Repository\obj\Debug\LisaKatherine.Interface.dll
+S:\LisaKatherine\LisaKatherine.Repository\obj\Debug\LisaKatherine.Interface.pdb
+S:\LisaKatherine\LisaKatherine.Repository\obj\Debug\LisaKatherine.Interface.csprojResolveAssemblyReference.cache
+C:\Users\Red 2\LKB\LisaKatherine.Repository\bin\Debug\LisaKatherine.Interface.dll
+C:\Users\Red 2\LKB\LisaKatherine.Repository\bin\Debug\LisaKatherine.Interface.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Repository\bin\Debug\Moq.dll
+C:\Users\Red 2\LKB\LisaKatherine.Repository\bin\Debug\Moq.pdb
+C:\Users\Red 2\LKB\LisaKatherine.Repository\bin\Debug\Moq.xml
+C:\Users\Red 2\LKB\LisaKatherine.Repository\obj\Debug\LisaKatherine.Interface.csprojResolveAssemblyReference.cache
+C:\Users\Red 2\LKB\LisaKatherine.Repository\obj\Debug\LisaKatherine.Interface.dll
+C:\Users\Red 2\LKB\LisaKatherine.Repository\obj\Debug\LisaKatherine.Interface.pdb
+S:\LisaKatherine\Src\LisaKatherine.Repository\bin\Debug\LisaKatherine.Interface.dll
+S:\LisaKatherine\Src\LisaKatherine.Repository\bin\Debug\LisaKatherine.Interface.pdb
+S:\LisaKatherine\Src\LisaKatherine.Repository\bin\Debug\Moq.dll
+S:\LisaKatherine\Src\LisaKatherine.Repository\bin\Debug\Moq.xml
+S:\LisaKatherine\Src\LisaKatherine.Repository\obj\Debug\LisaKatherine.Interface.csprojResolveAssemblyReference.cache
+S:\LisaKatherine\Src\LisaKatherine.Repository\obj\Debug\LisaKatherine.Interface.dll
+S:\LisaKatherine\Src\LisaKatherine.Repository\obj\Debug\LisaKatherine.Interface.pdb

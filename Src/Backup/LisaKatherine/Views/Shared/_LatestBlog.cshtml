@@ -1,0 +1,12 @@
+﻿@model LisaKatherine.Models.PublishedArticles
+<div id="LatestBlog">
+    <h3>
+         @Html.ActionLink("Latest " + (string)ViewBag.Section + " Blog - " + Model.headline, "../Blog/Details/" + Model.headline.Replace(" ", "_"), new { id = Model.articleId }, new { @class = "readMore" })
+    </h3>
+    <div class="blogImage"><img src="@ViewBag.Image" /></div>
+    <div class="date">@String.Format("{0:dddd d MMMM yyyy}", Model.datePublished)</div>
+    
+    <div class="articlebody">@Html.Raw(@Model.body) @Html.ActionLink("Read More...", "../Blog/Details/" + Model.Url, new { id = Model.articleId }, new { @class = "readMore" })</div>
+</div>
+<br />
+<br />

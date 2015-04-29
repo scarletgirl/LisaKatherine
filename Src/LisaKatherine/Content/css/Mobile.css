@@ -1,0 +1,30 @@
+﻿/***
+BLUE:   #457799
+YELLOW: #E7D973
+PINK:   #BF7E96
+***/
+
+
+html { margin: 0 padding: 0; }
+body { background-color:#FFF; font-family: 'Droid Sans' , Sans-Serif; font-size: 2em; margin: 0px; padding: 0; color: #696969; }
+a:link, a:visited, a:active { color: #BF7E96; text-decoration: underline; }
+a:hover { color: #BF7E96; text-decoration: none; }
+p, ul {  line-height: 1.6em; }
+img { border: 0 none;}
+
+h1 { clear:both;font-family: 'Rancho' , Sans-Serif; border-color:#BF7E96; border-style:dashed; border-width:1px 0;}
+
+/* TAB MENU ----------------------------------------------------------*/ 
+ul#menu { position: relative; margin:0px auto; padding:0;height:70px; background-color:#E7D973;}
+ul#menu li { display: inline-block; list-style: none;  height: 38px; float:left; width:20%; }
+ul#menu li a { padding: 15px 0 15px; text-decoration: none; color: #696969; display: block; font-family: 'Rancho' , Sans-Serif; font-size: 2em;  text-align:center;}
+ul#menu li a:hover { text-decoration: none; color:#BF7E96; }
+ul#menu li a:active { text-decoration: none; }
+ul#menu li.selected a { background-color: #fff; color: #000; }
+
+#header #logo { text-align:center; border:none; margin:20px 0;  }
+#main { padding:0 10px;}
+
+#Blog .date { float:right;}
+#Social { float:right;}
+#footer { text-align:center; margin-top:20px;}

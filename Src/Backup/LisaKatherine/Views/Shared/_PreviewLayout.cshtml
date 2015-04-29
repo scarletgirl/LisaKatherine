@@ -1,0 +1,83 @@
+﻿@{
+    string section = @ViewBag.Section;
+    
+    }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/css/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.lkb.js")" type="text/javascript"></script>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Rancho:400,700' rel='stylesheet' type='text/css' />
+ 
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW" />
+
+
+</head>
+<body>
+<div id="pagecontainer">
+    <div id="header">
+        <div id="menucontainer">
+            <ul id="menu">
+                <li class="link1">@Html.ActionLink("Home", "", "")</li>
+                <li class="link2">@Html.ActionLink("Geekiness", "", "Geek")</li>
+                <li class="link3">@Html.ActionLink("Photos", "", "Photos")</li>
+                <li class="link4">@Html.ActionLink("Work", "", "Work")</li>
+                <li class="link5">@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+        </div>
+        <div id="logo">
+            <a href="/" title="Lisa Katherine - Web - Photograpy - Science Geek">
+                <img src="/Content/images/logo.gif" alt="Lisa Katherine" /></a></div>
+    </div>
+    <div id="main">
+        <div class="head">
+            <ul id="menu2">
+                <li class="link_web">@Html.ActionLink("Work", "", "Work")</li>
+                <li class="link_spacer">&nbsp;</li>
+                <li class="link_photos">@Html.ActionLink("Photos", "", "Photos")</li>
+                <li class="link_spacer">&nbsp;</li>
+                <li class="link_blogs">@Html.ActionLink("Geek", "", "Geek")</li>
+            </ul>
+            <div class="yellowArrow"></div>
+            <div class="blueArrow"></div>
+            
+        </div>
+        <div id="container3" class="body">
+            <div id="container2">
+                <div id="col2">
+                    @RenderBody()</div>
+                <div id="col3">
+            @if (@ViewBag.Section == null)
+            { 
+                <div id="icons">
+                    <div id="laptop">
+                        <img src="/Content/images/laptop.gif" /></div>
+                    <div id="photographer">
+                        <img src="/Content/images/photographer.gif" /></div>
+                    <div id="science">
+                        <img src="/Content/images/atom.gif" /></div>
+                </div>
+            }
+            else 
+            {
+                
+                <div class="section-image">
+                    <img src='/Content/images/@(ViewBag.Section + ".gif")' alt="@ViewBag.Section" />
+                </div>
+            }
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footerlinks">
+            &copy; Lisa Katherine Photography @DateTime.Now.Year
+        </div>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿@model LisaKatherine.Interface.Contact
+@{
+    ViewBag.Title = "Contact";
+}
+@{ Html.RenderAction("RenderContactArticle"); }
+@using (Html.BeginForm()) { 
+    @Html.ValidationSummary(true) 
+    <fieldset> 
+        <legend>Contact Lisa Katherine</legend> 
+       <div class="editor-label"> 
+            @Html.LabelFor(model => model.From) 
+        </div>
+         <div class="editor-field"> 
+            @Html.TextBoxFor(model => model.From) 
+            @Html.ValidationMessageFor(model => model.From) 
+       </div> 
+        <div class="editor-label"> 
+            @Html.LabelFor(model => model.Subject) 
+        </div> 
+        <div class="editor-field"> 
+            @Html.TextBoxFor(model => model.Subject) 
+            @Html.ValidationMessageFor(model => model.Subject) 
+        </div> 
+        <div class="editor-label"> 
+            @Html.LabelFor(model => model.Message) 
+        </div> 
+        <div class="editor-field"> 
+            @Html.TextAreaFor(model => model.Message) 
+            @Html.ValidationMessageFor(model => model.Message) 
+        </div> 
+        <p> 
+            <input type="submit" value="Send" /> 
+        </p> 
+    </fieldset> 
+    
+}

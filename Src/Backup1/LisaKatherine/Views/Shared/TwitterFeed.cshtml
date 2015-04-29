@@ -1,0 +1,28 @@
+﻿@model LisaKatherine.Interface.Twitter
+<div id="Twitter">
+    <div class="top">       
+    </div>
+    <div class="mdl">
+ <div id="twitter_t">
+            my recent tweets</div>
+        <div id="twitter_m">
+            <div id="twitter_container">
+                <ul id="twitter_update_list">
+@foreach(var item in Model.Tweets)
+{
+    @Html.Raw(item.Text)
+               <br/><br/>
+}
+                </ul>
+            </div>
+        </div>
+        <div id="twitter_b">
+            <a href="http://twitter.com/scarlet_girl" target="_blank">Follow me on twitter </a>
+            <img src="/content/images/twitter.gif" alt="twitter" /></div>
+    </div>
+    <div class="btm">
+    </div>
+</div>
+
+
+

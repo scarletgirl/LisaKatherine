@@ -1,0 +1,81 @@
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherineTests.dll.config
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherineTests.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherineTests.pdb
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherine.DataEntitiesRepository.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherine.Interface.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherine.Services.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\Moq.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\Newtonsoft.Json.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\oAuthTwitterWrapper.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\MvcPager.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherine.DataEntitiesRepository.pdb
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherine.Interface.pdb
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\LisaKatherine.Services.pdb
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\Moq.xml
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\Newtonsoft.Json.xml
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\MvcPager.pdb
+S:\LisaKatherine\LisaKatherineTests\obj\Debug\LisaKatherineTests.csprojResolveAssemblyReference.cache
+S:\LisaKatherine\LisaKatherineTests\obj\Debug\LisaKatherineTests.dll
+S:\LisaKatherine\LisaKatherineTests\obj\Debug\LisaKatherineTests.pdb
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\Resources\tweets.txt
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\Resources\tweets.txt
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherineTests.dll.config
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherineTests.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherineTests.pdb
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.DataEntitiesRepository.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.Interface.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.Services.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\Moq.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\oAuthTwitterWrapper.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\MvcPager.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.DataEntitiesRepository.pdb
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.Interface.pdb
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\LisaKatherine.Services.pdb
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\Moq.pdb
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\Moq.xml
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Red 2\LKB\LisaKatherineTests\bin\Debug\MvcPager.pdb
+C:\Users\Red 2\LKB\LisaKatherineTests\obj\Debug\LisaKatherineTests.csprojResolveAssemblyReference.cache
+C:\Users\Red 2\LKB\LisaKatherineTests\obj\Debug\LisaKatherineTests.dll
+C:\Users\Red 2\LKB\LisaKatherineTests\obj\Debug\LisaKatherineTests.pdb
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.Mvc.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.WebPages.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.Razor.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.WebPages.Razor.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.WebPages.Deployment.dll
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.Mvc.xml
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.WebPages.xml
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.Razor.xml
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.WebPages.Razor.xml
+S:\LisaKatherine\LisaKatherineTests\bin\Debug\System.Web.WebPages.Deployment.xml
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\Resources\tweets.txt
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\LisaKatherineTests.dll.config
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\LisaKatherineTests.dll
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\LisaKatherineTests.pdb
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\LisaKatherine.DataEntitiesRepository.dll
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\LisaKatherine.Interface.dll
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\LisaKatherine.Services.dll
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\Moq.dll
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\Newtonsoft.Json.dll
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\oAuthTwitterWrapper.dll
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\MvcPager.dll
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\System.Web.Mvc.dll
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\System.Web.WebPages.dll
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\System.Web.Razor.dll
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\System.Web.WebPages.Razor.dll
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\System.Web.WebPages.Deployment.dll
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\LisaKatherine.DataEntitiesRepository.pdb
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\LisaKatherine.Interface.pdb
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\LisaKatherine.Services.pdb
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\Moq.xml
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\Newtonsoft.Json.xml
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\MvcPager.pdb
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\System.Web.Mvc.xml
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\System.Web.WebPages.xml
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\System.Web.Razor.xml
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\System.Web.WebPages.Razor.xml
+S:\LisaKatherine\Src\LisaKatherineTests\bin\Debug\System.Web.WebPages.Deployment.xml
+S:\LisaKatherine\Src\LisaKatherineTests\obj\Debug\LisaKatherineTests.csprojResolveAssemblyReference.cache
+S:\LisaKatherine\Src\LisaKatherineTests\obj\Debug\LisaKatherineTests.dll
+S:\LisaKatherine\Src\LisaKatherineTests\obj\Debug\LisaKatherineTests.pdb
