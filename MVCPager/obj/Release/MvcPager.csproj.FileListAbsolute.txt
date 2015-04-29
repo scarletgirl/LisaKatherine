@@ -1,7 +1,0 @@
-S:\LisaKatherine\MVCPager\bin\MvcPager.dll
-S:\LisaKatherine\MVCPager\bin\MvcPager.pdb
-S:\LisaKatherine\MVCPager\bin\Moq.dll
-S:\LisaKatherine\MVCPager\bin\Moq.pdb
-S:\LisaKatherine\MVCPager\bin\Moq.xml
-S:\LisaKatherine\MVCPager\obj\Release\MvcPager.dll
-S:\LisaKatherine\MVCPager\obj\Release\MvcPager.pdb

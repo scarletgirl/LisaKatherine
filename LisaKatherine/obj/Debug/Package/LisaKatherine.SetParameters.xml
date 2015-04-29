@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <setParameter name="IIS Web Application Name" value="Default Web Site/LisaKatherine_deploy" />
-  <setParameter name="WEBSITEDB-Web.config Connection String" value="Data Source=(local);Initial Catalog=LisaKatherine;Application Name=LisaKatherine Website;User ID=Lisa;Password=pa55word" />
-  <setParameter name="ApplicationServices-Web.config Connection String" value="data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|aspnetdb.mdf;User Instance=true" />
-  <setParameter name="LisaKatherineEntities-Web.config Connection String" value="metadata=res://*/Models.LKDataEntities.csdl|res://*/Models.LKDataEntities.ssdl|res://*/Models.LKDataEntities.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=(local);Initial Catalog=LisaKatherine;Integrated Security=True;MultipleActiveResultSets=True&quot;" />
-</parameters>

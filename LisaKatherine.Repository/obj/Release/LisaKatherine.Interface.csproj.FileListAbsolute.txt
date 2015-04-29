@@ -1,7 +1,0 @@
-S:\LisaKatherine\LisaKatherine.Repository\bin\Release\LisaKatherine.Interface.dll
-S:\LisaKatherine\LisaKatherine.Repository\bin\Release\LisaKatherine.Interface.pdb
-S:\LisaKatherine\LisaKatherine.Repository\bin\Release\Moq.dll
-S:\LisaKatherine\LisaKatherine.Repository\bin\Release\Moq.pdb
-S:\LisaKatherine\LisaKatherine.Repository\bin\Release\Moq.xml
-S:\LisaKatherine\LisaKatherine.Repository\obj\Release\LisaKatherine.Interface.dll
-S:\LisaKatherine\LisaKatherine.Repository\obj\Release\LisaKatherine.Interface.pdb
