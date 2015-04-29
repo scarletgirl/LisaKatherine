@@ -50,6 +50,5 @@ S:\LisaKatherine\Src\MVCPager\bin\Debug\System.Web.Razor.xml
 S:\LisaKatherine\Src\MVCPager\bin\Debug\System.Web.WebPages.xml
 S:\LisaKatherine\Src\MVCPager\bin\Debug\System.Web.WebPages.Deployment.xml
 S:\LisaKatherine\Src\MVCPager\bin\Debug\System.Web.WebPages.Razor.xml
-S:\LisaKatherine\Src\MVCPager\obj\Debug\MvcPager.csprojResolveAssemblyReference.cache
 S:\LisaKatherine\Src\MVCPager\obj\Debug\MvcPager.dll
 S:\LisaKatherine\Src\MVCPager\obj\Debug\MvcPager.pdb

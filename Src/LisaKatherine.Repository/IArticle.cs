@@ -4,19 +4,19 @@
 
     public interface IArticle
     {
-        Int32 ArticleId { get; set; }
+        int ArticleId { get; set; }
 
-        String Headline { get; set; }
+        string Headline { get; set; }
 
-        String Strapline { get; set; }
+        string Strapline { get; set; }
 
-        String Body { get; set; }
+        string Body { get; set; }
 
         DateTime DateCreated { get; set; }
 
         DateTime? DatePublished { get; set; }
 
-        Boolean IsPublished { get; set; }
+        bool IsPublished { get; set; }
 
         Guid? Userid { get; set; }
 

@@ -7,5 +7,5 @@ namespace LisaKatherine.Interface
         Landscape,
 
         Square
-    };
+    }
 }

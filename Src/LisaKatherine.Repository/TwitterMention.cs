@@ -2,13 +2,13 @@
 {
     using System.Collections.Generic;
 
-    public class TwitterMention : LisaKatherine.Interface.ITwitterMention
+    public class TwitterMention : ITwitterMention
     {
         public TwitterMention()
         {
         }
 
-        public TwitterMention(int id, string screenName, string Name, IEnumerable<int> indices)
+        public TwitterMention(int id, string screenName, string name, IEnumerable<int> indices)
         {
         }
 
