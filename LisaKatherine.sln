@@ -24,6 +24,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LisaKatherine.Services", "L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LisaKatherine", "LisaKatherine\LisaKatherine.csproj", "{AB23658E-972B-4A99-B8BC-AE438857FFFE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Scripts", "SQL Scripts", "{8009BC60-DBB9-4140-A5E6-5EB8393FA0E8}"
+	ProjectSection(SolutionItems) = preProject
+		Sql Scripts\tblArticle.sql = Sql Scripts\tblArticle.sql
+		Sql Scripts\tblArticlePublished.sql = Sql Scripts\tblArticlePublished.sql
+		Sql Scripts\tblArticleType.sql = Sql Scripts\tblArticleType.sql
+		Sql Scripts\tblPhotos.sql = Sql Scripts\tblPhotos.sql
+		Sql Scripts\tblPhotoSets.sql = Sql Scripts\tblPhotoSets.sql
+		Sql Scripts\tblSection.sql = Sql Scripts\tblSection.sql
+		Sql Scripts\tblUsers.sql = Sql Scripts\tblUsers.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
